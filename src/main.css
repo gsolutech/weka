@@ -30,7 +30,7 @@
     @apply absolute right-2 justify-center items-center flex;
 }
 #header nav .lastU button {
-    @apply mt-7 border-2 border-solid border-cyan-500;
+    @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-xl;
     background-color: #0096BE;
 }
 

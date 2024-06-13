@@ -609,10 +609,13 @@ video {
 
 #header nav .lastU button {
   margin-top: 1.75rem;
+  border-radius: 0.75rem;
   border-width: 2px;
   border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(6 182 212 / var(--tw-border-opacity));
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   background-color: #0096BE;
 }
 

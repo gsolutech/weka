@@ -654,10 +654,20 @@ video {
   font-weight: 500;
 }
 
-#header .container .secondU input {
-  padding: 0.5rem;
+#header .container .secondUl .search {
+  margin-right: 1rem;
+  width: 16rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+#header .container .secondUl .search:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 #header .container .secondU .btnSend {

@@ -28,13 +28,13 @@
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>
             <ul>
-                <p>Reservation simplifiée pour <label>Tous vos besoins</label></p>
+                <p>Réservation simplifiée pour <label>Tous Vos Besoins</label></p>
             </ul>
-            <ul>
+            <ul class="secondUl">
                 <input type="search" name="inputSearch">
                 <input type="submit" value="Rechercher" name="valideSearch">
             </ul>
-            <ul>
+            <ul class="lastUl">
                 <input type="radio" name="filtre_Check" id="">
                 <label for="filtre_Check">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked>

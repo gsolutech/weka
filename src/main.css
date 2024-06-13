@@ -42,6 +42,16 @@
 #header .container ul img {
     @apply w-28 h-auto object-contain;
 }
-
-
+#header .container ul p {
+    @apply text-4xl font-thin;
+}
+#header .container ul p label {
+    @apply font-medium;
+}
+#header .container .secondU input[type="search"] {
+    @apply focus:outline-none focus:ring-0 focus:border-transparent;
+}
+#header .container .secondU input[type="search"]:focus {
+    @apply border-none outline-none;
+}
 

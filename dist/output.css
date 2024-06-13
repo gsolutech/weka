@@ -2432,7 +2432,7 @@ video {
 }
 
 #header nav ul img {
-  width: 7rem;
+  /* @apply w-28; */
 }
 
 @media (min-width: 640px) {

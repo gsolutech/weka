@@ -583,6 +583,7 @@ video {
 
 #header nav ul img {
   height: auto;
+  max-width: 5rem;
 }
 
 

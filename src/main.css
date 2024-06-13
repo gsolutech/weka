@@ -18,7 +18,7 @@
     @apply flex flex-row;
 } 
 #header nav ul img {
-    @apply h-auto;
+    @apply max-w-20 h-auto;
 }
 
 

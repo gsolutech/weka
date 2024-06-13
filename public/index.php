@@ -10,16 +10,16 @@
     <section id="header">
         <!-- beso -->
         <nav>
-            <ul>
+            <ul class="firstU">
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>
-            <ul>
+            <ul class="secondU">
                 <li>Accueil</li>
                 <li>Reservation</li>
                 <li>Avis</li>
                 <li>Contact</li>
             </ul>
-            <ul>
+            <ul class="lastU">
                 <button>S'inscrite</button>
             </ul>
         </nav>

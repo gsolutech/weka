@@ -583,7 +583,9 @@ video {
 
 #header nav ul img {
   height: auto;
-  max-width: 5rem;
+  width: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 

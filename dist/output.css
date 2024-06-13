@@ -2426,6 +2426,15 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+#header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#header nav ul img {
+  width: 7rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

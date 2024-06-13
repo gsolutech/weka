@@ -39,6 +39,9 @@
 #header .container ul {
     @apply w-full h-32;
 }
+#header .container ul img {
+    @apply w-28 h-auto object-contain;
+}
 
 
 

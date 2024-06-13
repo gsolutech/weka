@@ -633,5 +633,12 @@ video {
   width: 100%;
 }
 
+#header .container ul img {
+  height: auto;
+  width: 7rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 
 

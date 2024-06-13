@@ -61,3 +61,6 @@
 #header .container .lastUl label {
     @apply mr-10 ml-2;
 }
+#header .container .lastUl input {
+    @apply w-12;
+}

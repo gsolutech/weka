@@ -597,7 +597,7 @@ video {
 
 #header nav .lastU {
   position: absolute;
-  right: 0.5rem;
+  right: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;

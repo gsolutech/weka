@@ -30,7 +30,7 @@
     @apply absolute right-2 justify-center items-center flex;
 }
 #header nav .lastU button {
-    @apply mt-5;
+    @apply mt-7;
 }
 
 

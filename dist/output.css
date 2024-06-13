@@ -584,7 +584,7 @@ video {
 }
 
 #header nav ul img {
-  margin-left: 0.75rem;
+  margin-left: 5rem;
   height: auto;
   width: 5rem;
   -o-object-fit: contain;
@@ -621,6 +621,7 @@ video {
   display: flex;
   width: 100%;
   flex-direction: column;
+  padding-top: 7rem;
   height: 450px;
   background-image: url('/src/assets/statics/bgheader.jpg');
   background-position: center;
@@ -629,8 +630,11 @@ video {
 }
 
 #header .container ul {
-  height: 7rem;
+  display: flex;
+  height: 5rem;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 #header .container ul img {

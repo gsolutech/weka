@@ -58,3 +58,6 @@
     @apply border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md;
     background-color: #0096BE;
 }
+#header .container .lastUl label {
+    @apply mr-10 ml-2;
+}

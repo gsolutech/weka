@@ -696,3 +696,8 @@ video {
   padding-left: 0.5rem;
   background-color: #0096BE;
 }
+
+#header .container .lastUl label {
+  margin-right: 2.5rem;
+  margin-left: 0.5rem;
+}

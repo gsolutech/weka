@@ -39,7 +39,7 @@
                 <label for="filtre_Check">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked>
                 <label for="filtre_Check">Disponible</label>
-                <input type="date" name="calendar" id="">               
+                <input type="date" name="calendar" id="calendar">               
             </ul>
         </div>
     </section>

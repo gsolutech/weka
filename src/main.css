@@ -64,3 +64,6 @@
 #header .container .lastUl input {
     @apply w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500;
 }
+#header .container .lastUl #calendar {
+    @apply opacity-0;
+}

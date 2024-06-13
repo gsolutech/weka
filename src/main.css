@@ -21,6 +21,9 @@
 #header nav .secondU {
     @apply items-center justify-center flex;
 }
+#header nav .secondU li {
+    @apply cursor-pointer;
+}
 #header nav .lastU {
     @apply absolute right-20 justify-end items-end flex;
 }

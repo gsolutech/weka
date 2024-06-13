@@ -15,10 +15,10 @@
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>
             <ul class="secondU">
-                <li>Accueil</li>
-                <li>Reservation</li>
-                <li>Avis</li>
-                <li>Contact</li>
+                <li href="">Accueil</li>
+                <li href="">Reservation</li>
+                <li href="">Avis</li>
+                <li href="">Contact</li>
             </ul>
             <ul class="lastU">
                 <button>S'inscrire</button>
@@ -36,7 +36,7 @@
                 <input type="submit" value="Rechercher" name="valideSearch" class="btnSend">
             </ul>
             <ul class="lastUl">
-                <input type="radio" name="filtre_Check" id="" value="dateFiltre">
+                <input type="radio" name="filtre_Check" id="" value="dateFiltre" >
                 <label for="filtre_Check">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre">
                 <label for="filtre_Check">Disponible</label>

@@ -597,6 +597,10 @@ video {
   justify-content: center;
 }
 
+#header nav .secondU li {
+  cursor: pointer;
+}
+
 #header nav .lastU {
   position: absolute;
   right: 5rem;

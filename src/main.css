@@ -15,8 +15,11 @@
     @apply bg-black w-full h-20 flex flex-row text-white;
 }
 #header nav ul {
-    @apply flex flex-row;
+    @apply flex flex-row w-2/6;
 } 
+#header nav ul li {
+    @apply pr-7;
+}
 #header nav ul img {
     @apply w-20 h-auto object-contain;
 }
@@ -25,6 +28,9 @@
 }
 #header nav .lastU {
     @apply absolute right-2 justify-center items-center flex;
+}
+#header nav .lastU button {
+    @apply mt-5;
 }
 
 

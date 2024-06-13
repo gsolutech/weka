@@ -578,7 +578,12 @@ video {
 
 #header nav ul {
   display: flex;
+  width: 33.333333%;
   flex-direction: row;
+}
+
+#header nav ul li {
+  padding-right: 1.75rem;
 }
 
 #header nav ul img {
@@ -600,6 +605,10 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#header nav .lastU button {
+  margin-top: 1.25rem;
 }
 
 

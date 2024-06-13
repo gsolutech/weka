@@ -587,6 +587,7 @@ video {
 }
 
 #header nav ul img {
+  margin-left: 0.75rem;
   height: auto;
   width: 5rem;
   -o-object-fit: contain;
@@ -609,7 +610,7 @@ video {
 
 #header nav .lastU button {
   margin-top: 1.75rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   border-width: 2px;
   border-style: solid;
   --tw-border-opacity: 1;

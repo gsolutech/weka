@@ -21,7 +21,7 @@
     @apply pr-7;
 }
 #header nav ul img {
-    @apply w-20 h-auto object-contain;
+    @apply w-20 h-auto object-contain ml-3;
 }
 #header nav .secondU {
     @apply items-center justify-center flex;
@@ -30,7 +30,7 @@
     @apply absolute right-2 justify-center items-center flex;
 }
 #header nav .lastU button {
-    @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-xl;
+    @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg;
     background-color: #0096BE;
 }
 

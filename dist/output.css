@@ -567,11 +567,13 @@ video {
 
 #header nav {
   display: flex;
-  height: 4rem;
+  height: 5rem;
   width: 100%;
   flex-direction: row;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 #header nav ul {
@@ -580,7 +582,7 @@ video {
 }
 
 #header nav ul img {
-  /* @apply w-28; */
+  height: auto;
 }
 
 

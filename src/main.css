@@ -29,7 +29,7 @@
     background-color: #0096BE;
 }
 #header .container {
-    @apply w-full flex flex-col pt-28;
+    @apply w-full flex flex-col pt-28 justify-center items-center;
     height: 450px;
     background-image: url('/src/assets/statics/bgheader.jpg');
     background-position: center;
@@ -48,9 +48,13 @@
 #header .container ul p label {
     @apply font-medium;
 }
-#header .container .secondUl .search {
-    @apply p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-lg mr-4;
+#header .container .secondUl {
+    @apply bg-white w-96 h-16;
 }
-#header .container .secondU .btnSend {
-    /* @apply bg-red-300 text-red-600; */
+#header .container .secondUl .search {
+    @apply p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-4 bg-gray-200;
+}
+#header .container .secondUl .btnSend {
+    @apply border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md;
+    background-color: #0096BE;
 }

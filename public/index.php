@@ -9,6 +9,17 @@
 <body>
     <section id="header">
         <!-- beso -->
+        <nav>
+            <ul>
+                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
+            </ul>
+            <ul>
+
+            </ul>
+            <ul>
+
+            </ul>
+        </nav>
 
 
     </section>

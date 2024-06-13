@@ -4,7 +4,7 @@
 
  /* #0096BE -> blue */
 #header {
-    @apply w-full;
+    @apply w-full text-white;
 }
 #header nav {
     @apply bg-black w-full h-20 flex flex-row text-white;

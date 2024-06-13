@@ -2411,7 +2411,7 @@ video {
 #header {
   height: 24rem;
   width: 100%;
-  background-image: url(static/4b6713c47b48ac786f4c0bf341634ef0.jpg);
+  background-image: url('static/4b6713c47b48ac786f4c0bf341634ef0.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

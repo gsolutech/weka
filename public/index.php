@@ -32,7 +32,7 @@
             </ul>
             <ul>
                 <input type="search" name="inputSearch">
-                <input type="submit" value="" name="valideSearch">
+                <input type="submit" value="Rechercher" name="valideSearch">
             </ul>
             <ul>
                 <input type="radio" name="filtre_Check" id="">

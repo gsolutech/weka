@@ -37,7 +37,7 @@
     background-size: cover;
 }
 #header .container ul {
-    @apply w-full h-32;
+    @apply w-full h-28;
 }
 #header .container ul img {
     @apply w-28 h-auto object-contain;

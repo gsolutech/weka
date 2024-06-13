@@ -28,10 +28,11 @@
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>
             <ul>
-
+                <p>Reservation simplifiée pour <label>Tous vos besoins</label></p>
             </ul>
             <ul>
-
+                <input type="search" name="inputSearch">
+                <input type="submit" value="">
             </ul>
             <ul>
 

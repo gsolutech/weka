@@ -62,5 +62,5 @@
     @apply mr-10 ml-2;
 }
 #header .container .lastUl input {
-    @apply w-12;
+    @apply w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500;
 }

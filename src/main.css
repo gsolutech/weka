@@ -12,7 +12,7 @@
     background-size: cover;
 }
 #header nav {
-    @apply bg-black w-full h-28;
+    @apply bg-black w-full h-28 flex flex-row;
 }
 
 

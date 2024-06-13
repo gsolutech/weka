@@ -2418,8 +2418,10 @@ video {
 }
 
 #header nav {
-  height: 7rem;
+  display: flex;
+  height: 4rem;
   width: 100%;
+  flex-direction: row;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }

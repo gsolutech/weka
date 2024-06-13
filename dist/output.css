@@ -588,5 +588,10 @@ video {
      object-fit: contain;
 }
 
+#header nav .lastU {
+  position: absolute;
+  right: 0.5rem;
+}
+
 
 

@@ -20,7 +20,7 @@
                 <li>Contact</li>
             </ul>
             <ul class="lastU">
-                <button>S'inscrite</button>
+                <button>S'inscrire</button>
             </ul>
         </nav>
 

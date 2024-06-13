@@ -20,6 +20,9 @@
 #header nav ul img {
     @apply w-20 h-auto object-contain;
 }
+#header nav .lastU {
+    @apply absolute right-2;
+}
 
 
 

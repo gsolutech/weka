@@ -22,7 +22,7 @@
     @apply items-center justify-center flex;
 }
 #header nav .lastU {
-    @apply absolute right-1 justify-center items-center flex;
+    @apply absolute right-20 justify-end items-end flex;
 }
 #header nav .lastU button {
     @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg;

@@ -597,10 +597,10 @@ video {
 
 #header nav .lastU {
   position: absolute;
-  right: 0.25rem;
+  right: 5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #header nav .lastU button {

@@ -668,7 +668,7 @@ video {
 }
 
 #header .container .secondUl .search {
-  margin-right: 1rem;
+  margin-right: 0.75rem;
   width: 16rem;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;

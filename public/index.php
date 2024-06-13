@@ -36,9 +36,9 @@
                 <input type="submit" value="Rechercher" name="valideSearch" class="btnSend">
             </ul>
             <ul class="lastUl">
-                <input type="radio" name="filtre_Check" id="">
+                <input type="radio" name="filtre_Check" id="" value="dateFiltre">
                 <label for="filtre_Check">Filtrez par date</label>
-                <input type="radio" name="filtre_Check" id="" checked>
+                <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre">
                 <label for="filtre_Check">Disponible</label>
                 <input type="date" name="calendar" id="calendar">               
             </ul>

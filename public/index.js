@@ -1,3 +1,3 @@
-if (filtre_Check.value == "dateFiltre") {
-    alert("Please");
+function canlendarShow() {
+    
 }

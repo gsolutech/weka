@@ -31,8 +31,8 @@
                 <p>Réservation simplifiée pour <label>Tous Vos Besoins</label></p>
             </ul>
             <ul class="secondUl">
-                <input type="search" name="inputSearch">
-                <input type="submit" value="Rechercher" name="valideSearch">
+                <input type="search" name="inputSearch" class="search">
+                <input type="submit" value="Rechercher" name="valideSearch" class="btnSend">
             </ul>
             <ul class="lastUl">
                 <input type="radio" name="filtre_Check" id="">

@@ -654,13 +654,10 @@ video {
   font-weight: 500;
 }
 
-#header .container .secondU input[type="search"]:focus {
-  border-color: transparent;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  border-style: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+#header .container .secondU .search {
+  width: 20rem;
 }
 
+#header .container .secondU .btnSend {
+  /* @apply bg-red-300 text-red-600; */
+}

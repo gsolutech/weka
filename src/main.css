@@ -48,10 +48,9 @@
 #header .container ul p label {
     @apply font-medium;
 }
-#header .container .secondU input[type="search"] {
-    @apply focus:outline-none focus:ring-0 focus:border-transparent;
+#header .container .secondU .search {
+    @apply w-80;
 }
-#header .container .secondU input[type="search"]:focus {
-    @apply border-none outline-none;
+#header .container .secondU .btnSend {
+    /* @apply bg-red-300 text-red-600; */
 }
-

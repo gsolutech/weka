@@ -14,10 +14,13 @@
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>
             <ul>
-
+                <li>Accueil</li>
+                <li>Reservation</li>
+                <li>Avis</li>
+                <li>Contact</li>
             </ul>
             <ul>
-
+                <button>S'inscrite</button>
             </ul>
         </nav>
 

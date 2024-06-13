@@ -2417,6 +2417,13 @@ video {
   background-size: cover;
 }
 
+#header nav {
+  height: 7rem;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

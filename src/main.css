@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+ /* #0096BE -> blue */
+#header {
+    @apply w-full, h-96 bg-red-400;
+}
 
 
 

@@ -654,8 +654,10 @@ video {
   font-weight: 500;
 }
 
-#header .container .secondU .search {
-  width: 20rem;
+#header .container .secondU input {
+  padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 #header .container .secondU .btnSend {

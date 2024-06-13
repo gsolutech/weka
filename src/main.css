@@ -49,7 +49,7 @@
     @apply font-medium;
 }
 #header .container .secondUl {
-    @apply bg-white w-96 h-16;
+    @apply bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2;
 }
 #header .container .secondUl .search {
     @apply p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-4 bg-gray-200;

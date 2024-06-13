@@ -588,9 +588,18 @@ video {
      object-fit: contain;
 }
 
+#header nav .secondU {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #header nav .lastU {
   position: absolute;
   right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

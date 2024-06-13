@@ -20,8 +20,11 @@
 #header nav ul img {
     @apply w-20 h-auto object-contain;
 }
+#header nav .secondU {
+    @apply items-center justify-center flex;
+}
 #header nav .lastU {
-    @apply absolute right-2;
+    @apply absolute right-2 justify-center items-center flex;
 }
 
 

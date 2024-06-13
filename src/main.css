@@ -29,12 +29,15 @@
     background-color: #0096BE;
 }
 #header .container {
-    @apply w-full;
+    @apply w-full flex flex-col;
     height: 450px;
     background-image: url('/src/assets/statics/bgheader.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+#header .container ul {
+    @apply w-full h-32;
 }
 
 

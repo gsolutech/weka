@@ -616,12 +616,19 @@ video {
 }
 
 #header .container {
+  display: flex;
   width: 100%;
+  flex-direction: column;
   height: 450px;
   background-image: url('/src/assets/statics/bgheader.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#header .container ul {
+  height: 8rem;
+  width: 100%;
 }
 
 

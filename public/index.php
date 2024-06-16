@@ -39,7 +39,7 @@
                 <input type="radio" name="filtre_Check" id="" value="dateFiltre" onclick="canlendarShow(); ">
                 <label for="filtre_Check">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre">
-                <label for="filtre_Check">Disponible</label>
+                <!-- <label for="filtre_Check">Disponible</label> -->
                 <!-- <input type="date" name="calendar" id="calendar"> -->
                 <!-- djo -->
             </ul>

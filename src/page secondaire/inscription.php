@@ -10,7 +10,7 @@
 <body>
     <div id="alertForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl mb-4">Formulaire d'Alerte</h2>
+            <h2 class="text-2xl mb-4">Inscrivez-vous</h2>
             <form id="alertFormElement">
                 <div class="mb-4">
                     <label for="inputField" class="block text-gray-700">Entrée:</label>

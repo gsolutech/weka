@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
+    <!-- <?php 
         require_once ("config/conbd.php"); 
         require_once ("config/login.php");
-    ?>
+    ?> -->
     <div class="weka">
         <form action="">
             <h1>contactez nous</h1>

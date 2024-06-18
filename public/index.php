@@ -21,7 +21,7 @@
                 <li href="">Contact</li>
             </ul>
             <ul class="lastU">
-                <button>S'inscrire</button>
+                <button id="btn_inscrire">S'inscrire</button>
             </ul>
         </nav>
         <div class="container">

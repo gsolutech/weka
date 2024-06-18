@@ -3,7 +3,7 @@ function canlendarShow() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const inscript = document.querySelector('btn_inscrire'),
+    const inscript = document.querySelector('btn_inscrire')
     
     function showPage(page) {
         // Afficher la page sélectionnée

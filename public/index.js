@@ -6,3 +6,4 @@ document.getElementById('showCalendarRadio').addEventListener('change', function
         calendarVar.style.display = 'none';
     }
 });
+

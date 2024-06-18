@@ -13,8 +13,12 @@
             <h2 class="text-2xl mb-4">Inscrivez-vous</h2>
             <form id="alertFormElement">
                 <div class="mb-4">
-                    <label for="inputField" class="block text-gray-700">Entrée:</label>
+                    <label for="name" class="block text-gray-700">Nom :</label>
                     <input type="text" id="inputField" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    <label for="firstname" class="block text-gray-700">Prenom :</label>
+                    <input type="text" id="inputField" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    <label for="email" class="block text-gray-700">Email :</label>
+                    <input type="email" id="inputField" class="w-full px-3 py-2 border border-gray-300 rounded" required>
                 </div>
                 <div class="flex justify-end">
                     <button type="button" id="closeAlertBtn" class="px-4 py-2 bg-red-500 text-white rounded mr-2">Fermer</button>

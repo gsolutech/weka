@@ -13,4 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
     inscript.addEventListener('click', function() {
         showPage('btn_inscrire');
     });
-}
+})

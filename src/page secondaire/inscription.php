@@ -23,7 +23,7 @@
                     <input type="texte" id="inputField" class="w-full px-3 py-2 border border-gray-300 rounded" required>
                 </div>
                 <div class="flex justify-end">
-                    <button type="button" id="closeAlertBtn" class="px-4 py-2 bg-red-500 text-white rounded mr-2">Fermer</button>
+                    <button type="button" id="closeAlertBtn" class="px-4 py-2 bg-red-500 text-white rounded mr-2">Retour</button>
                     <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded">Soumettre</button>
                 </div>
             </form>

@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Afficher la page sélectionnée
         page.classList.add('btn_inscrire');
     }
-}
 
-inscript.addEventListener('click', function() {
-    showPage();
-});
+    inscript.addEventListener('click', function() {
+        showPage('btn_inscrire');
+    });
+}

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- /* #0096BE -> blue */
 #header {
     @apply w-full text-white;
 }
@@ -34,7 +33,7 @@
 #header .container {
     @apply w-full flex flex-col pt-28 justify-center items-center;
     height: 450px;
-    background-image: url('/src/assets/statics/bgheader.jpg');
+    /* background-image: url('/src/assets/statics/bgheader.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,4 +69,5 @@
 #header .container .lastUl #calendar {
     @apply hidden;
 }
+
 

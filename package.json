@@ -2,7 +2,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.4"
   },
   "name": "tailwind-config",
   "version": "1.0.0",
@@ -106,11 +106,11 @@
   },
   "scripts": {
     "build": "tailwind build -i src/main.css -o dist/output.css",
+    "build:css": "tailwindcss build src/styles/tailwind.css -o public/styles/tailwind.css",
     "watch": "tailwind build -i src/main.css -o dist/output.css -w"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "application web de réservation des services"
 }

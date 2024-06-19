@@ -724,3 +724,8 @@ video {
 #header .container .lastUl #calendar {
   display: none;
 }
+
+.anelka label {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <div class="h-screen bg-indigo-100 flex justify-center items-center">
+    <div class="h-screen bg-indigo-80 flex justify-center items-center">
         <div class="lg:w-2/5 md:w-1/2 w-2/3">
-            <form class="bg-white p-10 rounded-lg shadow-lg min-w-full">
+            <form class="bg-white p-8 rounded-lg shadow-lg min-w-full">
                 <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">S'Enregistres</h1>
                 <div>
                     <label class="text-gray-800 font-semibold block my-3 text-md" for="username">Nom </label>

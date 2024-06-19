@@ -71,7 +71,3 @@
     @apply hidden;
 }
 
-
-.anelka label {
-    @apply text-red-300;
-}

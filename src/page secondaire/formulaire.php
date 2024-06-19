@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="form.css">
     <title>Document</title>
 </head>
-<!-- <body>
-    <?php 
-        require_once ("config/conbd.php"); 
-        require_once ("config/login.php");
-    ?> -->
+<body>
     <div class="weka">
         <form action="" method="post">
             <h1>contactez nous</h1>
@@ -24,13 +20,13 @@
             <hr class="h">
 
             <div class="goma">
-                <input type="mail" placeholder="Adresse mail">
+                <input type="email" name="email" placeholder="Adresse mail">
             </div>
             <div class="goma">
-                <input type="password" placeholder="Mots passe">
+                <input type="password" name="password" placeholder="Mots passe">
             </div>
             <div class="btn" align="center">
-                <input type="submit" value="">
+                <input type="submit" name="valider" value="">
             </div>
         </form>
     </div>

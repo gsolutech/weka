@@ -1,8 +1,10 @@
-document.getElementById('showCalendarRadio').addEventListener('change', function() {
-    var calendar = document.getElementById('calendar');
+/*document.getElementById('showCalendarRadio').addEventListener('change', function() {
+    var calendarVar = document.getElementById('calendar');
     if (this.checked) {
-        calendar.style.display = 'block';
+        calendarVar.style.display = 'block';
     } else {
-        calendar.style.display = 'none';
+        calendarVar.style.display = 'none';
     }
 });
+*/
+

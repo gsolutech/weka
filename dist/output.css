@@ -1,6 +1,6 @@
-/* styles.css */
-
-/* ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -552,16 +552,4 @@ video {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-
-.test {
-  height: 10rem;
-  width: 24rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.test p {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
 }

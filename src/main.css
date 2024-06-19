@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 #header {
-    @apply w-full text-white;
+    /* @apply ; */
 }
 #header nav {
-    @apply bg-black w-full h-20 flex flex-row text-white;
+    /* @apply bg-black w-full h-20 flex flex-row text-white; */
 }
 #header nav ul {
-    @apply flex flex-row w-2/6;
+    /* @apply flex flex-row w-2/6; */
 } 
 #header nav ul li {
-    @apply pr-7;
+    /* @apply ; */
 }
 #header nav ul img {
-    @apply w-20 h-auto object-contain ml-20;
+    /* @apply w-20 h-auto object-contain ml-20; */
 }
 #header nav .secondU {
-    @apply items-center justify-center flex;
+    /* @apply items-center justify-center flex; */
 }
 #header nav .secondU li {
-    @apply cursor-pointer;
+    /* @apply cursor-pointer; */
 }
 #header nav .lastU {
-    @apply absolute right-20 justify-end items-end flex;
+    /* @apply absolute right-20 justify-end items-end flex; */
 }
 #header nav .lastU button {
-    @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg;
-    background-color: #0096BE;
+    /* @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg; */
+    /* background-color: #0096BE; */
 }
 #header .container {
     @apply w-full flex flex-col pt-28 justify-center items-center;
@@ -69,5 +69,3 @@
 #header .container .lastUl #calendar {
     @apply hidden;
 }
-
-

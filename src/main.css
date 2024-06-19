@@ -2,6 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
+ /* #0096BE -> blue */
+#header {
+    @apply w-full text-white;
+}
+#header nav {
+    @apply bg-black w-full h-20 flex flex-row text-white;
+}
+#header nav ul {
+    @apply flex flex-row w-2/6;
+} 
+#header nav ul li {
+    @apply pr-7;
+}
+#header nav ul img {
+    @apply w-20 h-auto object-contain ml-20;
+}
+#header nav .secondU {
+    @apply items-center justify-center flex;
+}
+#header nav .secondU li {
+    @apply cursor-pointer;
+}
+#header nav .lastU {
+    @apply absolute right-20 justify-end items-end flex;
+}
+#header nav .lastU button {
+    @apply mt-7 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg;
+    background-color: #0096BE;
+}
+#header .container {
+    @apply w-full flex flex-col pt-28 justify-center items-center;
+    height: 450px;
+    background-image: url('/src/assets/statics/bgheader.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#header .container ul {
+    @apply w-full h-20 justify-center items-center flex ;
+}
+#header .container ul img {
+    @apply w-28 h-auto object-contain;
+}
+#header .container ul p {
+    @apply text-4xl font-thin;
+}
+#header .container ul p label {
+    @apply font-medium;
+}
+#header .container .secondUl {
+    @apply bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2;
+}
+#header .container .secondUl .search {
+    @apply p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200;
+}
+#header .container .secondUl .btnSend {
+    @apply border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md;
+    background-color: #0096BE;
+}
+#header .container .lastUl label {
+    @apply mr-10 ml-2;
+}
+#header .container .lastUl input {
+    @apply w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500;
+}
+#header .container .lastUl #calendar {
+    @apply hidden;
+<<<<<<< HEAD
+}
 
 
-
+.anelka label {
+    @apply text-red-300;
+=======
+>>>>>>> 540b14c5aa283237a8b104b81cfb0d006227075e
+}

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="weka">
-        <form action="" method="post">
+        <form action="#" method="post">
             <h1>contactez nous</h1>
             <div class="solutech">
                 <input type="text" placeholder="se connecter avec facebook">

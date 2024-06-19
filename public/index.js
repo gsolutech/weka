@@ -1,4 +1,4 @@
-document.getElementById('showCalendarRadio').addEventListener('change', function() {
+/*document.getElementById('showCalendarRadio').addEventListener('change', function() {
     var calendarVar = document.getElementById('calendar');
     if (this.checked) {
         calendarVar.style.display = 'block';
@@ -6,3 +6,5 @@ document.getElementById('showCalendarRadio').addEventListener('change', function
         calendarVar.style.display = 'none';
     }
 });
+*/
+

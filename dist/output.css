@@ -553,3 +553,172 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+.hidden {
+  display: none;
+}
+
+#header {
+  width: 100%;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#header nav {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  flex-direction: row;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#header nav ul {
+  display: flex;
+  width: 33.333333%;
+  flex-direction: row;
+}
+
+#header nav ul li {
+  padding-right: 1.75rem;
+}
+
+#header nav ul img {
+  margin-left: 5rem;
+  height: auto;
+  width: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#header nav .secondU {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header nav .secondU li {
+  cursor: pointer;
+}
+
+#header nav .lastU {
+  position: absolute;
+  right: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+#header nav .lastU button {
+  margin-top: 1.75rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(6 182 212 / var(--tw-border-opacity));
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: #0096BE;
+}
+
+#header .container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7rem;
+  height: 450px;
+  /* background-image: url('/src/assets/statics/bgheader.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header .container ul {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .container ul img {
+  height: auto;
+  width: 7rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#header .container ul p {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 100;
+}
+
+#header .container ul p label {
+  font-weight: 500;
+}
+
+#header .container .secondUl {
+  margin-top: 2rem;
+  height: 3.5rem;
+  width: 24rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#header .container .secondUl .search {
+  margin-right: 0.75rem;
+  width: 16rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+#header .container .secondUl .search:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#header .container .secondUl .btnSend {
+  border-radius: 0.375rem;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(6 182 212 / var(--tw-border-opacity));
+  padding: 0.25rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: #0096BE;
+}
+
+#header .container .lastUl label {
+  margin-right: 2.5rem;
+  margin-left: 0.5rem;
+}
+
+#header .container .lastUl input {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(6 182 212 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+}
+
+#header .container .lastUl #calendar {
+  display: none;
+}

@@ -107,6 +107,7 @@
   },
   "scripts": {
     "build": "tailwind build -i src/main.css -o dist/output.css",
+    "build:css": "tailwindcss build src/styles/tailwind.css -o public/styles/tailwind.css",
     "watch": "tailwind build -i src/main.css -o dist/output.css -w"
   },
   "keywords": [],

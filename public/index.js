@@ -1,3 +1,4 @@
+
 /*document.getElementById('showCalendarRadio').addEventListener('change', function() {
     var calendarVar = document.getElementById('calendar');
     if (this.checked) {
@@ -10,3 +11,4 @@
 document.querySelector('btn_inscrire').addEventListener('click', function() {
     window.location.href = 'inscription.php';
 });
+

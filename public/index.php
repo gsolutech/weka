@@ -24,7 +24,7 @@
                 <button id="btn_inscrire">S'inscrire</button>
             </ul>
         </nav>
-        <div class="container">
+        <div class="container" style="background-image: url('/src/assets/statics/bgheader.jpg');">
             <ul>
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
             </ul>

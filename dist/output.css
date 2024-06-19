@@ -631,7 +631,7 @@ video {
   justify-content: center;
   padding-top: 7rem;
   height: 450px;
-  background-image: url('/src/assets/statics/bgheader.jpg');
+  /* background-image: url('/src/assets/statics/bgheader.jpg'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

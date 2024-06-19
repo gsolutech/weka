@@ -8,6 +8,5 @@
 });
 */
 document.getElementById('btn_inscrire').addEventListener('click', function() {
-    // Remplace 'page2.html' par l'URL de la page que vous voulez ouvrir
     window.location.href = '../src/page secondaire/inscription.php';
 });

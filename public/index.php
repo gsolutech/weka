@@ -11,37 +11,39 @@
 <body>
     <section id="header" class="w-full text-white">
         <!-- beso -->
-        <nav class="bg-black w-full h-20 flex flex-row text-white">
+        <nav class="bg-black w-full h-20 flex flex-row text-white relative">
             <ul class="flex flex-row w-2/6">
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">
             </ul>
-            <ul class="items-center justify-center flex">
+            <ul class="flex-row w-2/6 items-center justify-center flex text-center relative">
                 <li href="" class="pr-7 cursor-pointer">Accueil</li>
                 <li href="" class="pr-7 cursor-pointer">Reservation</li>
                 <li href="" class="pr-7 cursor-pointer">Avis</li>
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
-            <ul class="absolute right-20 justify-end items-end flex">
-                <button id="btn_inscrire" class="mt-7 bg-cyan-500 border-2 border-solid border-cyan-500 pr-2 pl-2 rounded-lg">S'inscrire</button>
+            <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
+                <button id="btn_inscrire" class="bg-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7">S'inscrire</button>
             </ul>
         </nav>
-        <div class="container" style="background-image: url('/src/assets/statics/bgheader.jpg');">
-            <ul>
+        <div class="w-full flex flex-col pt-16 justify-center items-center h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/src/assets/statics/bgheader.jpg');">
+            <ul class="w-full h-20 justify-center items-center flex">
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">
             </ul>
-            <ul>
-                <p>Réservation simplifiée pour <label>Tous Vos Besoins</label></p>
+            <ul class="w-full h-20 justify-center items-center flex">
+                <p class="text-4xl font-thin">Réservation simplifiée pour <label class="font-medium">Tous Vos Besoins</label></p>
             </ul>
-            <ul class="items-center justify-center flex">
-                <input type="search" name="inputSearch" class="search">
-                <input type="submit" value="Rechercher" name="valideSearch" class="btnSend">
+            <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
+                <form action="" method="post" class="relative flex flex-row justify-center items-center">
+                    <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
+                    <input type="submit" value="Rechercher" name="valideSearch" class="bg-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md ">
+                </form>      
             </ul>
-            <ul class="justify-end items-end flex">
-                <input type="radio" name="filtre_Check" id="" value="dateFiltre" id="showCalendarRadio">
-                <label for="filtre_Check">Filtrez par date</label>
-                <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre">
-                <label for="filtre_Check">Disponible</label>
-                <input type="date" name="calendar" id="calendar">
+            <ul class="justify-end items-end flex mt-2">
+                <input type="radio" name="filtre_Check" id="" value="dateFiltre" id="showCalendarRadio" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
+                <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
+                <input type="date" name="calendar" id="calendar" class="hidden">
                 <!-- djo -->
             </ul>
         </div>

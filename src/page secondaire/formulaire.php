@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="form.css">
     <title>Document</title>
 </head>
-<body>
+<!-- <body>
     <?php 
         require_once ("config/conbd.php"); 
         require_once ("config/login.php");
-    ?>
+    ?> -->
     <div class="weka">
         <form action="" method="post">
             <h1>contactez nous</h1>

@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.block {
+  display: block;
+}
+
 /* #0096BE -> blue */
 
 #header {
@@ -718,5 +722,5 @@ video {
 }
 
 #header .container .lastUl #calendar {
-  opacity: 0;
+  display: none;
 }

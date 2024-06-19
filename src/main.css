@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- /* #0096BE -> blue */
 #header {
     @apply w-full text-white;
 }
@@ -69,12 +68,6 @@
 }
 #header .container .lastUl #calendar {
     @apply hidden;
-<<<<<<< HEAD
 }
 
 
-.anelka label {
-    @apply text-red-300;
-=======
->>>>>>> 540b14c5aa283237a8b104b81cfb0d006227075e
-}

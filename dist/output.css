@@ -554,11 +554,9 @@ video {
   --tw-contain-style:  ;
 }
 
-.block {
-  display: block;
+.hidden {
+  display: none;
 }
-
-/* #0096BE -> blue */
 
 #header {
   width: 100%;
@@ -725,7 +723,4 @@ video {
   display: none;
 }
 
-.anelka label {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
-}
+

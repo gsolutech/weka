@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../dist/output.css">
     <script src="index.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
     <title>weka</title>
 </head>
 <body>
@@ -47,11 +49,14 @@
                 <!-- djo -->
             </ul>
         </div>
+        <div class="calendarDiv" class="absolute bg-red-500 w-96 h-96">
+            <p class="">Choisissez une date </p>
+        </div>
     </section>
 
     <section class="yves">
         <class="test">
-            <p>fgkvgvvcgh</p>
+            <!-- <p>fgkvgvvcgh</p> -->
         </div>
     </section>
 

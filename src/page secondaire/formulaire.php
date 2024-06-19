@@ -26,7 +26,7 @@
                 <input type="password" name="password" placeholder="Mots passe">
             </div>
             <div class="btn" align="center">
-                <input type="submit" name="valider" value="">
+                <input type="submit" name="valider" value="Se connecter">
             </div>
         </form>
     </div>

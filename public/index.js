@@ -8,5 +8,5 @@
 });
 */
 document.querySelector('btn_inscrire').addEventListener('click', function() {
-    window.location.href = '../src/page secondaire/inscription.php';
+    window.location.href = 'inscription.php';
 });

@@ -49,8 +49,8 @@
                 <!-- djo -->
             </ul>
         </div>
-        <div class="calendarDiv" class="absolute bg-red-500 w-96 h-96">
-            <p class="">Choisissez une date </p>
+        <div id="calendarDiv" class="absolute bg-red-500 w-96 h-96 top-14">
+            <p class="text-white">Choisissez une date </p>
         </div>
     </section>
 

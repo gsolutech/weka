@@ -84,7 +84,7 @@
         </div>
         <div class="">
             <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
-            <div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="w-96 mx-auto bg-white shadow-lg overflow-hidden">
                 <img class="w-full h-48 object-cover" src="../src/assets/Serena/3.jpg" alt="Asha La Villa">
                 <div class="p-6 flex flex-col relative">
                     <h3 class="text-xl font-semibold mb-2">Asha La Villa</h3>
@@ -101,11 +101,11 @@
                         <span class="text-xl font-semibold">$300</span>
                     </div>
                     <div class="flex flex-row justify-between items-center">
-                        <ul class="flex flex-row justify-between items-center mb-4 w-9/12">
+                        <ul class="flex flex-row justify-between items-center mb-4 w-7/12">
                             <i class='bx bx-been-here text-xl'></i>
                             <span class="text-gray-500 text-xs">Av. Eugène Sumi, LA Corniche (fait Musée de Carre)</span>
                         </ul>
-                        <ul class="w-3/12">
+                        <ul class="w-5/12">
                             <button class="bg-cyan-custom text-white px-4 py-2 rounded hover:bg-blue-500 w-full h-12 text-xs">Réservez Maintenant</button>
                         </ul>
                     </div>

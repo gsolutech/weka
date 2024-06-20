@@ -82,11 +82,11 @@
 
             </div>
         </div>
-        <div class="text-center">
-            <h2 class="text-4xl font-semibold mb-8">Les Réservations</h2>
+        <div class="">
+            <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
             <div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover" src="../src/assets/Serena/3.jpg" alt="Asha La Villa">
-                <div class="p-6">
+                <div class="p-6 flex flex-col relative">
                     <h3 class="text-xl font-semibold mb-2">Asha La Villa</h3>
                     <div class="flex items-center mb-4">
                         <!-- Étoiles de notation -->
@@ -97,14 +97,19 @@
                         <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="bg-green-400 text-white px-3 py-1 rounded-3xl">Disponible</span>
+                        <span class="bg-green-400 text-white px-4 py-2 rounded-3xl">Disponible</span>
                         <span class="text-xl font-semibold">$300</span>
                     </div>
-                    <div class="flex flex-row justify-between items-center mb-4">
-                        <i class='bx bx-been-here text-xl'></i>
-                        <span class="text-gray-500 text-xs">Av. Eugène Sumi, LA Corniche (fait Musée de Carre)</span>
+                    <div class="flex flex-row justify-between items-center">
+                        <ul class="flex flex-row justify-between items-center mb-4 w-9/12">
+                            <i class='bx bx-been-here text-xl'></i>
+                            <span class="text-gray-500 text-xs">Av. Eugène Sumi, LA Corniche (fait Musée de Carre)</span>
+                        </ul>
+                        <ul class="w-3/12">
+                            <button class="bg-cyan-custom text-white px-4 py-2 rounded hover:bg-blue-500 w-full h-12 text-xs">Réservez Maintenant</button>
+                        </ul>
                     </div>
-                    <button class="bg-cyan-custom text-white px-4 py-2 rounded hover:bg-blue-500 w-full">Réservez Maintenant</button>
+                        
                 </div>
             </div>
         </div>

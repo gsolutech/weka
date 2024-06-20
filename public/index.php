@@ -52,6 +52,8 @@
         <div id="calendarDiv" class="absolute bg-red-500 w-96 h-96 top-14">
             <p class="text-white">Choisissez une date </p>
         </div>
+
+        <!-- dfndjfjf -->
     </section>
 
     <section class="yves">

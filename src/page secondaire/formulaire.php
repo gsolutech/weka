@@ -17,7 +17,11 @@
                 <input type="text" placeholder="se connecter avec Google">
             </div>
 
-            <hr class="h">
+            <div class="h">
+            <hr>
+            <p>ou</p>
+            <hr>
+           </div>
 
             <div class="goma">
                 <input type="email" name="email" placeholder="Adresse mail">

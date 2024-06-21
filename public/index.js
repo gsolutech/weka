@@ -20,13 +20,15 @@ document.getElementById('showCalendarRadio').addEventListener('change', function
 function ShowIscription() {
     let element = document.getElementById('inscriptionShow');
     let bodySelect = document.querySelector('body');
+    let blurShow = document.getElementById('closePop');
     console.log('Element:', element);
 
     if (element) {
         element.classList.add('someClass');
         element.classList.remove('hidden');
         element.classList.add('flex'); 
-        bodySelect.body.classList.add('backdrop-blur');      
+        bodySelect.body.classList.add('backdrop-blur');  
+        blurShow.classList.add('h-screen');    
     } else {
         console.error("Element with id 'someElementId' not found.");
     }

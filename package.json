@@ -102,7 +102,8 @@
     "which": "^2.0.2",
     "wrap-ansi": "^8.1.0",
     "wrap-ansi-cjs": "^7.0.0",
-    "yaml": "^2.4.2"
+    "yaml": "^2.4.2",
+    "yarn": "^1.22.22"
   },
   "scripts": {
     "build": "tailwind build -i src/main.css -o dist/output.css",
@@ -110,7 +111,8 @@
     "watch": "tailwind build -i src/main.css -o dist/output.css -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yves <darkgithub75@gmail.com>",
   "license": "ISC",
-  "description": "application web de réservation des services"
+  "description": "",
+  "repository": "https://github.com/gsolutech/weka.git"
 }

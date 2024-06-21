@@ -1,6 +1,6 @@
 <?php
 require_once 'C:/wamp64/www/weka/config/conBd.php';
-require_once dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
 ?>
 

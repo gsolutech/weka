@@ -47,13 +47,13 @@
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
+                <input type="date" name="calendar" id="calendar" class="hidden">
                 <!-- djo -->
             </ul>
         </div>
-        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36">
+        <!-- <div id="calendarDiv" class="absolute bg-red-500 w-96 h-96 top-14">
             <p class="text-white">Choisissez une date </p>
-            <input type="date" name="calendar" id="calendar" class="" focus>
-        </div>
+        </div> -->
 
         <!-- dfndjfjf -->
     </section>
@@ -61,7 +61,7 @@
     <section class="py-12">
     <div class="container mx-auto px-4">
         <div class="text-center">
-            <h2 class="text-4xl font-semibold mb-4">Acheivement</h2>
+            <h2 class="text-4xl font-semibold mb-4">Achèvement</h2>
             <p class="mb-8 text-gray-600">Grâce à la confiance de nos utilisateurs, Weka a atteint des sommets en matière de réservations en ligne. Nous avons facilité des milliers de réservations avec un taux de satisfaction élevé et des retours positifs constants. Rejoignez-nous et faites partie de notre succès !</p>
             <div class="flex justify-center space-x-2 mb-12">
                 <!-- Images des utilisateurs -->
@@ -85,44 +85,12 @@
 
             </div>
         </div>
-        <div class="">
-            <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
-            <div class="w-96 mx-auto bg-white shadow-lg overflow-hidden">
-                <img class="w-full h-48 object-cover" src="../src/assets/Serena/3.jpg" alt="Asha La Villa">
-                <div class="p-6 flex flex-col relative">
-                    <div class="flex flex-row ">
-                        <ul class="flex flex-row justify-between items-center mb-4 w-7/12">
-                            <h3 class="text-xl font-semibold mb-2">Asha La Villa</h3>
-                        </ul>
-                        <ul class="flex justify-end items-end w-5/12">
-                            <button class="flex justify-end items-end"><i class='bx bx-heart text-5xl'></i></button>
-                        </ul>
-                    </div>
-                    <div class="flex items-center mb-4">
-                        <!-- Étoiles de notation -->
-                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
-                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
-                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
-                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
-                        <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049.825L7.389 6.323H2.294a1 1 0 0 0-.743 1.669l4.056 3.347-1.613 5.347a1 1 0 0 0 1.541 1.069L10 15.27l4.465 2.985a1 1 0 0 0 1.541-1.069l-1.613-5.347 4.056-3.347a1 1 0 0 0-.743-1.669h-5.095L10.951.825a1 1 0 0 0-1.902 0z"/></svg>
-                    </div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="bg-green-400 text-white px-4 py-2 rounded-3xl">Disponible</span>
-                        <span class="text-xl font-semibold">$300</span>
-                    </div>
-                    <hr class="w-full bg-black opacity-20 border-1 border-solid border-black mb-3">
-                    <div class="flex flex-row justify-between items-center">
-                        <ul class="flex flex-row justify-between items-center mb-4 w-7/12">
-                            <i class='bx bx-been-here text-xl'></i>
-                            <span class="text-gray-500 text-xs">Av. Eugène Sumi, LA Corniche (fait Musée de Carre)</span>
-                        </ul>
-                        <ul class="w-5/12">
-                            <button class="bg-cyan-custom text-white px-4 py-2 hover:bg-blue-500 w-full h-12 text-xs">Réservez Maintenant</button>
-                        </ul>
-                    </div>
-                        
-                </div>
-            </div>
+        <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
+        <div class="w-full h-auto flex-wrap">
+           <?php
+                require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+           ?>
+            
         </div>
     </div>
 </section>
@@ -131,9 +99,5 @@
     <section>
         <!-- greg -->
     </section>
-
-    <script>
-        
-    </script>
 </body>
 </html>

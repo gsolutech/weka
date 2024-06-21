@@ -59,8 +59,8 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="hidden">
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page%20secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
+    <section class="absolute top-24 w-9/12 mt-12">
+        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
     </section>
 
     <section class="py-12">

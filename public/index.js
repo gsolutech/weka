@@ -40,12 +40,14 @@ function ShowIscription () {
 // });
 
 function ShowIscription() {
-    var element = document.getElementById('inscriptionShow');
+    let element = document.getElementById('inscriptionShow');
+    let bodySelect = document.querySelector('body');
     console.log('Element:', element); // Debugging line
     if (element) {
+        bodySelect.classList.add('blur');
         element.classList.add('someClass');
         element.classList.remove('hidden');
-        element.classList.add('flex');
+        element.classList.add('flex');       
     } else {
         console.error("Element with id 'someElementId' not found.");
     }

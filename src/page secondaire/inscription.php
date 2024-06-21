@@ -5,7 +5,7 @@ require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SE
 
 // Vérifier si les données du formulaire sont envoyées
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
+    
     $nom = $_POST['username'];
     $prenom = $_POST['firstname'];
     $email = $_POST['email'];

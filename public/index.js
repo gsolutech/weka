@@ -1,66 +1,32 @@
+// calendar show
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     let calendarEl = document.getElementById('calendar');
+document.getElementById('showCalendarRadio').addEventListener('change', function() {
+    if (this.checked) {
+        let calendarEl = document.getElementById('calendarDiv');
+        console.log("Element : " + calendarEl);
 
-
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
-    });
-
-    document.getElementById('showCalendarRadio').addEventListener('change', function() {
-        if (this.checked) {
-            calendarEl.className = 'block';
-            calendar.render();  // Render le calendrier lorsque le div est visible
+        if (calendarEl) {
+            calendarEl.classList.remove('hidden');
+            calendarEl.classList.add('flex');
         } else {
-            calendarEl.className = 'none'; 
+            console.error("Element with id 'calendarDiv' not found.");
         }
-    });
-//     let calendar = new FullCalendar.Calendar(calendarEl, {
-//         initialView: 'dayGridMonth'
-//     });
-
-//     document.getElementById('showCalendarRadio').addEventListener('change', function() {
-//         if (this.checked) {
-//             calendarEl.className = 'block';
-//             calendar.render();  // Render le calendrier lorsque le div est visible
-//         } else {
-//             calendarEl.className = 'none';
-//         }
-//     });
-// });
-document.addEventListener("DOMContentLoaded", function() {
-    let dateInput = document.getElementById("calendar");
-    dateInput.focus();
-    dateInput.click();
-})
-
-
-function ShowIscription () {
-    let modal = document.getElementById("inscriptionShow");
-    if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+    } else {
+        calendarEl.className = 'none'; 
     }
-    else {
-        alert("Elément introuvable");
-    }
-};
+});
 
-// $('input[type="radio"]').on('change', function(e){
-//     if(e.target.checked){
-//         $('#inscriptionShow').modal();
-//     }
-// });
-
+// page d'inscription show
 function ShowIscription() {
     let element = document.getElementById('inscriptionShow');
     let bodySelect = document.querySelector('body');
-    console.log('Element:', element); // Debugging line
+    console.log('Element:', element);
+
     if (element) {
         element.classList.add('someClass');
         element.classList.remove('hidden');
         element.classList.add('flex'); 
-        document.body.classList.add('backdrop-blur');      
+        bodySelect.body.classList.add('backdrop-blur');      
     } else {
         console.error("Element with id 'someElementId' not found.");
     }

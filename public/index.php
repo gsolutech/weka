@@ -43,7 +43,7 @@
                 </form>      
             </ul>
             <ul class="justify-end items-end flex mt-2">
-                <input type="radio" name="filtre_Check_date" id="" value="dateFiltre" id="showCalendarRadio" data-bs-toggle="" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <input type="radio" name="filtre_Check_date"  value="dateFiltre" id="showCalendarRadio" data-bs-toggle="" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
                 <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
@@ -56,10 +56,6 @@
             <p class="text-white">Choisissez une date </p>
             <input type="text" name="calendar" id="calendar" class="" focus>
         </div>
-
-        <!-- <div id="calendarDiv" class="absolute bg-red-500 w-96 h-96 top-14">
-            <p class="text-white">Choisissez une date </p>
-        </div> -->
 
         <!-- dfndjfjf -->
     </section>

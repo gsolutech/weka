@@ -22,7 +22,19 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 
-document.querySelector('btn_inscrire').addEventListener('click', function() {
-    window.location.href = 'inscription.php';
-});
+function ShowIscription () {
+    let modal = document.getElementById("inscriptionShow");
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    else {
+        alert("Elément introuvable");
+    }
+};
 
+// $('input[type="radio"]').on('change', function(e){
+//     if(e.target.checked){
+//         $('#inscriptionShow').modal();
+//     }
+// });

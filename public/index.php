@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../dist/output.css">
-    <script src="index.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+    <script src="index.js" defer></script>
     <title>weka</title>
 </head>
 <body>
@@ -27,7 +26,7 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_inscrire" class="bg-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7">S'inscrire</button>
+                <button id="btn_inscrire" class="bg-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7" onclick="ShowIscription();">S'inscrire</button>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-96 bg-center bg-no-repeat bg-cover">
@@ -44,19 +43,24 @@
                 </form>      
             </ul>
             <ul class="justify-end items-end flex mt-2">
-                <input type="radio" name="filtre_Check" id="" value="dateFiltre" id="showCalendarRadio" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <input type="radio" name="filtre_Check_date" id="" value="dateFiltre" id="showCalendarRadio" data-bs-toggle="" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
-                <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
                 <!-- djo -->
             </ul>
         </div>
-        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36">
+        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36 hidden">
             <p class="text-white">Choisissez une date </p>
             <input type="text" name="calendar" id="calendar" class="" focus>
         </div>
 
         <!-- dfndjfjf -->
+    </section>
+
+    <!-- tout les popup -->
+    <section class="hidden">
+        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page%20secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
     </section>
 
     <section class="py-12">
@@ -132,17 +136,5 @@
     <section>
         <!-- greg -->
     </section>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            flatpickr("#calendar", {
-                inline: true, // Affiche le calendrier en ligne
-                dateFormat: "Y-m-d", // Format de la date
-                minDate: "today", // Date minimale (aujourd'hui)
-                maxDate: new Date().fp_incr(30), // Date maximale (30 jours à partir d'aujourd'hui)
-                defaultDate: new Date() // Date par défaut (aujourd'hui)
-            });
-        });
-    </script>
 </body>
 </html>

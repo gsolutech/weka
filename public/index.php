@@ -52,7 +52,7 @@
         </div>
         <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36">
             <p class="text-white">Choisissez une date </p>
-            <input type="date" name="calendar" id="calendar" class="" focus>
+            <input type="text" name="calendar" id="calendar" class="" focus>
         </div>
 
         <!-- dfndjfjf -->
@@ -133,7 +133,15 @@
     </section>
 
     <script>
-        
+        document.addEventListener("DOMContentLoaded", function() {
+            flatpickr("#calendar", {
+                inline: true, // Affiche le calendrier en ligne
+                dateFormat: "Y-m-d", // Format de la date
+                minDate: "today", // Date minimale (aujourd'hui)
+                maxDate: new Date().fp_incr(30), // Date maximale (30 jours à partir d'aujourd'hui)
+                defaultDate: new Date() // Date par défaut (aujourd'hui)
+            });
+        });
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calendarEl.className = 'block';
             calendar.render();  // Render le calendrier lorsque le div est visible
         } else {
-            calendarEl.className = 'none';
+            calendarEl.className = 'none'; 
         }
     });
 });

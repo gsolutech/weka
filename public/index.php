@@ -47,12 +47,12 @@
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
                 <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
-                <input type="date" name="calendar" id="calendar" class="hidden">
                 <!-- djo -->
             </ul>
         </div>
-        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-96 top-36">
+        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36">
             <p class="text-white">Choisissez une date </p>
+            <input type="date" name="calendar" id="calendar" class="" focus>
         </div>
 
         <!-- dfndjfjf -->
@@ -131,5 +131,9 @@
     <section>
         <!-- greg -->
     </section>
+
+    <script>
+        
+    </script>
 </body>
 </html>

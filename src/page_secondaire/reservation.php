@@ -1,31 +1,22 @@
 <?php
-// parametres d'etablissement dea connection.
-$servername = "localhost";
-$username = "root";
-password="";
-$dbname = "weka";
-
-// Creation de la connection.
-$conn = new mysqli($localhost, $root, $weka);
-
-// verification de la connection.
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require_once 'C:/wamp64/www/weka/config/conBd.php';
+require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 // verifier si le formulaire est soumis.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // obtention des donnees du formulaire.
     $nom = $_POST['nom'];
-    $telephone = $_POST['telephone'];
-    $date_reservation = $_POST['date_reservation'];
-    $delais = $_POST['delais'];
+    $phone = $_POST['phone'];
+    $datePrevu = $_POST['datePrevu'];
+    $delai = $_POST['delai'];
     $prix = $_POST['prix'];
-    $service = $_POST['service'];
+    $serviceAutres = $_POST['serviceAutres'];
 
     // Preparation et la liaison.
-    $stmt = $conn->prepare("INSERT INTO reservations (nom, telephone, date_reservation, delais, prix, service) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssds", $nom, $telephone, $date_reservation, $delais, $prix, $service);
+    $stmt = $bdd->prepare("INSERT INTO treservations (date_reservation, delai,prix, serviceAutres) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssssds", $datePrevu, $delai, $prix, $serviceAutres);
+
+    $stmt = $bdd->prepare("INSERT INTO tclients(nom,email,phone) VALUES (?, ?, ?)");
+    $stmt->bind_param("ssssds", $nom, $email,$phone,);
 
     // executer la declaration.
     if ($stmt->execute()) {
@@ -39,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Fermeture de la session de connection.
-$conn->close();
+$bdd = null;
 ?>
 <body>
 <form action="reservation.php" method="POST">
@@ -47,13 +38,13 @@ $conn->close();
     <input type="text" id="nom" name="nom" required>
     
     <label for="telephone">Numero de telephone</label>
-    <input type="text" id="telephone" name="telephone" required>
+    <input type="text" id="phone" name="phone" required>
     
     <label for="date_reservation">Date de votre reservation</label>
-    <input type="date" id="date_reservation" name="date_reservation" required>
+    <input type="date" id="datePrevu" name="datePrevu" required>
     
     <label for="delais">Delais ( Pour combien de jours )</label>
-    <input type="number" id="delais" name="delais" required>
+    <input type="number" id="delai" name="delai" required>
     
     <label for="prix">Votre Prix</label>
     <input type="text" id="prix" name="prix" required>

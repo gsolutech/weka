@@ -1,3 +1,34 @@
+<?php
+require_once 'C:/wamp64/www/weka/config/conBd.php';
+require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $nom = $_POST['username'];
+    $prenom = $_POST['firstname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // $conn = getDatabaseConnection();
+
+    $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
+
+    if ($stmt->execute()) {
+        echo "Nouvel utilisateur enregistré avec succès";
+    } else {
+        echo "Erreur : " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <div id="inscriptionShow" class="h-screen bg-indigo-80 justify-center items-center hidden">
     <div class="lg:w-2/5 md:w-1/2 w-2/3">
         <form class="bg-white p-8 rounded-lg shadow-lg min-w-full">

@@ -5,7 +5,9 @@
 
 .bg-cyan-custom {
     background-color: #0096BE;
+    opacity: 50%;
 }
+
 .bg-header {
     background-image: url('../src/assets/statics/bgheader.jpg');
     /*  */

@@ -4,14 +4,6 @@ require_once dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'config'
 
 ?>
 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

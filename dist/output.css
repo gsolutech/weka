@@ -563,3 +563,6 @@ video {
   opacity: 50%;
 }
 
+.bg-header {
+  background-image: url('../src/assets/statics/bgheader.jpg');
+}

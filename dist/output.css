@@ -561,3 +561,7 @@ video {
 .bg-cyan-custom {
   background-color: #0096BE;
 }
+
+.bg-header {
+  background-image: url('../src/assets/statics/bgheader.jpg');
+}

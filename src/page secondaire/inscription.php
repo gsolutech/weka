@@ -5,8 +5,8 @@ require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SE
 // Vérifier si les données du formulaire sont envoyées
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
-    $username = $_POST['username'];
-    $firstname = $_POST['firstname'];
+    $nom = $_POST['username'];
+    $prenom = $_POST['firstname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $phone = $_POST['phone'];
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Préparer et exécuter la requête d'insertion
     $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $username, $firstname, $email, $hashed_password, $phone);
+    $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
 
     if ($stmt->execute()) {
         echo "Nouvel utilisateur enregistré avec succès";

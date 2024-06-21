@@ -65,7 +65,7 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-24 w-9/12 mt-12">
+    <section class="absolute top-24 w-9/12 mt-12 z-50">
         <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
     </section>
 
@@ -78,19 +78,19 @@
                 <!-- Images des utilisateurs -->
                 <div class="flex">
                     <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 first:ml-0 relative z-10">
-                        <img src="../src/assets/Serena/11.jpg" alt="Personne 1" class="w-full h-full object-cover">
+                        <img src="../src/assets/salles/profil/11.jpg" alt="Personne 1" class="w-full h-full object-cover">
                     </div>
                     <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-9">
-                        <img src="../src/assets/Serena/12.jpg" alt="Personne 2" class="w-full h-full object-cover">
+                        <img src="../src/assets/salles/profil/12.jpg" alt="Personne 2" class="w-full h-full object-cover">
                     </div>
                     <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-8">
-                        <img src="../src/assets/Serena/13.jpg" alt="Personne 3" class="w-full h-full object-cover">
+                        <img src="../src/assets/salles/profil/13.jpg" alt="Personne 3" class="w-full h-full object-cover">
                     </div>
                     <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-7">
-                        <img src="../src/assets/Serena/14.jpg" alt="Personne 4" class="w-full h-full object-cover">
+                        <img src="../src/assets/salles/profil/14.jpg" alt="Personne 4" class="w-full h-full object-cover">
                     </div>
                     <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-6">
-                        <img src="../src/assets/Serena/9.jpg" alt="Personne 5" class="w-full h-full object-cover">
+                        <img src="../src/assets/salles/profil/9.jpg" alt="Personne 5" class="w-full h-full object-cover">
                     </div>
                 </div>
 

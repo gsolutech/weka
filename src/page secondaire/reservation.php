@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = $_POST['service'];
 
     // Preparation et la liaison.
-    $stmt = $bdd->prepare("INSERT INTO reservations (nom, telephone, date_reservation, delais, prix, service) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $bdd->prepare("INSERT INTO treservations (nom, telephone, date_reservation, delais,prix, service) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssds", $nom, $telephone, $date_reservation, $delais, $prix, $service);
 
     // executer la declaration.

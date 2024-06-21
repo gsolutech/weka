@@ -3,6 +3,9 @@ module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
     extend: {},
+    fontSize: {
+      'ys' : '0.4rem',
+    },
   },
   plugins: [],
 };
@@ -12,9 +15,6 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
-    fontSize : {
-      ys : '0.3rem',
-    }
   },
   variants: {
     extend: {},

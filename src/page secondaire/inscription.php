@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Obtenir la connexion à la base de données
     $conn = getDatabaseConnection();
 
     // Préparer et exécuter la requête d'insertion

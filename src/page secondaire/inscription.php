@@ -1,5 +1,5 @@
 <body>
-    <div id="inscriptionShow" class="h-screen bg-indigo-80 justify-center items-center hidden">
+    <div id="inscriptionShow" class="h-screen bg-indigo-80 justify-center items-center ">
         <div class="lg:w-2/5 md:w-1/2 w-2/3">
             <form class="bg-white p-8 rounded-lg shadow-lg min-w-full">
                 <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Enregistrez-Vous</h1>

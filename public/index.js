@@ -38,3 +38,25 @@ function ShowIscription () {
 //         $('#inscriptionShow').modal();
 //     }
 // });
+
+function ShowIscription() {
+    var element = document.getElementById('inscriptionShow');
+    console.log('Element:', element); // Debugging line
+    if (element) {
+        element.classList.add('someClass');
+        element.classList.remove('hidden');
+        element.classList.add('flex');
+    } else {
+        console.error("Element with id 'someElementId' not found.");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('btn_inscrire');
+    console.log('Button:', button); // Debugging line
+    if (button) {
+        button.onclick = ShowIscription;
+    } else {
+        console.error("Button with id 'yourButtonId' not found.");
+    }
+})

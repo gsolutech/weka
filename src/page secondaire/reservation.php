@@ -2,6 +2,7 @@
 // parametres d'etablissement dea connection.
 $servername = "localhost";
 $username = "root";
+password="";
 $dbname = "weka";
 
 // Creation de la connection.
@@ -39,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Fermeture de la session de connection.
 $conn->close();
-
+?>
+<body>
 <form action="reservation.php" method="POST">
     <label for="nom">Nom et Postnom</label>
     <input type="text" id="nom" name="nom" required>
@@ -64,5 +66,4 @@ $conn->close();
     
     <button type="submit">Envoyer</button>
 </form>
-
-?>
+</body>

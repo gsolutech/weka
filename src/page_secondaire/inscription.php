@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div id="inscriptionShow" class="h-96 bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-4 mt-10">
+<div id="inscriptionShow" class="h-96 bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-4 mt-40">
     <div class="lg:w-2/5 md:w-1/2 w-2/3">
         <form class="bg-white p-8 rounded-lg shadow-lg min-w-full">
             <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Enregistrez-Vous</h1>

@@ -71,6 +71,14 @@ function closeInscription() {
     element.classList.remove('flex');
     element.classList.add('hidden');
 }
+function closeInscription(event) {
+    if (event.target.id === 'inscriptionShow' || event.target.classList.contains('close')) {
+        let element = document.getElementById('inscriptionShow');
+        element.classList.remove('flex');
+        element.classList.add('hidden');
+        document.body.classList.remove('backdrop-blur'); // Remove blur effect from body
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     let button = document.getElementById('btn_inscrire');

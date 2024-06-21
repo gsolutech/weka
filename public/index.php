@@ -65,7 +65,7 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-9/12 mt-12 z-50 backdrop-blur">
+    <section class="absolute top-16 w-full mt-12 z-50 backdrop-blur">
         <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
     </section>
 

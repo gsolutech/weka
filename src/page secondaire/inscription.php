@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<?php  require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
     <div class="h-screen bg-indigo-80 flex justify-center items-center">
         <div class="lg:w-2/5 md:w-1/2 w-2/3">
             <form class="bg-white p-8 rounded-lg shadow-lg min-w-full">

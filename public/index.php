@@ -47,15 +47,16 @@
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
                 <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
-                <input type="date" name="calendar" id="calendar" class="hidden">
                 <!-- djo -->
             </ul>
         </div>
 
         <div id="calendarDiv" class="w-full h-72  z-50 backdrop-blur fixed inset-4 mt-40 justify-center items-center flex">
-            <div class=" bg-white w-96 h-96 justify-center items-center flex relative">
-                <p class="text-white">Choisissez une date </p>
-                <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->
+            <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col">
+                <p class="text-black pb-3">Choisissez une date </p>
+                <form class="mb-10">
+                    <input type="date" name="calendar" id="calendar" class="text-4xl border-2 border-solid border-bge-cyan-custom text-black">
+                </form>
                 <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
                     <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
                     <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>

@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $phone = $_POST['phone'];
 
-    // Hashage du mot de passe pour la sécurité
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Obtenir la connexion à la base de données

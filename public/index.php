@@ -47,7 +47,6 @@
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
                 <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
-                <!-- djo -->
             </ul>
         </div>
 
@@ -63,8 +62,6 @@
                 </ul>
             </div>
         </div>
-
-        <!-- dfndjfjf -->
     </section>
 
     <!-- tout les popup -->

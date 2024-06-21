@@ -66,12 +66,25 @@ function ShowIscription() {
     }
 }
 
+function closeInscription() {
+    let element = document.getElementById('inscriptionShow');
+    element.classList.remove('flex');
+    element.classList.add('hidden');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    var button = document.getElementById('btn_inscrire');
+    let button = document.getElementById('btn_inscrire');
     console.log('Button:', button); // Debugging line
     if (button) {
         button.onclick = ShowIscription;
     } else {
-        console.error("Button with id 'yourButtonId' not found.");
+        console.error("Bouton 'btn_inscrire' non trouvé.");
+    }
+    let buttonClose = document.getElementById("btn_close_pop");
+    console.log('Button:', buttonClose); // Debugging line
+    if (buttonClose) {
+        button.onclick = closeInscription;
+    } else {
+        console.log("Bouton 'btn_close_pop' non trouvé.");
     }
 })

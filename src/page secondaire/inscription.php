@@ -3,7 +3,6 @@
 require_once 'C:/wamp64/www/weka/config/conBd.php';
 require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-// Vérifier si les données du formulaire sont envoyées
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $nom = $_POST['username'];

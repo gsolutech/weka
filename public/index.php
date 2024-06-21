@@ -52,9 +52,14 @@
             </ul>
         </div>
 
-        <div id="calendarDiv" class="absolute left-96 bg-red-500 w-96 h-72 top-36 hidden">
-            <p class="text-white">Choisissez une date </p>
-            <input type="text" name="calendar" id="calendar" class="" focus>
+        <div id="calendarDiv" class="absolute left-96 w-96 h-72 top-36 hidden border-2 border-solid z-50 backdrop-blur bg-white border-gray-300">
+            <div>
+                <p class="text-white">Choisissez une date </p>
+                <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->
+                <ul class="w-full border-t-2 border-solid border-gray-200">
+                    <button class="bg-cyan-500">Close</button>
+                </ul>
+            </div>
         </div>
 
         <!-- dfndjfjf -->

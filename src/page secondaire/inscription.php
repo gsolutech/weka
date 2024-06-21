@@ -1,24 +1,19 @@
-
 <?php
 require_once 'C:/wamp64/www/weka/config/conBd.php';
 require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-// Vérifier si les données du formulaire sont envoyées
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
+    
     $nom = $_POST['username'];
     $prenom = $_POST['firstname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $phone = $_POST['phone'];
 
-    // Hashage du mot de passe pour la sécurité
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Obtenir la connexion à la base de données
     $conn = getDatabaseConnection();
 
-    // Préparer et exécuter la requête d'insertion
     $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
@@ -29,11 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Erreur : " . $stmt->error;
     }
 
-    // Fermer la déclaration et la connexion
     $stmt->close();
     $conn->close();
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -52,11 +52,11 @@
             </ul>
         </div>
 
-        <div id="calendarDiv" class="w-96 h-72 top-36 hidden border-2 border-solid z-50 backdrop-blur bg-white border-gray-300 fixed inset-4 mt-40">
-            <div>
+        <div id="calendarDiv" class="w-full h-72 hidden z-50 backdrop-blur fixed inset-4 mt-40 justify-center items-center">
+            <div class=" bg-white w-96 h-96 justify-center items-center flex relative">
                 <p class="text-white">Choisissez une date </p>
                 <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->
-                <ul class="w-full border-t-2 border-solid border-gray-200">
+                <ul class="w-full border-t-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
                     <button class="bg-cyan-500">Close</button>
                 </ul>
             </div>

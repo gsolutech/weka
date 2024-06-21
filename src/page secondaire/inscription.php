@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Erreur : " . $stmt->error;
     }
 
-    // Fermer la déclaration et la connexion
     $stmt->close();
     $conn->close();
 }

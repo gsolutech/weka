@@ -560,4 +560,6 @@ video {
 
 .bg-cyan-custom {
   background-color: #0096BE;
+  opacity: 50%;
 }
+

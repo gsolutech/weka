@@ -114,7 +114,7 @@
                             <span class="text-gray-500 text-xs">Av. Eugène Sumi, LA Corniche (fait Musée de Carre)</span>
                         </ul>
                         <ul class="w-5/12">
-                            <button class="bg-cyan-custom text-white px-4 py-2 hover:bg-blue-500 w-full h-12 text-xs">Réservez Maintenant</button>
+                            <button class="bg-cyan-custom text-white px-4 py-2 hover:bg-cyan-500 w-full h-12 text-xs">Réservez Maintenant</button>
                         </ul>
                     </div>
                         

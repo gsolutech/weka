@@ -52,7 +52,7 @@
             </ul>
         </div>
 
-        <div id="calendarDiv" class="absolute left-96 w-96 h-72 top-36 hidden border-2 border-solid z-50 backdrop-blur bg-white border-gray-300">
+        <div id="calendarDiv" class="w-96 h-72 top-36 hidden border-2 border-solid z-50 backdrop-blur bg-white border-gray-300 fixed inset-4 mt-40">
             <div>
                 <p class="text-white">Choisissez une date </p>
                 <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->

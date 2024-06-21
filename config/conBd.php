@@ -16,7 +16,7 @@
         global $servername, $username, $password, $dbname;
     
         // Créer une nouvelle connexion MySQLi
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli('localhost', 'root', '', 'weka');
     
         // Vérifier la connexion
         if ($conn->connect_error) {

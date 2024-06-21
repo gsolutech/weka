@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div>
                     <label class="text-gray-800 font-semibold block my-3 text-md" for="password">Mots de passe</label>
-                    <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="password" name="password" id="password" placeholder="Mots de passe" required />
+                    <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="password" id="password" placeholder="Mots de passe" required />
                 </div>
                 <div>
                     <label class="text-gray-800 font-semibold block my-3 text-md" for="phone">Numero de telephone</label>

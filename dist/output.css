@@ -558,12 +558,17 @@ video {
   display: none;
 }
 
-.bg-cyan-custom {
-  background-color: #0096BE;
+.bge-cyan-custom {
+  background-color: #017c9e;
   opacity: 50%;
 }
 
 .bg-header {
   background-image: url('../src/assets/statics/bgheader.jpg');
   /*  */
+}
+
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }

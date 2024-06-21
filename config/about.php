@@ -1,33 +1,33 @@
-<?php  require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-      
-      $req ='';
-      $sql = $bdd -> prepare("SELECT * FROM tinfosalle ");
+<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-      $sql -> execute();
-  
-      $total = $sql -> rowCount();
-      $resultat = $sql -> fetchAll(PDO::FETCH_ASSOC);
-      $avis;
-      $nom_items;
-      
-  
-      $error = "";
-      if ($total != 0) {
-        $req_avis = $bdd -> prepare("SELECT * FROM tavis WHERE nomSalle = ? ");
-          foreach ($resultat as $res) {
-              $nom_items = $res['nomSalle'];
-              $prix_items = $res['prix1'];
-              $adresse_items = $res['adresse'];
-              $image_items_name = $res['photo'];
+$req = '';
+$sql = $bdd->prepare("SELECT * FROM tinfosalle ");
 
-              $req_avis -> execute(array($nom_items));
-              $total_avis = $sql -> rowCount();
-                $resultat_avis = $sql -> fetchAll(PDO::FETCH_ASSOC);
+$sql->execute();
 
-                // foreach ($resultat_avis as $res_avis) {
-                    $avis = '';
-                    // $res_avis['nombreAvis'];
-                    echo " 
+$total = $sql->rowCount();
+$resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
+$avis;
+$nom_items;
+
+
+$error = "";
+if ($total != 0) {
+    $req_avis = $bdd->prepare("SELECT * FROM tavis WHERE nomSalle = ? ");
+    foreach ($resultat as $res) {
+        $nom_items = $res['nomSalle'];
+        $prix_items = $res['prix1'];
+        $adresse_items = $res['adresse'];
+        $image_items_name = $res['photo'];
+
+        $req_avis->execute(array($nom_items));
+        $total_avis = $sql->rowCount();
+        $resultat_avis = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        // foreach ($resultat_avis as $res_avis) {
+        $avis = '';
+        // $res_avis['nombreAvis'];
+        echo " 
 
                     <div class=\"w-96 mx-auto bg-gray-100 border-2 border-solid border-gray-200 m-5 shadow-lg overflow-hidde relative px-3 py-3\">
                     <img class=\"w-full h-48 object-cover  relative\" src=\"../src/assets/salles/profil/$image_items_name\" alt=\"Asha La Villa\">
@@ -64,13 +64,11 @@
                             
                     </div>
                 </div>
-                "; 
-    
-                // }
-             
-          }
-      } else {
-          $error = "Aucun élement trouvé ! ";
-      }
- ?>
+                ";
 
+        // }
+
+    }
+} else {
+    $error = "Aucun élement trouvé ! ";
+}

@@ -1,18 +1,6 @@
 <?php
-// parametres d'etablissement dea connection.
-$servername = "localhost";
-$username = "root";
-$password="";
-$dbname = "weka";
-
-// Creation de la connection.
-$conn = new mysqli($localhost, $root, $weka);
-
-// verification de la connection.
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require_once 'C:/wamp64/www/weka/config/conBd.php';
+require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 // verifier si le formulaire est soumis.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // obtention des donnees du formulaire.
@@ -24,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = $_POST['service'];
 
     // Preparation et la liaison.
-    $stmt = $conn->prepare("INSERT INTO reservations (nom, telephone, date_reservation, delais, prix, service) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $bdd->prepare("INSERT INTO treservations (nom, telephone, date_reservation, delais,prix, service) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssds", $nom, $telephone, $date_reservation, $delais, $prix, $service);
 
     // executer la declaration.
@@ -39,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Fermeture de la session de connection.
-$conn->close();
+$bdd = null;
 ?>
 <body>
 <form action="reservation.php" method="POST">

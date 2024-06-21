@@ -2,7 +2,7 @@
 // parametres d'etablissement dea connection.
 $servername = "localhost";
 $username = "root";
-password="";
+$password="";
 $dbname = "weka";
 
 // Creation de la connection.

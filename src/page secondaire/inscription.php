@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn = getDatabaseConnection();
 
-    // Préparer et exécuter la requête d'insertion
     $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);

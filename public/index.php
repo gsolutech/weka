@@ -58,7 +58,7 @@
                 <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->
                 <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
                     <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
-                    <button class="bg-slate-500 text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>
                 </ul>
             </div>
         </div>

@@ -2,9 +2,11 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
+    $bdname = "weka";
 
+    // 
     try {
-        $bdd = new PDO("mysql:host=$servername;dbname=light", $username, $password);
+        $bdd = new PDO("mysql:host=$servername;dbname=$bdname", $username, $password);
     }
     catch (PDOException $e) {
         echo "

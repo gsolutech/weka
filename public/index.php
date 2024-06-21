@@ -14,7 +14,7 @@
 <body>
     <?php  require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
     <section id="header" class="w-full text-white">
-        <!-- beso -->
+
         <nav class="bg-black w-full h-20 flex flex-row text-white relative">
             <ul class="flex flex-row w-2/6">
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">

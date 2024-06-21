@@ -26,7 +26,7 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_inscrire" class="bg-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7" onclick="ShowIscription();">S'inscrire</button>
+                <button id="btn_inscrire" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7" onclick="ShowIscription();">S'inscrire</button>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-96 bg-center bg-no-repeat bg-cover">
@@ -52,12 +52,13 @@
             </ul>
         </div>
 
-        <div id="calendarDiv" class="w-full h-72 hidden z-50 backdrop-blur fixed inset-4 mt-40 justify-center items-center">
+        <div id="calendarDiv" class="w-full h-72  z-50 backdrop-blur fixed inset-4 mt-40 justify-center items-center flex">
             <div class=" bg-white w-96 h-96 justify-center items-center flex relative">
                 <p class="text-white">Choisissez une date </p>
                 <!-- <input type="text" name="calendar" id="calendar" class="" focus> -->
-                <ul class="w-full border-t-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
-                    <button class="bg-cyan-500">Close</button>
+                <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
+                    <button class="bg-slate-500 text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>
                 </ul>
             </div>
         </div>

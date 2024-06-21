@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.bg-cyan-custom {
+.bge-cyan-custom {
     background-color: #0096BE;
     opacity: 50%;
 }

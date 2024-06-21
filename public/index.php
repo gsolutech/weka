@@ -12,6 +12,7 @@
     <title>weka</title>
 </head>
 <body>
+    <?php  require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
     <section id="header" class="w-full text-white">
         <!-- beso -->
         <nav class="bg-black w-full h-20 flex flex-row text-white relative">
@@ -28,7 +29,7 @@
                 <button id="btn_inscrire" class="bg-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7">S'inscrire</button>
             </ul>
         </nav>
-        <div class="w-full flex flex-col pt-16 justify-center items-center h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/src/assets/statics/bgheader.jpg');">
+        <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-96 bg-center bg-no-repeat bg-cover">
             <ul class="w-full h-20 justify-center items-center flex">
                 <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">
             </ul>

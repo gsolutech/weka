@@ -51,11 +51,11 @@
             </ul>
         </div>
 
-        <div id="calendarDiv" class="w-full h-72  z-50 backdrop-blur fixed inset-4 mt-40 justify-center items-center flex">
-            <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col">
+        <div id="calendarDiv" class="w-full h-screen  z-50 backdrop-blur fixed inset-4 mt-10 justify-center items-center flex">
+            <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col rounded-md">
                 <p class="text-black pb-3">Choisissez une date </p>
                 <form class="mb-10">
-                    <input type="date" name="calendar" id="calendar" class="text-4xl border-2 border-solid border-bge-cyan-custom text-black">
+                    <input type="date" name="calendar" id="calendar" class="text-2xl border-2 border-solid border-bge-cyan-custom text-black">
                 </form>
                 <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
                     <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
@@ -68,7 +68,7 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-full mt-12 z-50 backdrop-blur id="closePop">
+    <section class="absolute top-16 w-full h-screen mt-12 z-50 backdrop-blur id="closePop">
         <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
     </section>
 

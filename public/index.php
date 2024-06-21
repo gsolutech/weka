@@ -61,7 +61,7 @@
     <section class="py-12">
     <div class="container mx-auto px-4">
         <div class="text-center">
-            <h2 class="text-4xl font-semibold mb-4">Acheivement</h2>
+            <h2 class="text-4xl font-semibold mb-4">Achèvement</h2>
             <p class="mb-8 text-gray-600">Grâce à la confiance de nos utilisateurs, Weka a atteint des sommets en matière de réservations en ligne. Nous avons facilité des milliers de réservations avec un taux de satisfaction élevé et des retours positifs constants. Rejoignez-nous et faites partie de notre succès !</p>
             <div class="flex justify-center space-x-2 mb-12">
                 <!-- Images des utilisateurs -->

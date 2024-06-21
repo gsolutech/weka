@@ -80,7 +80,7 @@ function closeInscription(event) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', 'click', function() {
     let button = document.getElementById('btn_inscrire');
     console.log('Button:', button); // Debugging line
     if (button) {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error("Bouton 'btn_inscrire' non trouvé.");
     }
-    let buttonClose = document.getElementById("btn_close_pop");
+    let buttonClose = document.getElementById("closePop");
     console.log('Button:', buttonClose); // Debugging line
     if (buttonClose) {
         button.onclick = closeInscription;

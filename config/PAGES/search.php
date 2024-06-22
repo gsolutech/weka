@@ -1,35 +1,35 @@
-<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; ?>
 <?php
-// affichage sans filtre
-$req = '';
-$sql = $bdd->prepare("SELECT * FROM tinfosalle ");
-
-$sql->execute();
-
-$total = $sql->rowCount();
-$resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
-$avis;
-$nom_items;
-
-
 $error = "";
-if ($total != 0) {
-    $req_avis = $bdd->prepare("SELECT * FROM tavis WHERE nomSalle = ? ");
-    foreach ($resultat as $res) {
-        $nom_items = $res['nomSalle'];
-        $prix_items = $res['prix1'];
-        $adresse_items = $res['adresse'];
-        $image_items_name = $res['photo'];
+if (isset($_GET['valideSearch'])) {
+    // filtrer par recherche
+    $recherche_nom = $_GET['inputSearch'];
+    // $recherche_prix = $_POST['inputSearch'];
+    // $recherche_taille = $_POST['inputSearch'];
+    // $recherche_adresse = $_POST['inputSearch'];
 
-        $req_avis->execute(array($nom_items));
-        $total_avis = $sql->rowCount();
-        $resultat_avis = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $sql_recherche = $bdd->prepare("SELECT * FROM tinfosalle WHERE nomSalle =?");
+    $sql_recherche->execute(array($recherche_nom));
+    $total_recherche = $sql_recherche->rowCount();
+    $resultat_recherche = $sql_recherche->fetchAll(PDO::FETCH_ASSOC);
 
-        // foreach ($resultat_avis as $res_avis) {
-        $avis = '';
-        // $res_avis['nombreAvis'];
-        echo " 
+    if ($total_recherche == 0) {
+        $error = 'Aucun élement trouvé  <br/>';
+    } else {
+        foreach ($resultat_recherche as $res) {
+            $nom_items = $res['nomSalle'];
+            $prix_items = $res['prix1'];
+            $adresse_items = $res['adresse'];
+            $image_items_name = $res['photo'];
+    
+            // $req_avis->execute(array($nom_items));
+            // $total_avis = $sql->rowCount();
+            // $resultat_avis = $sql->fetchAll(PDO::FETCH_ASSOC);
+    
+            // foreach ($resultat_avis as $res_avis) {
+            $avis = '';
 
+            // affiche de la recherche
+            echo " 
                     <div class=\"w-96 mx-auto bg-gray-100 border-2 border-solid border-gray-200 m-5 shadow-lg overflow-hidde relative px-3 py-3\">
                     <img class=\"w-full h-48 object-cover  relative\" src=\"../src/assets/salles/profil/$image_items_name\" alt=\"Asha La Villa\">
                         <div class=\"flex flex-row \">
@@ -66,12 +66,7 @@ if ($total != 0) {
                     </div>
                 </div>
                 ";
-
-        // }
-
+        }
     }
-} else {
-    $error = "Aucun élement trouvé ! ";
 }
-
 ?>

@@ -13,7 +13,9 @@
     <title>weka</title>
 </head>
 <body>
-    <?php  //require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
+    <?php  
+        require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+    ?>
     <section id="header" class="w-full text-white screen-minus-20 mb-24">
 
         <nav class="bg-black w-full h-20 flex flex-row text-white relative">
@@ -41,10 +43,10 @@
             </ul>
 
             <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
-                <ul action="" method="get" class="relative flex flex-row justify-center items-center">
+                <form action="" method="get" class="relative flex flex-row justify-center items-center">
                     <input type="search" id="inputSearchId" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
                     <button type="submit" id="btn_search_send" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md" onclick="showFiltre_recherche(); ">Rechercher</button>
-                </ul>      
+                </form>      
             </ul>
 
             <ul class="justify-start items-start border-2 border-solid border-gray-100 mt-2 px-3 py-1 bg-gray-100 text-black rounded-full w-32 relative hidden" id="filtre_recherche">
@@ -107,13 +109,15 @@
             </div>
         </div>
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
-        <div class="w-full h-auto flex-wrap">
+        <div id="mainContainer" class="w-full h-auto flex-wrap">
             <?php
-                // require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
             ?>            
         </div>
-        <div>
-            <?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php' ;?>
+        <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+            <?php 
+                require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
+            ?>
         </div>
     </div>
 </section>

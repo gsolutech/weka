@@ -134,6 +134,22 @@ document.addEventListener('click', function() {
     
     if(inputSearch) {
         alert("Input checker");
+
+        let liens = new XMLHttpRequest();
+        liens.open('GET', 'process.php', true);
+        liens.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+        liens.onreadystatechange = function () {
+                if (liens.readyState === 4 && liens.status === 200) {
+                    var response = JSON.parse(liens.responseText);
+                    document.getElementById('responseOutput').innerText = response.message;
+                } else if (xhr.readyState === 4) {
+                    document.getElementById('responseOutput').innerText = 'Erreur: ' + liens.statusText;
+                }
+            };
+            
+            xhr.send();
+
     } else {
         alert("Input not found");
     }

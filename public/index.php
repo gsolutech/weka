@@ -37,7 +37,7 @@
                 <p class="text-4xl font-thin">Réservation simplifiée pour <label class="font-medium">Tous Vos Besoins</label></p>
             </ul>
             <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
-                <form action="" method="post" class="relative flex flex-row justify-center items-center">
+                <form action="" method="get" class="relative flex flex-row justify-center items-center">
                     <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
                     <input type="submit" value="Rechercher" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md ">
                 </form>      
@@ -53,7 +53,7 @@
         <div id="calendarDiv" class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 mt-10 justify-center items-center">
             <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col rounded-md">
                 <p class="text-black pb-3">Choisissez une date </p>
-                <form class="mb-10">
+                <form class="mb-10" method="GET">
                     <input type="date" name="calendar" id="calendar" class="text-2xl border-2 border-solid border-bge-cyan-custom text-black">
                 </form>
                 <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">

@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', 'click', function() {
         console.log("Bouton 'btn_close_pop' non trouvé.");
     }
 
-    let btn_search = document.getElementById('btn_search');
-    if (btn_search) {
-        // btn_search.onclick = showFiltre_recherche();
-    } else {
-        console.log('Filtre non trouvé');
-    }
+    // let btn_search = document.getElementById('btn_search');
+    // if (btn_search) {
+    //     // btn_search.onclick = showFiltre_recherche();
+    // } else {
+    //     console.log('Filtre non trouvé');
+    // }
 })

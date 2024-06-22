@@ -39,7 +39,7 @@
             <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
                 <form action="" method="post" class="relative flex flex-row justify-center items-center">
                     <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
-                    <input type="submit" value="Rechercher" name="valideSearch" class="bg-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md ">
+                    <input type="submit" value="Rechercher" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md ">
                 </form>      
             </ul>
             <ul class="justify-end items-end flex mt-2">

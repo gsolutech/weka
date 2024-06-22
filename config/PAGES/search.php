@@ -1,4 +1,7 @@
 <?php
+
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conBd.php';
+function rechercher() {}
 $error = "";
 if (isset($_GET['valideSearch'])) {
     // filtrer par recherche
@@ -66,7 +69,7 @@ if (isset($_GET['valideSearch'])) {
                     </div>
                 </div>
 
-                <script type=\"text/javascript\" src=\"\">onload=showFiltre_recherche();</script>
+                <script type=\"text/javascript\" src=\"../../public/index.js\">showFiltre_recherche();</script>
                 ";
         }
     }

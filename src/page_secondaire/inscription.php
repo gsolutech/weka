@@ -12,7 +12,7 @@ if (isset($_POST['check_inscri'])) {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // $conn = getDatabaseConnection();
+    $conn = getDatabaseConnection();
 
     $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);

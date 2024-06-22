@@ -12,7 +12,7 @@
     <title>weka</title>
 </head>
 <body>
-    <?php  require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
+    <?php  //require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
     <section id="header" class="w-full text-white screen-minus-20 mb-24">
 
         <nav class="bg-black w-full h-20 flex flex-row text-white relative">
@@ -40,14 +40,14 @@
             </ul>
 
             <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
-                <form action="" method="get" class="relative flex flex-row justify-center items-center">
+                <ul action="" method="get" class="relative flex flex-row justify-center items-center">
                     <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
-                    <input type="submit" id="btn_search" value="Rechercher" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md">
-                </form>      
+                    <button type="submit" id="btn_search_send" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md" onclick="showFiltre_recherche(); ">Rechercher</button>
+                </ul>      
             </ul>
 
             <ul class="justify-start items-start border-2 border-solid border-gray-100 mt-2 px-3 py-1 bg-gray-100 text-black rounded-full w-32 relative hidden" id="filtre_recherche">
-                <button type="button" class="hover:bg-cyan-300 text-sm">x Recherche</button>
+                <button type="button" class="hover:bg-cyan-300 text-sm" onclick="closeFiltre_rechercher(); ">x Recherche par nom</button>
             </ul>
 
             <ul class="justify-end items-end flex mt-2">
@@ -74,7 +74,7 @@
 
     <!-- tout les popup -->
     <section class="absolute top-16 w-full mt-40 z-50 backdrop-blur id="closePop">
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?>
+        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> -->
     </section>
 
     <section class="py-12">

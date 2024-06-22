@@ -49,13 +49,29 @@ function closeInscription(event) {
     }
 }
 
-// function showFiltre_recherche() {
-//     alert("Filtre check");
-//     let element = document.getElementById('filtre_recherche');
-//     element.classList.remove('hidden');
-//     element.classList.add('flex')
-// }
-document.addEventListener('DOMContentLoaded', 'click', function() {
+//afficher bouton filtrer
+function showFiltre_recherche() {
+    let element = document.getElementById("filtre_recherche");
+
+    if (element) {
+        element.classList.remove("hidden");
+        element.classList.add("flex");
+    } else {
+        console.log("btn_search non trouvé");
+    }
+}
+function closeFiltre_rechercher() {
+    let element = document.getElementById("filtre_recherche");
+
+    if (element) {
+        element.classList.remove("flex");
+        element.classList.add("hidden");
+    } else {
+        console.log("btn_search non trouvé");
+    }
+}
+// document.addEventListener('DOMContentLoaded')
+document.addEventListener('DOMContentLoaded', function() {
     let button = document.getElementById('btn_inscrire');
     console.log('Button:', button); // Debugging line
     if (button) {
@@ -74,7 +90,8 @@ document.addEventListener('DOMContentLoaded', 'click', function() {
 
     // let btn_search = document.getElementById('btn_search');
     // if (btn_search) {
-    //     // btn_search.onclick = showFiltre_recherche();
+    //     btn_search.onclick = showFiltre_recherche();
+    //     console.log('btn_search confirmed')
     // } else {
     //     console.log('Filtre non trouvé');
     // }

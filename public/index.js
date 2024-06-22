@@ -49,12 +49,12 @@ function closeInscription(event) {
     }
 }
 
-function showFiltre_recherche() {
-    alert("Filtre check");
-    let element = document.getElementById('filtre_recherche');
-    element.classList.remove('hidden');
-    element.classList.add('flex')
-}
+// function showFiltre_recherche() {
+//     alert("Filtre check");
+//     let element = document.getElementById('filtre_recherche');
+//     element.classList.remove('hidden');
+//     element.classList.add('flex')
+// }
 document.addEventListener('DOMContentLoaded', 'click', function() {
     let button = document.getElementById('btn_inscrire');
     console.log('Button:', button); // Debugging line

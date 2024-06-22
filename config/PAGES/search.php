@@ -66,7 +66,7 @@ if (isset($_GET['valideSearch'])) {
                     </div>
                 </div>
 
-                <script type=\"text/javascript\" defer>showFiltre_recherche();</script>
+                <script type=\"text/javascript\" src=\"\">onload=showFiltre_recherche();</script>
                 ";
         }
     }

@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php  require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
-    <section id="header" class="w-full text-white">
+    <section id="header" class="w-full text-white h-4/5">
 
         <nav class="bg-black w-full h-20 flex flex-row text-white relative">
             <ul class="flex flex-row w-2/6">

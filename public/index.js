@@ -134,6 +134,12 @@ document.addEventListener('click', function() {
     
     if(inputSearch) {
         // alert("Input checker");
+
+        let liens = new XMLHttpRequest();
+        liens.open('GET', '../config/PAGES/search.php', true);
+        liens.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // alert("Récu");
+
         let mainContainer = document.getElementById('mainContainer');
         let filtreContainer = document.getElementById('filtreContainer');
 
@@ -142,6 +148,7 @@ document.addEventListener('click', function() {
 
         filtreContainer.classList.remove('hidden');
         filtreContainer.classList.add('flex');
+
     } else {
         alert("Input not found");
     }

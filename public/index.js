@@ -1,8 +1,8 @@
 // calendar show
-
 document.getElementById('showCalendarRadio').addEventListener('change', function() {
     if (this.checked) {
         let calendarEl = document.getElementById('calendarDiv');
+        calendarEl.value = "";
         console.log("Element : " + calendarEl);
 
         if (calendarEl) {
@@ -16,6 +16,39 @@ document.getElementById('showCalendarRadio').addEventListener('change', function
     }
 });
 
+//calendar close
+function closeCalendar() {
+    let calendarEl = document.getElementById('calendarDiv');
+    if (calendarEl) {
+        calendarEl.classList.remove('flex');
+        calendarEl.classList.add('hidden');
+
+        document.getElementById('dispoCheck').checked = true;
+    } else {
+        console.error("Element with id 'calendarDiv' not found.");
+    }
+}
+
+//récupérer la date
+function getDateCalendar() {
+    let calendarEl = document.getElementById('calendar');
+    if (calendarEl) {
+        let calendarValue = calendarEl.value;
+        if (calendarValue == "") {
+            let error = document.getElementById('errorDate');
+            error.innerHTML = 'Veillez sélectioner une date pour filter';
+        } else {
+            // alert('Calendar : ' + calendarValue);
+            let calendarContainer = document.getElementById('calendarDiv');
+            if (calendarContainer) {
+                calendarContainer.classList.remove('flex');
+                calendarContainer.classList.add('hidden');
+            }
+        }
+    } else {
+        console.log('Calendar not found');
+    }
+}
 // page d'inscription show
 function ShowIscription() {
     let element = document.getElementById('inscriptionShow');
@@ -95,4 +128,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // } else {
     //     console.log('Filtre non trouvé');
     // }
+})
+document.addEventListener('click', function() {
+    let inputSearch = document.getElementById('inputSearchId');
+    
+    if(inputSearch) {
+        alert("Input checker");
+    } else {
+        alert("Input not found");
+    }
 })

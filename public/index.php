@@ -41,7 +41,7 @@
 
             <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
                 <ul action="" method="get" class="relative flex flex-row justify-center items-center">
-                    <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
+                    <input type="search" id="inputSearchId" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
                     <button type="submit" id="btn_search_send" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md" onclick="showFiltre_recherche(); ">Rechercher</button>
                 </ul>      
             </ul>
@@ -53,27 +53,28 @@
             <ul class="justify-end items-end flex mt-2">
                 <input type="radio" name="filtre_Check_date"  value="dateFiltre" id="showCalendarRadio" data-bs-toggle="" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
-                <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <input type="radio" name="filtre_Check_date" id="dispoCheck" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
             </ul>
         </div>
 
         <div id="calendarDiv" class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 mt-10 justify-center items-center">
-            <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col rounded-md">
+            <div class=" bg-white w-96 h-52 justify-center items-center flex relative flex-col rounded-md">
                 <p class="text-black pb-3">Choisissez une date </p>
-                <form class="mb-10" method="GET">
+                <form class="mb-3" method="GET">
                     <input type="date" name="calendar" id="calendar" class="text-2xl border-2 border-solid border-bge-cyan-custom text-black">
                 </form>
+                <p id="errorDate" class="text-red-500 mb-10"></p>
                 <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
-                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
-                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right" onclick="getDateCalendar(); ">Filtrer</button>
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right" onclick="closeCalendar(); ">Fermer</button>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-full mt-40 z-50 backdrop-blur id="closePop">
+    <section class="absolute top-16 w-full mt-40 z-50  id="closePop">
         <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> -->
     </section>
 

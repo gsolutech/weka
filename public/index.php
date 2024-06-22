@@ -21,7 +21,7 @@
             </ul>
             <ul class="flex-row w-2/6 items-center justify-center flex text-center relative">
                 <li href="" class="pr-7 cursor-pointer text-ys">Accueil</li>
-                <li href="" class="pr-7 cursor-pointer">Reservation</li>
+                <li href="" class="pr-7 cursor-pointer">Reservation</li> 
                 <li href="" class="pr-7 cursor-pointer">Avis</li>
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>

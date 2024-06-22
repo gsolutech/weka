@@ -1,5 +1,5 @@
-<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-
+<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; ?>
+<?php
 $req = '';
 $sql = $bdd->prepare("SELECT * FROM tinfosalle ");
 
@@ -72,3 +72,35 @@ if ($total != 0) {
 } else {
     $error = "Aucun élement trouvé ! ";
 }
+?>
+
+<!-- traitement de la recherche et affichage -->
+<?php
+$error = "";
+if (isset($_POST['valideSearch'])) {
+    $recherche = $_POST['inputSearch'];
+
+    $sql_recherche = $bdd->prepare("SELECT * FROM tinfosalle WHERE nomSalle =? || prix1 =? || taille =? || adresse=?");
+    $sql_recherche->execute(array($recherche));
+    $total_recherche = $sql_recherche->rowCount();
+    $resultat_recherche = $sql_recherche->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($total == 0) {
+        $error = 'Aucun élement trouvé  <br/>';
+    } else {
+        foreach ($resultat_recherche as $res) {
+            $nom_items = $res['nomSalle'];
+            $prix_items = $res['prix1'];
+            $adresse_items = $res['adresse'];
+            $image_items_name = $res['photo'];
+    
+            $req_avis->execute(array($nom_items));
+            $total_avis = $sql->rowCount();
+            $resultat_avis = $sql->fetchAll(PDO::FETCH_ASSOC);
+    
+            // foreach ($resultat_avis as $res_avis) {
+            $avis = '';
+        }
+    }
+}
+?>

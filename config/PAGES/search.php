@@ -65,6 +65,8 @@ if (isset($_GET['valideSearch'])) {
                             
                     </div>
                 </div>
+
+                <srcipt>showFiltre_recherche();</srcipt>
                 ";
         }
     }

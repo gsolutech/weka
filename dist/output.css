@@ -572,3 +572,7 @@ video {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
+
+.screen-minus-20 {
+  height: calc(100vh - 120px);
+}

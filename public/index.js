@@ -39,6 +39,7 @@ function closeInscription() {
     element.classList.remove('flex');
     element.classList.add('hidden');
 }
+
 function closeInscription(event) {
     if (event.target.id === 'inscriptionShow' || event.target.classList.contains('close')) {
         let element = document.getElementById('inscriptionShow');
@@ -48,19 +49,33 @@ function closeInscription(event) {
     }
 }
 
+function showFiltre_recherche() {
+    alert("Filtre check");
+    let element = document.getElementById('filtre_recherche');
+    element.classList.remove('hidden');
+    element.classList.add('flex')
+}
 document.addEventListener('DOMContentLoaded', 'click', function() {
     let button = document.getElementById('btn_inscrire');
     console.log('Button:', button); // Debugging line
     if (button) {
         button.onclick = ShowIscription;
     } else {
-        console.error("Bouton 'btn_inscrire' non trouvé.");
+        console.log("Bouton 'btn_inscrire' non trouvé.");
     }
+
     let buttonClose = document.getElementById("closePop");
     console.log('Button:', buttonClose); // Debugging line
     if (buttonClose) {
-        button.onclick = closeInscription;
+        buttonClose.onclick = closeInscription;
     } else {
         console.log("Bouton 'btn_close_pop' non trouvé.");
+    }
+
+    let btn_search = document.getElementById('btn_search');
+    if (btn_search) {
+        // btn_search.onclick = showFiltre_recherche();
+    } else {
+        console.log('Filtre non trouvé');
     }
 })

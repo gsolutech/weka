@@ -143,11 +143,11 @@ document.addEventListener('click', function() {
         let mainContainer = document.getElementById('mainContainer');
         let filtreContainer = document.getElementById('filtreContainer');
 
-        mainContainer.classList.remove('flex');
-        mainContainer.classList.add('hidden');
+        // mainContainer.classList.remove('flex');
+        // mainContainer.classList.add('hidden');
 
-        filtreContainer.classList.remove('hidden');
-        filtreContainer.classList.add('flex');
+        // filtreContainer.classList.remove('hidden');
+        // filtreContainer.classList.add('flex');
 
     } else {
         alert("Input not found");

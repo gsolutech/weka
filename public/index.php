@@ -109,7 +109,7 @@
             </div>
         </div>
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
-        <div id="mainContainer" class="w-full h-auto flex-wrap">
+        <div id="mainContainer" class="w-full h-auto flex flex-wrap">
             <?php
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
             ?>            

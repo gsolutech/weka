@@ -1,5 +1,4 @@
 <?php
-
 require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
 if (isset($_POST['check_inscri'])) {

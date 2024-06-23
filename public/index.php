@@ -10,7 +10,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
     <script src="index.js" defer></script>
-    <title>weka</title>
+    <title>Weka</title>
 </head>
 <body>
     <?php  //require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>

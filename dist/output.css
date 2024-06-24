@@ -387,7 +387,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1;
+  opacity: 1; 
   /* 1 */
   color: #9ca3af;
   /* 2 */
@@ -552,10 +552,6 @@ video {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-
-.hidden {
-  display: none;
 }
 
 .bge-cyan-custom {

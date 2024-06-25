@@ -79,8 +79,8 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-full mt-40 z-50  id="closePop">
-        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> -->
+    <section class="absolute top-16 w-full mt-40 z-50"  id="closePop">
+        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> -->
     </section>
 
     <section class="py-12">

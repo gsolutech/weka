@@ -3,13 +3,8 @@
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conBd.php';
 function rechercher() {}
 $error = "";
-if (isset($_GET['valideSearch'])) {
-    // filtrer par recherche
-    $recherche_nom = $_GET['inputSearch'];
-    // $recherche_prix = $_POST['inputSearch'];
-    // $recherche_taille = $_POST['inputSearch'];
-    // $recherche_adresse = $_POST['inputSearch'];
-
+if (isset($_GET['inputSearch'])) {
+    $recherche_nom = htmlspecialchars($_GET['inputSearch']);
     $sql_recherche = $bdd->prepare("SELECT * FROM tinfosalle WHERE nomSalle =?");
     $sql_recherche->execute(array($recherche_nom));
     $total_recherche = $sql_recherche->rowCount();
@@ -17,19 +12,13 @@ if (isset($_GET['valideSearch'])) {
 
     if ($total_recherche == 0) {
         $error = 'Aucun élement trouvé  <br/>';
+        echo $error;
     } else {
         foreach ($resultat_recherche as $res) {
             $nom_items = $res['nomSalle'];
             $prix_items = $res['prix1'];
             $adresse_items = $res['adresse'];
             $image_items_name = $res['photo'];
-    
-            // $req_avis->execute(array($nom_items));
-            // $total_avis = $sql->rowCount();
-            // $resultat_avis = $sql->fetchAll(PDO::FETCH_ASSOC);
-    
-            // foreach ($resultat_avis as $res_avis) {
-            $avis = '';
 
             // affiche de la recherche
             echo " 

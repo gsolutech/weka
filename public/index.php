@@ -1,54 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../dist/output.css">
-    <script href="index.js" defer></script>
-    <title>weka</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../src/assets/statics/wekaicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src="index.js" defer></script>
+    <title>Weka</title>
 </head>
 <body>
-    <section id="header">
-        <!-- beso -->
-        <nav>
-            <ul class="firstU">
-                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
+    <?php  //require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';     ?>
+    <section id="header" class="w-full text-white screen-minus-20 mb-24">
+
+        <nav class="bg-black w-full h-20 flex flex-row text-white relative">
+            <ul class="flex flex-row w-2/6">
+                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">
             </ul>
-            <ul class="secondU">
-                <li href="">Accueil</li>
-                <li href="">Reservation</li>
-                <li href="">Avis</li>
-                <li href="">Contact</li>
+            <ul class="flex-row w-2/6 items-center justify-center flex text-center relative">
+                <li href="" class="pr-7 cursor-pointer text-ys">Accueil</li>
+                <li href="" class="pr-7 cursor-pointer">Reservation</li> 
+                <li href="" class="pr-7 cursor-pointer">Avis</li>
+                <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
-            <ul class="lastU">
-                <button id="btn_inscrire">S'inscrire</button>
+            <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
+                <button id="btn_inscrire" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7" onclick="ShowIscription();">S'inscrire</button>
             </ul>
         </nav>
-        <div class="container">
-            <ul>
-                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
+        <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-full bg-center bg-no-repeat bg-cover">
+
+            <ul class="w-full h-20 justify-center items-center flex">
+                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="" class="w-20 h-auto object-contain ml-20">
             </ul>
-            <ul>
-                <p>Réservation simplifiée pour <label>Tous Vos Besoins</label></p>
+
+            <ul class="w-full h-20 justify-center items-center flex">
+                <p class="text-4xl font-thin">Réservation simplifiée pour <label class="font-medium">Tous Vos Besoins</label></p>
             </ul>
-            <ul class="secondUl">
-                <input type="search" name="inputSearch" class="search">
-                <input type="submit" value="Rechercher" name="valideSearch" class="btnSend">
+
+            <ul class="bg-white w-96 h-14 mt-8 rounded-md pl-2 pr-2 justify-center items-center flex">
+                <ul action="" method="get" class="relative flex flex-row justify-center items-center">
+                    <input type="search" name="inputSearch" class="p-1 pl-2 pr-2 text-black focus:outline-none w-64 rounded-md mr-3 bg-gray-200">
+                    <button type="submit" id="btn_search_send" name="valideSearch" class="bge-cyan-custom border-2 border-solid border-cyan-500 p-1 pr-2 pl-2 rounded-md" onclick="showFiltre_recherche(); ">Rechercher</button>
+                </ul>      
             </ul>
-            <ul class="lastUl">
-                <input type="radio" name="filtre_Check" id="" value="dateFiltre" id="showCalendarRadio" ">
-                <label for="filtre_Check">Filtrez par date</label>
-                <input type="radio" name="filtre_Check" id="" checked value="dispoFiltre">
-                <label for="filtre_Check">Disponible</label>
-                <input type="date" name="calendar" id="calendar">
-                <!-- djo -->
+
+            <ul class="justify-start items-start border-2 border-solid border-gray-100 mt-2 px-3 py-1 bg-gray-100 text-black rounded-full w-32 relative hidden" id="filtre_recherche">
+                <button type="button" class="hover:bg-cyan-300 text-sm" onclick="closeFiltre_rechercher(); ">x Recherche par nom</button>
             </ul>
+
+            <ul class="justify-end items-end flex mt-2">
+                <input type="radio" name="filtre_Check_date"  value="dateFiltre" id="showCalendarRadio" data-bs-toggle="" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <label for="filtre_Check" class="mr-10 ml-2">Filtrez par date</label>
+                <input type="radio" name="filtre_Check_date" id="" checked value="dispoFiltre" class="w-5 h-5 bg-cyan-500 border-2 border-solid border-cyan-500">
+                <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
+            </ul>
+        </div>
+
+        <div id="calendarDiv" class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 mt-10 justify-center items-center">
+            <div class=" bg-white w-96 h-40 justify-center items-center flex relative flex-col rounded-md">
+                <p class="text-black pb-3">Choisissez une date </p>
+                <form class="mb-10" method="GET">
+                    <input type="date" name="calendar" id="calendar" class="text-2xl border-2 border-solid border-bge-cyan-custom text-black">
+                </form>
+                <ul class="w-full border-2 border-solid border-gray-200 absolute bottom-0 bg-slate">
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Filtrer</button>
+                    <button class="bge-cyan-custom text-white w-3/6 h-11 border-2 border-solid border-cyan-500 float-right">Fermer</button>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section>
-        <!-- yves -->
+    <!-- tout les popup -->
+    <section class="absolute top-16 w-full mt-40 z-50 backdrop-blur id="closePop">
+        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> -->
     </section>
+
+    <section class="py-12">
+    <div class="container mx-auto px-4">
+        <div class="text-center">
+            <h2 class="text-4xl font-semibold mb-4">Achèvement</h2>
+            <p class="mb-8 text-gray-600">Grâce à la confiance de nos utilisateurs, Weka a atteint des sommets en matière de réservations en ligne. Nous avons facilité des milliers de réservations avec un taux de satisfaction élevé et des retours positifs constants. Rejoignez-nous et faites partie de notre succès !</p>
+            <div class="flex justify-center space-x-2 mb-12">
+                <!-- Images des utilisateurs -->
+                <div class="flex">
+                    <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 first:ml-0 relative z-10">
+                        <img src="../src/assets/salles/profil/11.jpg" alt="Personne 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-9">
+                        <img src="../src/assets/salles/profil/12.jpg" alt="Personne 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-8">
+                        <img src="../src/assets/salles/profil/13.jpg" alt="Personne 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-7">
+                        <img src="../src/assets/salles/profil/14.jpg" alt="Personne 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-12 h-12 rounded-full overflow-hidden -ml-4 relative z-6">
+                        <img src="../src/assets/salles/profil/9.jpg" alt="Personne 5" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
+        <div class="w-full h-auto flex-wrap">
+            <?php
+                // require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+            ?>            
+        </div>
+        <div>
+            <?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php' ;?>
+        </div>
+    </div>
+</section>
+
 
     <section>
         <!-- greg -->

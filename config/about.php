@@ -7,7 +7,7 @@ $sql = $bdd->prepare("SELECT * FROM tinfosalle ");
 $sql->execute();
 
 $total = $sql->rowCount();
-$resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
+$resultat = $sql->fetchAll(PDO::FETCH_ASSOC); 
 $avis;
 $nom_items;
 

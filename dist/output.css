@@ -554,10 +554,6 @@ video {
   --tw-contain-style:  ;
 }
 
-.hidden {
-  display: none;
-}
-
 .bge-cyan-custom {
   background-color: #0092bb;
   /* opacity: 50%; */

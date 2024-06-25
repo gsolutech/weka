@@ -8,29 +8,35 @@
 </head>
 <body>
     <div class="weka">
-        <form action="#" method="post">
+        <form action="">
             <h1>contactez nous</h1>
             <div class="solutech">
                 <input type="text" placeholder="se connecter avec facebook">
             </div>
+            <div class="ad">
+                <img src="facebook.png" alt="fb">
+            </div>
+            
             <div class="solutech">
                 <input type="text" placeholder="se connecter avec Google">
             </div>
-
-            <div class="h">
+             <div class="add">
+                <img src="google.png" alt="">
+             </div>
+           <div class="h">
             <hr>
             <p>ou</p>
             <hr>
            </div>
 
             <div class="goma">
-                <input type="email" name="email" placeholder="Adresse mail">
+                <input type="mail" placeholder="Adresse mail">
             </div>
             <div class="goma">
-                <input type="password" name="password" placeholder="Mots passe">
+                <input type="password" placeholder="Mots passe">
             </div>
             <div class="btn" align="center">
-                <input type="submit" name="valider" value="Se connecter">
+                <input type="submit" value="Se connecter">
             </div>
         </form>
     </div>

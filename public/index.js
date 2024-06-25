@@ -33,13 +33,16 @@ function closeCalendar() {
 function getDateCalendar() {
     let calendarEl = document.getElementById('calendar');
     if (calendarEl) {
+        let containerCalendar = document.getElementById('calendarDiv');
+        bodySelect.body.classList.add('backdrop-blur'); 
+        containerCalendar.classList.add('backdrop-blur');
         let calendarValue = calendarEl.value;
         if (calendarValue == "") {
             let error = document.getElementById('errorDate');
             error.innerHTML = 'Veillez sélectioner une date pour filter';
         } else {
             // alert('Calendar : ' + calendarValue);
-            let calendarContainer = document.getElementById('calendarDiv');
+            let calendarContainer = document.getElementById('calendarDiv');            
             if (calendarContainer) {
                 calendarContainer.classList.remove('flex');
                 calendarContainer.classList.add('hidden');
@@ -78,7 +81,7 @@ function closeInscription(event) {
         let element = document.getElementById('inscriptionShow');
         element.classList.remove('flex');
         element.classList.add('hidden');
-        document.body.classList.remove('backdrop-blur'); // Remove blur effect from body
+        document.body.classList.remove('backdrop-blur');
     }
 }
 
@@ -121,6 +124,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Bouton 'btn_close_pop' non trouvé.");
     }
 
+    let closeCalendar = document.getElementById("calendarDiv");
+    if (closeCalendar) {
+        closeCalendar.onclick = closeCalendar;
+    }
+
+
     // let btn_search = document.getElementById('btn_search');
     // if (btn_search) {
     //     btn_search.onclick = showFiltre_recherche();
@@ -143,11 +152,10 @@ document.addEventListener('click', function() {
         let mainContainer = document.getElementById('mainContainer');
         let filtreContainer = document.getElementById('filtreContainer');
 
-        // mainContainer.classList.remove('flex');
-        // mainContainer.classList.add('hidden');
-
-        // filtreContainer.classList.remove('hidden');
-        // filtreContainer.classList.add('flex');
+        let closeCalendar = document.getElementById("calendarDiv");
+        if (closeCalendar) {
+            closeCalendar.onclick = closeCalendar;
+        }
 
     } else {
         alert("Input not found");

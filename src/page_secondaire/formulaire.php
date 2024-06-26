@@ -1,13 +1,13 @@
 <!-- <div id="inscriptionShow" class="h-auto bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-1 mt-40"></div> -->
-    <div class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
-        <form action="" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg ">
+    <div id="inscriptionShow"  class="w-6/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
+        <form action="" class="bg-gray-300 w-full h-screnn p-2 sm:p-2 md:p-4 rounded-lg ">
             <h1 class="text-3xl text-center mt-10 mb-10">Connectez vous</h1>
 
             <div class="text-center justify-center items-center flex flex-col">
                 <button class=" w-3/4 p-3 h-12 scroll-p-15 flex flex-row rounded-3xl text-center mb-9 text-gray-400 bg-white justify-center items-center" type="submit ">
-                <img class=" pr-5 h-8" src="../src/assets/statics/facebook.png" alt="">    
-                se connecter avec facebook
-                     <button>
+                    <img class=" pr-5 h-8" src="../src/assets/statics/facebook.png" alt="">    
+                    se connecter avec facebook
+                <button>
                 <button class="w-3/4 p-3 h-12 scroll-p-15 flex flex-row rounded-3xl text-center text-gray-400 bg-white justify-center items-center" type="submit">
                     <img class=" pr-5 h-8" src="../src/assets/statics/google.png"  alt="">
                     <p class="text-center" >se connecter avec Google</p> 
@@ -28,7 +28,7 @@
             <div class="text-center">
                 <!-- <input class=" px-10 py-20 border-0 decoration-white text-base rounded-md my-50" type="submit" value="Se connecter"> -->
                 <button class="px-10 py-2 mb-20 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " type="submit">
-                     se connecter</button>
+                    se connecter</button>
             </div>
         </form>
     </div>

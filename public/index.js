@@ -54,17 +54,18 @@ function getDateCalendar() {
 }
 // page d'inscription show
 function ShowIscription() {
-    let element = document.getElementById('inscriptionShow');
+    let element = document.getElementById('closePop');
     let bodySelect = document.querySelector('body');
-    let blurShow = document.getElementById('closePop');
     console.log('Element:', element);
 
     if (element) {
         // element.classList.add('someClass');
         element.classList.remove('hidden');
         element.classList.add('flex'); 
-        bodySelect.body.classList.add('backdrop-blur');  
-        // blurShow.classList.add('h-screen');    
+        element.classList.add("backdrop-blur-md")
+
+        bodySelect.body.classList.add('backdrop-blur'); 
+        blurShow.classList.add('backdrop-blur');   
     } else {
         console.error("Element with id 'someElementId' not found.");
     }
@@ -158,6 +159,13 @@ document.addEventListener('click', function() {
         }
 
     } else {
-        alert("Input not found");
+        console.log("Input not found");
+    }
+
+    let closeConnexion = document.getElementById("closePop");
+    if (closeConnexion) {
+        closeConnexion.onclick = closeInscription
+    } else {
+        console.log("container non trouver ! ");
     }
 })

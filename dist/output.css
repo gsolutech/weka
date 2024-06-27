@@ -572,3 +572,7 @@ video {
 .screen-minus-20 {
   height: calc(100vh - 120px);
 }
+
+.screen-minus-200 {
+  height: calc(100vh - 200px);
+}

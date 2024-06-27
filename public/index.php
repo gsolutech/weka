@@ -14,7 +14,7 @@
     <script src="index.js" defer></script>
     <title>Weka</title>
 </head>
-<body>
+<body class="">
     <?php  
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
     ?>
@@ -79,8 +79,8 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-full mt-40 z-50"  id="closePop">
-        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> -->
+    <section class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 justify-center items-center"  id="closePop">
+        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
     </section>
 
     <section class="py-12">
@@ -110,17 +110,15 @@
 
             </div>
         </div>
+
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
-        <div id="mainContainer" class="w-full h-auto flex flex-wrap">
+        <div id="mainContainer" class="w-full flex flex-wrap justify-center items-center">
             <?php
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
-            ?>            
+            ?>           
         </div>
-        <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
-            <?php 
-                require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
-            ?>
-        </div>
+        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+        </div> -->
     </div>
 </section>
 

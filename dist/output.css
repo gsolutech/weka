@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -552,4 +552,27 @@ video {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
+}
+
+.bge-cyan-custom {
+  background-color: #0092bb;
+  /* opacity: 50%; */
+}
+
+.bg-header {
+  background-image: url('../src/assets/statics/bgheader.jpg');
+  /*  */
+}
+
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.screen-minus-20 {
+  height: calc(100vh - 120px);
+}
+
+.screen-minus-200 {
+  height: calc(100vh - 200px);
 }

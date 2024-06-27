@@ -55,7 +55,7 @@ function getDateCalendar() {
 // page d'inscription show
 function ShowIscription() {
     alert("closePop read");
-    let element = document.getElementById('showConnexion');
+    let element = document.getElementById('closePop');
     let bodySelect = document.querySelector('body');
     console.log('Element séléctioné :', element);
 
@@ -65,8 +65,7 @@ function ShowIscription() {
         element.classList.add('flex'); 
         element.classList.add("backdrop-blur-md")
 
-        bodySelect.body.classList.add('backdrop-blur'); 
-        blurShow.classList.add('backdrop-blur');   
+        bodySelect.body.classList.add('backdrop-blur');  
     } else {
         console.error("closePop not found");
     }

@@ -54,9 +54,10 @@ function getDateCalendar() {
 }
 // page d'inscription show
 function ShowIscription() {
-    let element = document.getElementById('closePop');
+    alert("closePop read");
+    let element = document.getElementById('showConnexion');
     let bodySelect = document.querySelector('body');
-    console.log('Element:', element);
+    console.log('Element séléctioné :', element);
 
     if (element) {
         // element.classList.add('someClass');
@@ -67,7 +68,7 @@ function ShowIscription() {
         bodySelect.body.classList.add('backdrop-blur'); 
         blurShow.classList.add('backdrop-blur');   
     } else {
-        console.error("Element with id 'someElementId' not found.");
+        console.error("closePop not found");
     }
 }
 

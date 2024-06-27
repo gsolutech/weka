@@ -1,4 +1,4 @@
-<div class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
+<div id="showConnexion" class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto hidden">
         <form action="" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg ">
             <h1 class="text-3xl text-center mt-10 mb-10">Connectez vous</h1>
 

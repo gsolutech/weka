@@ -2,4 +2,4 @@
     alert('Enregistrement reussie !!')
  })
 
- const btn = document.querySelector('submit')
+ const btn = document.querySelector

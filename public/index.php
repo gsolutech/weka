@@ -128,19 +128,18 @@
          <div class="logo">
             
             <div class="logo-app">
-                <img src="src/assets/statics/Fichier 10@4xweka.png" alt="weka-logo">
+                <img src="../src/assets/statics/facebook.png" alt="">
             </div>
-            
-            <div class="main-logo">
-                <nav classe="main-logo-nav">
-                    <ul>
-                        <li><a href="#"> Acceuil </a></li>
-                        <li><a href="#">Reservation</a></li>
-                        <li><a href="#">Avis</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
+
+            <div>
+                <ul class="section">
+                    <li href="#" class="section-Accueil">Accueil</li>
+                    <li href="#" class="section-Accueil">Reservation</li> 
+                    <li href="#" class="section-Accueil">Avis</li>
+                    <li href="#" class="section-Accueil">Contact</li>
+                </ul>
             </div>
+                
             
          </div>
     </section>

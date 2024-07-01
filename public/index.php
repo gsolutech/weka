@@ -79,7 +79,7 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 justify-center items-center"  id="closePop">
+    <section class="w-full h-screen z-50 backdrop-blur fixed inset-4 justify-center items-center"  id="closePop">
         <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
     </section>
 

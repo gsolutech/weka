@@ -54,7 +54,7 @@ function getDateCalendar() {
 }
 // page d'inscription show
 function ShowIscription() {
-    alert("closePop read");
+    //alert("closePop read");
     let element = document.getElementById('closePop');
     let bodySelect = document.querySelector('body');
     console.log('Element séléctioné :', element);

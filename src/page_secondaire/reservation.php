@@ -11,24 +11,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prix = $_POST['prix'];
     $serviceAutres = $_POST['service'];
 
-    $stmt = $bdd->prepare("INSERT INTO treservations (date_reservation, delai, prix, serviceAutres) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $datePrevu, $delai, $prix, $serviceAutres);
-    if ($stmt->execute()) {
-        echo "Réservation enregistrée avec succès !";
-    } else {
-        echo "Erreur : " . $stmt->error;
-    }
+    try {
+        
+        $bdd->beginTransaction();
 
-    $stmt->close();
+        $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres]);
 
-    $stmt = $bdd->prepare("INSERT INTO tclients (nom, phone) VALUES (?, ?)");
-    $stmt->bind_param("ss", $nom, $phone);
-    if ($stmt->execute()) {
-        echo "Client enregistré avec succès !";
-    } else {
-        echo "Erreur : " . $stmt->error;
+        $stmt = $bdd->prepare("INSERT INTO tclient (nom, phone) VALUES (?, ?)");
+        $stmt->execute([$nom, $phone]);
+
+        $bdd->commit();
+
+        echo "Réservation et client enregistrés avec succès !";
+
+    } catch (Exception $e) {
+    
+        $bdd->rollBack();
+        echo "Erreur : " . $e->getMessage();
     }
-    $stmt->close();
+    /*$stmt->close();*/
 }
 /*$bdd->close();*/
 ?>

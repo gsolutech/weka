@@ -70,6 +70,32 @@ function ShowIscription() {
         console.error("closePop not found");
     }
 }
+function showInscriptionTwo() {
+    let element = document.getElementById('showConnexion');
+    let element2 = document.getElementById('inscriptionShow');
+    let bodySelect = document.querySelector('body');
+    console.log('Element séléctioné :', element);
+
+    if (element) {
+        // element.classList.add('someClass');
+        element.classList.add('hidden');
+        element.classList.remove('flex'); 
+        element.classList.add("backdrop-blur-md")
+
+        bodySelect.body.classList.add('backdrop-blur');
+    } else {
+        console.error("closePop not found");
+    }
+
+    if (element2) {
+        alert("Element 2 already" + element2);
+        element2.classList.add('flex');
+        element2.classList.remove('hidden');
+    } else {
+        alert("Element 2 not found " + element)
+    }
+    
+}
 
 function closeInscription() {
     let element = document.getElementById('inscriptionShow');

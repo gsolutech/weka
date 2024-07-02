@@ -1,6 +1,8 @@
 <?php
 require_once 'C:/wamp64/www/weka/config/conBd.php';
 
+$message = "";
+$messageType = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -23,12 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $bdd->commit();
 
-        echo "Réservation et client enregistrés avec succès !";
+        $message = "Réservation et client enregistrés avec succès !";
+        $messageType = "success";
 
     } catch (Exception $e) {
     
         $bdd->rollBack();
-        echo "Erreur : " . $e->getMessage();
+        $message = "Erreur : " . $e->getMessage();
+        $messageType = "error";
     }
     /*$stmt->close();*/
 }
@@ -84,6 +88,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-gray-200 flex items-center justify-center min-h-screen">
     <div class="form-container">
         <h2 class="form-title">Réservez Maintenant</h2>
+        <?php if ($message): ?>
+            <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'; ?> p-4 mb-4 rounded">
+                <?php echo htmlspecialchars($message); ?>
+            </div>
+        <?php endif; ?>
         <form action="reservation.php" method="POST">
             <div class="mb-4">
                 <label for="nom" class="form-label">Nom et Postnom</label>

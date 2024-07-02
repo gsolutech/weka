@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt->close();
 }
-$bdd->close();
+/*$bdd->close();*/
 ?>
 <!DOCTYPE html>
 <html lang="fr">

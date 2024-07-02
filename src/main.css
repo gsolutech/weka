@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 
-.bg-cyan-custom {
-    background-color: #0096BE;
-    opacity: 50%;
+.bge-cyan-custom {
+    background-color: #0092bb;
+    /* opacity: 50%; */
 }
 
 .bg-header {
     background-image: url('../src/assets/statics/bgheader.jpg');
     /*  */
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(5px); 
+}
+
+.screen-minus-20 {
+    height: calc(100vh - 120px);
+}
+.screen-minus-200 {
+    height: calc(100vh - 200px);
 }

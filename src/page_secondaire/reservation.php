@@ -21,6 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
 
+    // Preparation et la liaison.
+    $stmt = $bdd->prepare("INSERT INTO treservations (date_reservation, delai,prix, serviceAutres) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssssds", $datePrevu, $delai, $prix, $serviceAutres);
+
+    $stmt = $bdd->prepare("INSERT INTO tclients(nom,email,phone) VALUES (?, ?, ?)");
+    $stmt->bind_param("ssssds", $nom, $email,$phone,);
+
+
     $stmt = $bdd->prepare("INSERT INTO tclients (nom, phone) VALUES (?, ?)");
     $stmt->bind_param("ss", $nom, $phone);
     if ($stmt->execute()) {
@@ -28,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erreur : " . $stmt->error;
     }
+        echo "Error: " . $stmt->error;
+    }
+
+    // fermeture de la declaration.
     $stmt->close();
 }
 /*$bdd->close();*/

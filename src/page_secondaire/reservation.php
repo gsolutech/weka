@@ -34,9 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Erreur : " . $e->getMessage();
         $messageType = "error";
     }
-    /*$stmt->close();*/
+    /*$stmt->close();
+    $bdd->close();*/
 }
-/*$bdd->close();*/
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -84,8 +85,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #2B6CB0; 
         }
     </style>
-</head>
-<body class="bg-gray-200 flex items-center justify-center min-h-screen">
     <div class="form-container">
         <h2 class="form-title">Réservez Maintenant</h2>
         <?php if ($message): ?>
@@ -126,5 +125,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="form-button">Envoyer</button>
         </form>
     </div>
-</body>
-</html>

@@ -60,7 +60,7 @@ if(isset($_POST['btnconnexion'])){
                 <button name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " type="submit">
                      se connecter</button>
 
-                     <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
+                     <p>Mots passe oubliée? <a class="text-red-500" href="#" href="password_oublier.php" >Cliquez ici</a> </p>
                      <p>Vous n'avez pas un compte? <a class="text-red-500" href="inscription.php">Crer un compte</a> </p>
                      
 

@@ -23,3 +23,9 @@
 .screen-minus-200 {
     height: calc(100vh - 200px);
 }
+.photoUpload button i {
+    color: white;
+}
+.photoUpload button #profilchange {
+    color: black;
+}

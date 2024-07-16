@@ -29,3 +29,6 @@
 .photoUpload button #profilchange {
     color: black;
 }
+.photoUpload button #profilchangeUp {
+    color : red;
+}

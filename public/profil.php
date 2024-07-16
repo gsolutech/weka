@@ -4,6 +4,7 @@
 <body>
     <?php  
         require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'profilSet.php';
     ?>
     <section>
         <div class="photoUpload w-full h-96 relative flex flex-col">
@@ -11,8 +12,16 @@
                 <button class="right-10 bottom-5 absolute"><i class="fa-solid fa-pen-to-square" class="text-white"></i></button>
             </div>
             <div class="profilUp bg-red-300 absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white">
-                <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full rounded-full bg-cover">
-                <button class="right-4 bottom-2 absolute text-2xl"><i class="fa-solid fa-pen-to-square" id="profilchange"></i></button>
+                <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full object-cover rounded-full">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <button class="right-4 bottom-2 absolute text-2xl" type="file" name="profile_image">
+                        <i class="fa-solid fa-pen-to-square" id="profilchangeUp" name="inputCheck"></i>
+                    </button>
+<!-- 
+                    <button class="left-0 bottom-0 absolute text-2xl" type="submit" name="submitprofil">
+                        <i class="fa-solid fa-pen-to-square" id="profilchange" name="inputCheck"></i>
+                    </button> -->
+                </form>
             </div>
         </div>
     </section>

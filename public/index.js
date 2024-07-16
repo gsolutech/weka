@@ -54,20 +54,47 @@ function getDateCalendar() {
 }
 // page d'inscription show
 function ShowIscription() {
-    let element = document.getElementById('inscriptionShow');
+    //alert("closePop read");
+    let element = document.getElementById('closePop');
     let bodySelect = document.querySelector('body');
-    let blurShow = document.getElementById('closePop');
-    console.log('Element:', element);
+    console.log('Element séléctioné :', element);
 
     if (element) {
-        element.classList.add('someClass');
+        // element.classList.add('someClass');
         element.classList.remove('hidden');
         element.classList.add('flex'); 
+        element.classList.add("backdrop-blur-md")
+
         bodySelect.body.classList.add('backdrop-blur');  
-        blurShow.classList.add('h-screen');    
     } else {
-        console.error("Element with id 'someElementId' not found.");
+        console.error("closePop not found");
     }
+}
+function showInscriptionTwo() {
+    let element = document.getElementById('showConnexion');
+    let element2 = document.getElementById('inscriptionShow');
+    let bodySelect = document.querySelector('body');
+    console.log('Element séléctioné :', element);
+
+    if (element) {
+        // element.classList.add('someClass');
+        element.classList.add('hidden');
+        element.classList.remove('flex'); 
+        element.classList.add("backdrop-blur-md")
+
+        bodySelect.body.classList.add('backdrop-blur');
+    } else {
+        console.error("closePop not found");
+    }
+
+    if (element2) {
+        alert("Element 2 already" + element2);
+        element2.classList.add('flex');
+        element2.classList.remove('hidden');
+    } else {
+        alert("Element 2 not found " + element)
+    }
+    
 }
 
 function closeInscription() {
@@ -158,6 +185,13 @@ document.addEventListener('click', function() {
         }
 
     } else {
-        alert("Input not found");
+        console.log("Input not found");
+    }
+
+    let closeConnexion = document.getElementById("closePop");
+    if (closeConnexion) {
+        closeConnexion.onclick = closeInscription
+    } else {
+        console.log("container non trouver ! ");
     }
 })

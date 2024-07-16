@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../dist/output.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../src/assets/statics/wekaicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
-    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <script src="index.js" defer></script>
-    <title>Weka</title>
-</head>
-<body>
+<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php'; ?>
+<body class="">
     <?php  
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
     ?>
@@ -79,8 +66,9 @@
     </section>
 
     <!-- tout les popup -->
-    <section class="absolute top-16 w-full mt-40 z-50"  id="closePop">
-        <<?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
+    <section class="w-full h-screen z-50 backdrop-blur fixed inset-4 hidden justify-center items-center"  id="closePop">
+        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
+        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> 
     </section>
 
     <section class="py-12">
@@ -110,7 +98,9 @@
 
             </div>
         </div>
+
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
+
         <div id="mainContainer" class="items-center justify-center flex-wrap m-auto w-full">
             <?php
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
@@ -120,7 +110,14 @@
             <?php 
                 // require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
             ?>
+
+        <div id="mainContainer" class="w-full flex flex-wrap justify-center items-center">
+            <?php
+                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+            ?>           
         </div>
+        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+        </div> -->
     </div>
 </section>
 

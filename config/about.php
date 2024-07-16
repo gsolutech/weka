@@ -11,7 +11,6 @@ $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 $avis;
 $nom_items;
 
-
 $error = "";
 if ($total != 0) {
     $req_avis = $bdd->prepare("SELECT * FROM tavis WHERE nomSalle = ? ");
@@ -29,7 +28,8 @@ if ($total != 0) {
         $avis = '';
         // $res_avis['nombreAvis'];
         echo " 
-                    <div class=\"w-96 bg-gray-100 border-2 mx-auto border-solid border-gray-200 m-5 shadow-lg overflow-hidden relative px-3 py-3\">
+
+                    <div class=\"w-96 mx-auto bg-gray-100 border-2 border-solid border-gray-200 m-5 shadow-lg overflow-hidde relative px-3 py-3\">
                     <img class=\"w-full h-48 object-cover  relative\" src=\"../src/assets/salles/profil/$image_items_name\" alt=\"Asha La Villa\">
                         <div class=\"flex flex-row \">
                             <ul class=\"flex flex-row justify-between items-center mb-4 w-7/12\">
@@ -63,14 +63,10 @@ if ($total != 0) {
                         </div>
                             
                     </div>
-                </div>
                 ";
-
-        // }
-
     }
-} else {
+} 
+else {
     $error = "Aucun élement trouvé ! ";
 }
-
 ?>

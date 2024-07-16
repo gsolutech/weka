@@ -14,13 +14,11 @@
             <div class="profilUp bg-red-300 absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white">
                 <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full object-cover rounded-full">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <button class="right-4 bottom-2 absolute text-2xl" type="file" name="profile_image">
-                        <i class="fa-solid fa-pen-to-square" id="profilchangeUp" name="inputCheck"></i>
-                    </button>
-<!-- 
-                    <button class="left-0 bottom-0 absolute text-2xl" type="submit" name="submitprofil">
-                        <i class="fa-solid fa-pen-to-square" id="profilchange" name="inputCheck"></i>
-                    </button> -->
+                    <input class="right-4 bottom-2 absolute text-2xl" type="file" name="photo" value="">
+                        <i class="fa-solid fa-pen-to-square" id="profilchangeUp"  type="file" name="photo" ></i>
+                    <!-- </input> -->
+                    <!-- <input type="file" name="photo" class="right-4 bottom-2 absolute text-2xl"> -->
+                    <!-- <input type="submit" value="Uploader" class="class="right-4 bottom-2 absolute text-2xl"> -->
                 </form>
             </div>
         </div>

@@ -116,7 +116,7 @@
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
             ?>           
         </div>
-        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden"> 
         </div> -->
     </div>
 </section>

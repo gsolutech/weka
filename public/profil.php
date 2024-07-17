@@ -16,9 +16,9 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <input class="right-4 bottom-2 absolute text-2xl" type="file" name="photo" value="">
                         <i class="fa-solid fa-pen-to-square" id="profilchangeUp"  type="file" name="photo" ></i>
-                    <!-- </input> -->
-                    <!-- <input type="file" name="photo" class="right-4 bottom-2 absolute text-2xl"> -->
-                    <!-- <input type="submit" value="Uploader" class="class="right-4 bottom-2 absolute text-2xl"> -->
+                    </input> 
+                    <input type="file" name="photo" class="right-4 bottom-2 absolute text-2xl">
+                    <input type="submit" value="Uploader" class="class="right-4 bottom-2 absolute text-2xl">
                 </form>
             </div>
         </div>

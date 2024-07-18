@@ -137,7 +137,7 @@
                 </ul>
             </div>
 
-            <ul class="search">
+            <ul class="">
                 <form action="" method="get" class="search-form">
                     <input type="search" id="inputSearchId" name="inputSearch" class="search-input">
                     <button type="submit" id="btn_search_send" name="valideSearch" class="search-button" onclick="showFiltre_recherche(); ">Rechercher</button>

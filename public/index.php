@@ -122,8 +122,39 @@
 </section>
 
 
-    <section>
+    <section classe= bg-black>
         <!-- greg -->
+            <div class="logo-app">
+                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
+            </div>
+
+            <div>
+                <ul class="section">
+                    <li href="#" class="section-Accueil">Accueil</li>
+                    <li href="#" class="section-Accueil">Reservation</li> 
+                    <li href="#" class="section-Accueil">Avis</li>
+                    <li href="#" class="section-Accueil">Contact</li>
+                </ul>
+            </div>
+
+            <ul class="">
+                <form action="" method="get" class="search-form">
+                    <input type="search" id="inputSearchId" name="inputSearch" class="search-input">
+                    <button type="submit" id="btn_search_send" name="valideSearch" class="search-button" onclick="showFiltre_recherche(); ">Rechercher</button>
+                </form>      
+            </ul>
+
+            <ul class="section">
+                    <li href="#" class="section-Accueil"><i class='bx bxl-instagram'></i></li>
+                    <li href="#" class="section-Accueil"><i class='bx bxl-facebook-circle' ></i></li> 
+                    <li href="#" class="section-Accueil"><i class="fa-brands fa-x-twitter"></i></li>
+                    <li href="#" class="section-Accueil"><i class='bx bxl-linkedin-square'></i></li>
+            </ul>
+
+            <div class="footeer-logo">
+                <img src=".../src/assets/statics/g-solution.png" alt="">
+            </div>
+
     </section>
 </body>
 </html>

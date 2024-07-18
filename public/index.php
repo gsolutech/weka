@@ -100,19 +100,56 @@
         </div>
 
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
+
+        <div id="mainContainer" class="items-center justify-center flex-wrap m-auto w-full">
+            <?php
+                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+            ?>            
+        </div>
+        <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+            <?php 
+                // require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
+            ?>
+
         <div id="mainContainer" class="w-full flex flex-wrap justify-center items-center">
             <?php
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
             ?>           
         </div>
-        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
+        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden"> 
         </div> -->
     </div>
 </section>
 
 
-    <section>
+    <section classe= bg-black>
         <!-- greg -->
+            <div class="logo-app">
+                <img src="../src/assets/statics/Fichier 10@4xweka.png" alt="">
+            </div>
+
+            <div>
+                <ul class="section">
+                    <li href="#" class="section-Accueil">Accueil</li>
+                    <li href="#" class="section-Accueil">Reservation</li> 
+                    <li href="#" class="section-Accueil">Avis</li>
+                    <li href="#" class="section-Accueil">Contact</li>
+                </ul>
+            </div>
+
+            <ul class="">
+                <form action="" method="get" class="search-form">
+                    <input type="search" id="inputSearchId" name="inputSearch" class="search-input">
+                    <button type="submit" id="btn_search_send" name="valideSearch" class="search-button" onclick="showFiltre_recherche(); ">Rechercher</button>
+                </form>      
+            </ul>
+
+            
+
+            <div class="footeer-logo">
+                <img src=".../src/assets/statics/g-solution.png" alt="">
+            </div>
+
     </section>
 </body>
 </html>

@@ -144,12 +144,7 @@
                 </form>      
             </ul>
 
-            <ul class="section">
-                    <li href="#" class="section-Accueil"><i class='bx bxl-instagram'></i></li>
-                    <li href="#" class="section-Accueil"><i class='bx bxl-facebook-circle' ></i></li> 
-                    <li href="#" class="section-Accueil"><i class="fa-brands fa-x-twitter"></i></li>
-                    <li href="#" class="section-Accueil"><i class='bx bxl-linkedin-square'></i></li>
-            </ul>
+            
 
             <div class="footeer-logo">
                 <img src=".../src/assets/statics/g-solution.png" alt="">

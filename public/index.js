@@ -1,5 +1,5 @@
 // calendar show
-document.getElementById('showCalendarRadio').addEventListener('change', function() {
+document.getElementById('showCalendarRadio').addEventListener('change', function(event) {
     if (this.checked) {
         let calendarEl = document.getElementById('calendarDiv');
         calendarEl.value = "";
@@ -165,46 +165,49 @@ document.addEventListener('DOMContentLoaded', function() {
     //     console.log('Filtre non trouvé');
     // }
 })
-document.addEventListener('click', function() {
-    let inputSearch = document.getElementById('inputSearchId');
-    
-    if(inputSearch) {
+document.addEventListener("click", function () {
+    let inputSearch = document.getElementById("inputSearchId");
+
+    if (inputSearch) {
         // alert("Input checker");
 
         let liens = new XMLHttpRequest();
-        liens.open('GET', '../config/PAGES/search.php', true);
-        liens.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        liens.open("GET", "../config/PAGES/search.php", true);
+        liens.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // alert("Récu");
 
-        let mainContainer = document.getElementById('mainContainer');
-        let filtreContainer = document.getElementById('filtreContainer');
+        let mainContainer = document.getElementById("mainContainer");
+        let filtreContainer = document.getElementById("filtreContainer");
 
         let closeCalendar = document.getElementById("calendarDiv");
         if (closeCalendar) {
             closeCalendar.onclick = closeCalendar;
         }
-
     } else {
         console.log("Input not found");
     }
 
     let closeConnexion = document.getElementById("closePop");
     if (closeConnexion) {
-        closeConnexion.onclick = closeInscription
+        closeConnexion.onclick = closeInscription;
     } else {
         console.log("container non trouver ! ");
     }
-})
+});
 
 // changer la photo de profil
-function changePicture() {
-    document.getElementById('showFilesDialog').addEventListener('change', function(event){
-        alert("Files");
-        const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('profileImage').src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    });
-}
+
+// document.getElementById("showFilesDialog").addEventListener("change", function (event) {
+//     alert("Files");
+//     const file = event.target.files[0];
+//     if (file) {
+//         console.log("fichier trouver");
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//         document.getElementById("profileImage").src = e.target.result;
+//     };
+//     reader.readAsDataURL(file);
+//     } else {
+//         console.error("Aucun fichier sélectionné.");
+//     }
+// });

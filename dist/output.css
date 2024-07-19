@@ -578,7 +578,7 @@ video {
 }
 
 .screen-minus-50 {
-  height: calc(100vh - 50);
+  height: calc(100vh - 500px);
 }
 
 .photoUpload button i {

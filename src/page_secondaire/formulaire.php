@@ -33,7 +33,7 @@
                 se connecter</button>
 
             <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
-            <p>Vous n'avez pas un compte? <a class="text-red-500" onclick="showInscriptionPage();">Crer un compte</a> </p>
+            <p>Vous n'avez pas un compte? <a class="text-red-500 cursor-pointer" onclick="showInscriptionPage();">Créer un compte</a> </p>
         </div>
     </form>
 </div>

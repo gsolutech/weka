@@ -17,17 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
         if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
             $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
         } else {
-            $image_name = $nom_items . '-' . rand() . '.' . $ext;
-            move_uploaded_file($image_items_tmp, '../../src/images/articles/' . $image_name);
+            $image_name = $nom_client . '-' . rand() . '.' . $ext;
+            move_uploaded_file($image_items_tmp, '../../src/assets/salles/profil/' . $image_name);
 
             $dateto_to_day = date("Y-M-D H:i:s");
 
 
             //insertion dans la base de données 
             $sql = $bdd->prepare("INSERT INTO tproduit (nom, prix, description, image, date, nomCollection) VALUES (:nom, :prix, :description, :image, :date, :nomCollection)");
-            $sql->bindParam(':nom', $nom_items);
-            $sql->bindParam(':prix', $prix_items);
-            $sql->bindParam(':description', $description_items);
             $sql->bindParam(':image', $image_name);
             $sql->bindParam(':date', $dateto_to_day);
             $sql->bindParam(':nomCollection', $category_items);

@@ -1,17 +1,34 @@
 <?php
+session_start();
 // require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-if (isset($_POST['btnconnexion'])) {
+$error = "";
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnconnexion'])) {
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = htmlspecialchars($_POST['email']);
-        $email = sha1($_POST['password']);
-        $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =? AND password= ?");
-        $req->execute(array($email, $password));
+        $password = sha1($_POST['password']);
+
+        $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =?");
+        $req->execute(array($email));
         $compt = $req->rowCount();
 
-        if ($compt == 1) {
-            $message = "compte trouvé";
+        $resultats = $req -> fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($resultats as $resultat) {
+            $passwordbd = $resultat['password'];
+        }
+        if ($compt == 0) {
+            $error = "Compte non trouvé ! ";
         } else {
-            $message = "mot passe incorect";
+            if (password_verify($password, $passwordbd)) {
+                $_SESSION['user_id'] = $resultat['idSalle'];
+                $_SESSION['username'] = $resultat['prenom'];
+                //redirectional authentication
+                header ("location : accueil.php");
+                echo "Connexion réussie !! ";
+                exit();
+            } else {
+                $error = 'Mot de passe incorrect<br/>';
+            }
         }
     } else {
         $message = 'remplissez tous les champs';
@@ -42,15 +59,7 @@ if (isset($_POST['btnconnexion'])) {
         <div class="text-center mt-2">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="mail" name="email" placeholder="Adresse mail">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="password" name="password" placeholder="Mots passe"> <br>
-            <i style="color:red">
-                <?php
-                if (isset($message)) {
-                    echo $message . "<br />";
-                }
-                ?>
-            </i>
-
-
+            <i style="color:red"><?php echo $error; ?></i>
         </div>
 
         <div class="text-center">

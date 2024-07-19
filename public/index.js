@@ -70,47 +70,52 @@ function ShowIscription() {
         console.error("closePop not found");
     }
 }
-function showInscriptionTwo() {
+
+//Afficher la page d'inscription
+
+function showInscriptionPage() {
     let element = document.getElementById('showConnexion');
-    let element2 = document.getElementById('inscriptionShow');
+    let inscrisSshow = document.getElementById('inscriptionShow');
     let bodySelect = document.querySelector('body');
     console.log('Element séléctioné :', element);
 
     if (element) {
+        //cacher la page de connexion
         // element.classList.add('someClass');
         element.classList.add('hidden');
         element.classList.remove('flex'); 
         element.classList.add("backdrop-blur-md")
+
+        //afficher la page d'inscription
+        inscrisSshow.classList.remove('hidden');
+        inscrisSshow.classList.add('flex');
 
         bodySelect.body.classList.add('backdrop-blur');
     } else {
         console.error("closePop not found");
     }
 
-    if (element2) {
+    if (inscrisSshow) {
         alert("Element 2 already" + element2);
-        element2.classList.add('flex');
-        element2.classList.remove('hidden');
+        inscrisSshow.classList.add('flex');
+        inscrisSshow.classList.remove('hidden');
     } else {
         alert("Element 2 not found " + element)
     }
     
 }
-
+//Fermeture de la page de connexion 
 function closeInscription() {
-    let element = document.getElementById('inscriptionShow');
+    alert("Connection closed")
+    let element = document.getElementById('showConnexion');
     element.classList.remove('flex');
     element.classList.add('hidden');
+    element.classList.remove("backdrop-blur-md");
+
+    bodySelect.body.classList.remove('backdrop-blur');
+
 }
 
-function closeInscription(event) {
-    if (event.target.id === 'inscriptionShow' || event.target.classList.contains('close')) {
-        let element = document.getElementById('inscriptionShow');
-        element.classList.remove('flex');
-        element.classList.add('hidden');
-        document.body.classList.remove('backdrop-blur');
-    }
-}
 
 //afficher bouton filtrer
 function showFiltre_recherche() {
@@ -141,14 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.onclick = ShowIscription;
     } else {
         console.log("Bouton 'btn_inscrire' non trouvé.");
-    }
-
-    let buttonClose = document.getElementById("closePop");
-    console.log('Button:', buttonClose); // Debugging line
-    if (buttonClose) {
-        buttonClose.onclick = closeInscription;
-    } else {
-        console.log("Bouton 'btn_close_pop' non trouvé.");
     }
 
     let closeCalendar = document.getElementById("calendarDiv");
@@ -187,12 +184,6 @@ document.addEventListener("click", function () {
         console.log("Input not found");
     }
 
-    let closeConnexion = document.getElementById("closePop");
-    if (closeConnexion) {
-        closeConnexion.onclick = closeInscription;
-    } else {
-        console.log("container non trouver ! ");
-    }
 });
 
 // changer la photo de profil

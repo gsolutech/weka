@@ -585,6 +585,7 @@ video {
   color: black;
 }
 
-.photoUpload button #profilchangeUp {
-  color : red;
+#closeConnexion {
+  color: #0092bb;
+  font-size: x-large;
 }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 // require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnconnexion'])) {

@@ -1,44 +1,8 @@
-<?php
-session_start();
-// require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-$error = "";
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnconnexion'])) {
-    if (!empty($_POST['email']) and !empty($_POST['password'])) {
-        $email = htmlspecialchars($_POST['email']);
-        $password = sha1($_POST['password']);
 
-        $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =?");
-        $req->execute(array($email));
-        $compt = $req->rowCount();
-
-        $resultats = $req -> fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($resultats as $resultat) {
-            $passwordbd = $resultat['password'];
-        }
-        if ($compt == 0) {
-            $error = "Compte non trouvé ! ";
-        } else {
-            if (password_verify($password, $passwordbd)) {
-                $_SESSION['user_id'] = $resultat['idSalle'];
-                $_SESSION['username'] = $resultat['prenom'];
-                //redirectional authentication
-                header ("location : accueil.php");
-                echo "Connexion réussie !! ";
-                exit();
-            } else {
-                $error = 'Mot de passe incorrect<br/>';
-            }
-        }
-    } else {
-        $message = 'remplissez tous les champs';
-    }
-}
-?>
 <div id="showConnexion" class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
-    <form action="" method="POST" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg ">
+    <form action="formulaireCheck.php" method="POST" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg">
         <h1 class="text-3xl text-center mt-5 mb-5">Connectez vous</h1>
-
+        
         <div class="text-center justify-center items-center flex flex-col">
             <button class=" w-3/4 p-3 h-12 scroll-p-15 flex flex-row rounded-3xl text-center mb-2 text-gray-400 bg-white justify-center items-center" type="submit ">
                 <img class=" pr-5 h-8" src="../src/assets/statics/facebook.png" alt="">
@@ -59,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnconnexion'])) {
         <div class="text-center mt-2">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="mail" name="email" placeholder="Adresse mail">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="password" name="password" placeholder="Mots passe"> <br>
-            <i style="color:red"><?php echo $error; ?></i>
+            <i style="color:red"></i>
         </div>
 
         <div class="text-center">

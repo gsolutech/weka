@@ -23,6 +23,9 @@
 .screen-minus-200 {
     height: calc(100vh - 200px);
 }
+.screen-minus-50 {
+    height: calc(100vh - 50);
+}
 .photoUpload button i {
     color: white;
 }

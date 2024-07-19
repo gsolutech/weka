@@ -29,7 +29,7 @@ if (isset($_POST['check_inscri'])) {
 }
 ?>
 
-<div id="inscriptionShow" class="h-auto bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-1 mt-10">
+<div id="inscriptionShow" class="screen-minus-50 bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-1 mt-10">
     <div class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
         <form method="POST" class="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg w-full">
             <h1 class="text-center text-xl sm:text-2xl mb-4 sm:mb-6 text-gray-600 font-bold font-sans">Enregistrez-Vous</h1>

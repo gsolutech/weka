@@ -195,3 +195,16 @@ document.addEventListener('click', function() {
         console.log("container non trouver ! ");
     }
 })
+
+// changer la photo de profil
+function changePicture() {
+    document.getElementById('profilePicture').addEventListener('click', function(event){
+        alert("Files");
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profileImage').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}

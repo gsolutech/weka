@@ -198,7 +198,7 @@ document.addEventListener('click', function() {
 
 // changer la photo de profil
 function changePicture() {
-    document.getElementById('profilePicture').addEventListener('click', function(event){
+    document.getElementById('showFilesDialog').addEventListener('change', function(event){
         alert("Files");
         const file = event.target.files[0];
         const reader = new FileReader();

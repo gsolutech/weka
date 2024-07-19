@@ -15,7 +15,7 @@
                 <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full object-cover rounded-full">
                 <input type="file" name="photo" id="showFilesDialog" class="hidden" accept="image/*">
                 <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl" id="showDialogFile">
-                    <button  id="profilePicture" onclick="changePicture();">
+                    <button  id="profilePicture">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </button>
                 </label>

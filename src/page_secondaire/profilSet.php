@@ -1,14 +1,14 @@
 <?php
 $error = "";
-global $nom_items;
+global $nom_client;
 global $prix_items;
 global $category_items;
 global $description_items;
 global $image_name;
 
-if (isset($_FILES['photo']) || ($_FILES['photo']['error']) == UPLOAD_ERR_OK) {
-    $image_items = $_FILES['photo']['name'];
-    $image_items_tmp = $_FILES['photo']['tmp_name'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
+    $image_items = $_FILES['profile_picture']['name'];
+    $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 
     if ($image_items != "") {
         $ext = pathinfo($image_items, PATHINFO_EXTENSION);

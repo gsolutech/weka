@@ -12,7 +12,7 @@ if (isset($_POST['btnconnexion'])) {
         $req->execute(array($email));
         $compt = $req->rowCount();
 
-        $resultats = $req -> fetchAll(PDO::FETCH_ASSOC);
+        $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($resultats as $resultat) {
             $passwordbd = $resultat['password'];
@@ -24,11 +24,12 @@ if (isset($_POST['btnconnexion'])) {
                 $_SESSION['user_id'] = $resultat['idSalle'];
                 $_SESSION['username'] = $resultat['prenom'];
                 //redirectional authentication
-                header ("location : accueil.php");
+                header("location: ../../../../public/accueil.php");
                 echo "Connexion réussie !! ";
                 exit();
             } else {
                 $message = 'Mot de passe incorrect<br/>';
+                echo " <script>testConnexion();</script> ";
             }
         }
     } else {
@@ -68,8 +69,7 @@ if (isset($_POST['btnconnexion'])) {
 
         <div class="text-center">
             <!-- <input class=" px-10 py-20 border-0 decoration-white text-base rounded-md my-50" type="submit" value="Se connecter"> -->
-            <button name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " type="submit">
-                se connecter</button>
+            <input type="submit" name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " value="Se connecter">   
 
             <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
             <p>Vous n'avez pas un compte? <a class="text-red-500 cursor-pointer" onclick="showInscriptionPage();">Créer un compte</a> </p>

@@ -53,8 +53,8 @@ if (isset($_POST['check_inscri'])) {
                 <label class="text-gray-800 font-semibold block my-2 sm:my-3 text-sm sm:text-md" for="phone">Numero de telephone</label>
                 <input class="w-full bg-gray-100 px-2 sm:px-4 py-1 sm:py-2 rounded-lg focus:outline-none" type="text" name="phone" id="phone" placeholder="Votre Numero de telephone" />
             </div>
-            <button type="submit" class="w-full mt-4 sm:mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Enregistres</button>
-            <button type="button" name="check_inscri" class="w-full mt-4 sm:mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans">Se Connecter</button>
+            <input type="submit" class="w-full mt-4 sm:mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans" value="Enregistres">
+            <button type="button" name="check_inscri" class="w-full mt-4 sm:mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans" onclick="ShowConnexionPage_inscri_visible();">Se Connecter</button>
         </form>
     </div>
 </div>

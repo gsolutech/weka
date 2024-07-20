@@ -70,7 +70,21 @@ function ShowIscription() {
         console.error("closePop not found");
     }
 }
+function ShowConnexionPage_inscri_visible() {
+    //récupérer les id de la page d'inscription et de la connexion
+    let inscriptionPage = document.getElementById('inscriptionShow');
+    let connexionPage = document.getElementById('showConnexion');
 
+    if (inscriptionPage) {
+    //Fermer la page d'inscription
+        inscriptionPage.classList.remove('flex');
+        inscriptionPage.classList.add('hidden');
+
+    //Afficher la page de connexion
+        connexionPage.classList.remove('hidden');
+        connexionPage.classList.add('flex');
+    }
+}
 //Afficher la page d'inscription
 
 function showInscriptionPage() {
@@ -80,8 +94,7 @@ function showInscriptionPage() {
     console.log('Element séléctioné :', element);
 
     if (element) {
-        //cacher la page de connexion
-        // element.classList.add('someClass');
+        //fermer la page de connexion
         element.classList.add('hidden');
         element.classList.remove('flex'); 
         element.classList.add("backdrop-blur-md")
@@ -111,9 +124,6 @@ function closeInscription() {
     element.classList.remove('flex');
     element.classList.add('hidden');
     element.classList.remove("backdrop-blur-md");
-
-    bodySelect.body.classList.remove('backdrop-blur');
-
 }
 
 
@@ -177,6 +187,9 @@ document.addEventListener("click", function () {
 
 });
 
+function testConnexion() {
+    alert("Connexion réussie !!! ");
+}
 // changer la photo de profil
 
 // document.getElementById("showFilesDialog").addEventListener("change", function (event) {

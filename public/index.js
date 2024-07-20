@@ -187,8 +187,21 @@ document.addEventListener("click", function () {
 
 });
 
-function testConnexion() {
-    alert("Connexion réussie !!! ");
+//afficher la fénêtre de reservation
+function showReservation() {
+    alert("modale ");
+    let reservation = document.getElementById('showReservationDiv');
+    let containerReservation = document.getElementById('container_reservation_show');
+
+    if (reservation) {
+        reservation.classList.remove('hidden');
+        reservation.classList.add('flex-col');
+
+        containerReservation.classList.remove('hidden');
+        containerReservation.classList.add('flex');
+    } else {
+        console.log('reservation introuvable');
+    }
 }
 // changer la photo de profil
 

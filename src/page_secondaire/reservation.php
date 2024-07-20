@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/wamp64/www/weka/config/conBd.php';
+require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
 $message = "";
 $messageType = "";
@@ -13,20 +13,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prix = $_POST['prix'];
     $serviceAutres = $_POST['service'];
 
+    $etatReservation = "En attente";
+    $id_client = "";
     try {
         
         $bdd->beginTransaction();
 
-        $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres]);
-
+        //ajouter le client
         $stmt = $bdd->prepare("INSERT INTO tclient (nom, phone) VALUES (?, ?)");
         $stmt->execute([$nom, $phone]);
+
+        //récupérer l'id du client 
+        $req = $bdd->prepare("SELECT * FROM tclient ORDER BY idClient DESC LIMIT 1");
+        $req->execute();
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+            foreach($resultat as $res) {
+                $id_client = $res['idClient'];
+                echo "Id = " . $id_client;
+            }
+
+        } else {
+            echo "Aucun élément trouvé";
+        }
+        //ajouter sa reservation
+        $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres, etatReservation, idClient, servicesName) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres, $etatReservation, $id_client]);
+
+
 
         $bdd->commit();
 
         $message = "Réservation et client enregistrés avec succès !";
         $messageType = "success";
+
+        header("Location: index.php?name=" . urlencode($name));
+        exit();
 
     } catch (Exception $e) {
     
@@ -34,65 +57,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Erreur : " . $e->getMessage();
         $messageType = "error";
     }
-    /*$stmt->close();
-    $bdd->close();*/
+    // $stmt->close();
+    // $bdd->close();
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche de Réservation</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .form-container {
-            background-color: #D1D5DB; 
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            max-width: 28rem;
-            margin: auto;
-        }
-        .form-title {
-            font-size: 1.5rem;
-            font-weight: 700; 
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .form-label {
-            display: block; 
-            color: #4B5563; 
-        }
-        .form-input {
-            width: 100%; 
-            padding: 0.5rem; 
-            border: 1px solid #9CA3AF; 
-            border-radius: 0.25rem; 
-            margin-top: 0.25rem;
-        }
-        .form-button {
-            background-color: #4299E1; 
-            color: #FFF; 
-            padding: 0.5rem 1rem; 
-            border-radius: 0.25rem; 
-            text-align: center;
-            display: block;
-            margin: 1.5rem auto 0; 
-        }
-        .form-button:hover {
-            background-color: #2B6CB0; 
-        }
-    </style>
-    <div class="form-container">
+    <div class="form-container hidden" id="showReservationDiv">
         <h2 class="form-title">Réservez Maintenant</h2>
         <?php if ($message): ?>
             <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'; ?> p-4 mb-4 rounded">
                 <?php echo htmlspecialchars($message); ?>
             </div>
         <?php endif; ?>
-        <form action="reservation.php" method="POST">
+        <form action="" method="POST">
             <div class="mb-4">
                 <label for="nom" class="form-label">Nom et Postnom</label>
                 <input type="text" id="nom" name="nom" required class="form-input">
@@ -111,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="mb-4">
                 <label for="prix" class="form-label">Votre Prix</label>
-                <input type="text" id="prix" name="prix" required class="form-input">
+                <input type="text" id="prix" name="prix" required readonly class="form-input cursor-not-allowed">
             </div>
             <div class="mb-4">
                 <label class="form-label">Service</label>

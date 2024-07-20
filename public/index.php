@@ -67,8 +67,9 @@
 
     <!-- tout les popup -->
     <section class="w-full h-screen z-50 backdrop-blur fixed inset-4 hidden justify-center items-center"  id="closePop">
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> 
+        <?php 
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php';
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php'; ?>
     </section>
 
     <section class="py-12">
@@ -102,22 +103,13 @@
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
 
         <div id="mainContainer" class="items-center justify-center flex-wrap m-auto w-full">
-            <?php
+            <div id="container_reservation_show" class="fixed w-full h-full backdrop-blur top-0 inset-5 z-30 hidden">
+                <?php  require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' .  DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'reservation.php'; ?>
+            </div>
+            <?php    
                 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
             ?>            
         </div>
-        <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
-            <?php 
-                // require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
-            ?>
-        </div>
-        <!-- <div id="mainContainer" class="w-full flex flex-wrap justify-center items-center">
-            <?php
-                // require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
-            ?>           
-        </div> -->
-        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden"> 
-        </div> -->
     </div>
 </section>
 

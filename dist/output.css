@@ -577,6 +577,10 @@ video {
   height: calc(100vh - 200px);
 }
 
+.screen-minus-50 {
+  height: calc(100vh - 500px);
+}
+
 .photoUpload button i {
   color: white;
 }
@@ -585,6 +589,7 @@ video {
   color: black;
 }
 
-.photoUpload button #profilchangeUp {
-  color : red;
+#closeConnexion {
+  color: #0092bb;
+  font-size: x-large;
 }

@@ -1,25 +1,7 @@
-<?php
-// require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-if (isset($_POST['btnconnexion'])) {
-    if (!empty($_POST['email']) and !empty($_POST['password'])) {
-        $email = htmlspecialchars($_POST['email']);
-        $email = sha1($_POST['password']);
-        $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =? AND password= ?");
-        $req->execute(array($email, $password));
-        $compt = $req->rowCount();
 
-        if ($compt == 1) {
-            $message = "compte trouvé";
-        } else {
-            $message = "mot passe incorect";
-        }
-    } else {
-        $message = 'remplissez tous les champs';
-    }
-}
-?>
-<div id="showConnexion" class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
-    <form action="" method="POST" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg ">
+<div id="showConnexion" class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto relative">
+    <form action="" method="POST" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg relative">
+        <button class="absolute top-1 right-1" onclick="closeInscription();"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
         <h1 class="text-3xl text-center mt-5 mb-5">Connectez vous</h1>
 
         <div class="text-center justify-center items-center flex flex-col">
@@ -42,15 +24,7 @@ if (isset($_POST['btnconnexion'])) {
         <div class="text-center mt-2">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="mail" name="email" placeholder="Adresse mail">
             <input class="w-3/4 m-2 px-3 py-2 border-0 rounded-md bg-white" type="password" name="password" placeholder="Mots passe"> <br>
-            <i style="color:red">
-                <?php
-                if (isset($message)) {
-                    echo $message . "<br />";
-                }
-                ?>
-            </i>
-
-
+            <i style="color:red"><?php echo""; ?></i>
         </div>
 
         <div class="text-center">
@@ -59,10 +33,9 @@ if (isset($_POST['btnconnexion'])) {
                 se connecter</button>
 
             <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
-            <p>Vous n'avez pas un compte? <a class="text-red-500" onclick="showInscriptionTwo();">Crer un compte</a> </p>
-
-
-
+            <p>Vous n'avez pas un compte? <a class="text-red-500 cursor-pointer" onclick="showInscriptionPage();">Créer un compte</a> </p>
         </div>
     </form>
 </div>
+
+<?php require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaireCheck.php' ?>

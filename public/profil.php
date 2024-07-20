@@ -12,18 +12,19 @@
                 <button class="right-10 bottom-5 absolute"><i class="fa-solid fa-pen-to-square" class="text-white"></i></button>
             </div>
             <div class="profilUp bg-red-300 absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white">
-                <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full object-cover rounded-full">
+                <img src="../src/assets/salles/profil/12.jpg" alt="" class="relative w-full h-full object-cover rounded-full" id="profileImage">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <button class="right-4 bottom-2 absolute text-2xl" type="file" name="profile_image">
-                        <i class="fa-solid fa-pen-to-square" id="profilchangeUp" name="inputCheck"></i>
-                    </button>
-<!-- 
-                    <button class="left-0 bottom-0 absolute text-2xl" type="submit" name="submitprofil">
-                        <i class="fa-solid fa-pen-to-square" id="profilchange" name="inputCheck"></i>
-                    </button> -->
+                    <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/*">
+                    <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile">
+                            <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
+                    </label>
                 </form>
             </div>
         </div>
+    </section>
+
+    <section>
+        
     </section>
 </body>
 </html>

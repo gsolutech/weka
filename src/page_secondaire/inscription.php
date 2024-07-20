@@ -19,7 +19,7 @@ if (isset($_POST['check_inscri'])) {
 
     if ($stmt->execute()) {
         echo "Nouvel utilisateur enregistré avec succès";
-        echo "<srcipt>closeInscription();</srcipt>";
+        // echo "<srcipt>closeInscription();</srcipt>";
     } else {
         echo "Erreur : " . $stmt->error;
     }
@@ -29,9 +29,9 @@ if (isset($_POST['check_inscri'])) {
 }
 ?>
 
-<div id="inscriptionShow" class="h-auto bg-indigo-80 justify-center items-center hidden z-50 backdrop-blur fixed inset-1 mt-40">
+<div id="inscriptionShow" class="screen-minus-20 bg-indigo-80 justify-center items-center hidden backdrop-blur fixed w-11/12">
     <div class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto">
-        <form method="POST" class="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg w-full">
+        <form action="" method="POST" class="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg w-full">
             <h1 class="text-center text-xl sm:text-2xl mb-4 sm:mb-6 text-gray-600 font-bold font-sans">Enregistrez-Vous</h1>
             <div>
                 <label class="text-gray-800 font-semibold block my-2 sm:my-3 text-sm sm:text-md" for="username">Nom </label>

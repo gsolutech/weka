@@ -203,19 +203,6 @@ function showReservation() {
         console.log('reservation introuvable');
     }
 }
-// changer la photo de profil
 
-// document.getElementById("showFilesDialog").addEventListener("change", function (event) {
-//     alert("Files");
-//     const file = event.target.files[0];
-//     if (file) {
-//         console.log("fichier trouver");
-//         const reader = new FileReader();
-//         reader.onload = function (e) {
-//         document.getElementById("profileImage").src = e.target.result;
-//     };
-//     reader.readAsDataURL(file);
-//     } else {
-//         console.error("Aucun fichier sélectionné.");
-//     }
-// });
+//récupérer le prix du service et l'affecter à un input type text
+let prix_services;

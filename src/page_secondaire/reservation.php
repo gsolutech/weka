@@ -3,6 +3,13 @@ require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIREC
 
 $message = "";
 $messageType = "";
+$name_service_get ="";
+$prix_get = "";
+
+if (isset($_POST['getData_reservation'])) {
+    $name_service_get = $_POST['name_service'] ? htmlspecialchars($_POST['name_service']) : '';
+    $prix_get = $_POST['price_service'] ? htmlspecialchars($_POST['price_service']) : '';
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     

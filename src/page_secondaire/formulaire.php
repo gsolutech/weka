@@ -1,9 +1,8 @@
 <?php
 // session_start();
 // require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-
+$message = "";
 if (isset($_POST['btnconnexion'])) {
-    $message = "";
     echo $message;
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = htmlspecialchars($_POST['email']);

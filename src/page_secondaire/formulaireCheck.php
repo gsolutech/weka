@@ -2,7 +2,7 @@
 // session_start();
 // require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnconnexion'])) {
+if (isset($_POST['btnconnexion'])) {
     $error = "";
     echo $error;
     if (!empty($_POST['email']) and !empty($_POST['password'])) {

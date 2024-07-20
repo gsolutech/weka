@@ -152,15 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeCalendar) {
         closeCalendar.onclick = closeCalendar;
     }
-
-
-    // let btn_search = document.getElementById('btn_search');
-    // if (btn_search) {
-    //     btn_search.onclick = showFiltre_recherche();
-    //     console.log('btn_search confirmed')
-    // } else {
-    //     console.log('Filtre non trouvé');
-    // }
 })
 document.addEventListener("click", function () {
     let inputSearch = document.getElementById("inputSearchId");

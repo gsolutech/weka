@@ -29,7 +29,7 @@
             </ul>
 
             <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
-                <div class="w-full h-6 bg-yellow-400">
+                <div class="w-full h-6 rounded-lg">
                     <p class="">Fermez</p>
                 </div>
                 <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">

@@ -596,9 +596,13 @@ video {
 
 /*  */
 
-#sub-container {
-  /* display: grid;
-    flex-direction:row; */
+#logoutBtn {
+  font-size: 3rem;
+}
+
+#closeProfil {
+  color: #0092bb;
+  font-size: x-large;
 }
 
 /* style réservation */

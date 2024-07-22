@@ -29,24 +29,26 @@
             </ul>
 
             <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
-                <div class="w-full h-6 rounded-lg">
-                    <p class="">Fermez</p>
+                <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
+                    <button class="absolute top-1 right-1 items-center justify-center flex my-auto mx-auto">
+                        <i class="fa-solid fa-rectangle-xmark" id="closeProfil"></i>
+                    </button>
                 </div>
                 <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
                     <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 my-2">
                         <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-5/6 flex items-center justify-center">
-                        <p class="text-black">Mon profil</p>
+                        <p class="text-black font-bold">Mon profil</p>
                     </div>
                 </button>
 
                 <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                    <div class="w-16 h-16 absolute left-4 rounded-full bg-green-600 my-2">
-                        <!-- <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full"> -->
+                    <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 my-2">
+                        <i class='bx bx-log-out' id="logoutBtn"></i>
                     </div>
                     <div class="w-5/6 flex items-center justify-center">
-                        <p class="text-black">Déconnexion</p>
+                        <p class="text-black font-bold">Déconnexion</p>
                     </div>
                 </button>
             </ul>

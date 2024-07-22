@@ -174,9 +174,9 @@ document.addEventListener("click", function () {
     if (inputSearch) {
         // alert("Input checker");
 
-        let liens = new XMLHttpRequest();
-        liens.open("GET", "../config/PAGES/search.php", true);
-        liens.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // let liens = new XMLHttpRequest();
+        // liens.open("GET", "../config/PAGES/search.php", true);
+        // liens.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // alert("Récu");
 
         let mainContainer = document.getElementById("mainContainer");
@@ -193,8 +193,8 @@ document.addEventListener("click", function () {
 });
 
 //afficher la fénêtre de reservation
-function showReservation(event) {
-    event.preventDefault();
+function showReservation() {
+
     alert("modale " + nameS + "  " + priceS);
     let reservation = document.getElementById('showReservationDiv');
     let containerReservation = document.getElementById('container_reservation_show');
@@ -248,7 +248,7 @@ btn_buy.forEach(button => {
                 console.log("serviceNameHide not found");
             }
 
-            showReservation(event);
+            showReservation();
 
         } else {
             console.log("prixSet not found");

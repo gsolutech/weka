@@ -74,7 +74,7 @@ if (isset($_POST['check_inscri'])) {
     $sql->bindParam(':phone', $phone);
 
 
-    if ($stmt->execute()) {
+    if ($sql->execute()) {
         echo "Nouvel utilisateur enregistré avec succès";
         // echo "<srcipt>closeInscription();</srcipt>";
     } else {

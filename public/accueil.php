@@ -34,8 +34,7 @@
                 </div>
                 <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative">
                     <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 my-2">
-                        <p>dsf</p>
-                        <!-- <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full"> -->
+                        <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-5/6 flex items-center justify-center">
                         <p class="text-black">Mon profil</p>

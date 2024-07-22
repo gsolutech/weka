@@ -31,7 +31,6 @@ if (isset($_POST['getData_reservation'])) {
             </div>
             <div class="mb-4">
                 <label for="datePrevu" class="form-label">Date de votre réservation</label>
-                <input type="text" name="serviceNameHide" class="opacity-0 required readonly cursor-not-allowed">
                 <input type="date" id="datePrevu" name="datePrevu" required class="form-input">
             </div>
             <div class="mb-4">
@@ -41,6 +40,8 @@ if (isset($_POST['getData_reservation'])) {
             <div class="mb-4">
                 <label for="prix" class="form-label">Votre Prix</label>
                 <input type="text" id="prix" name="prix" required readonly class="form-input cursor-not-allowed">
+                <input type="text" id="serviceNameHide" name="serviceNameHide" class="hidden required readonly cursor-not-allowed">
+
             </div>
             <div class="mb-4">
                 <label class="form-label">Service</label>

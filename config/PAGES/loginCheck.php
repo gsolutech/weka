@@ -65,9 +65,14 @@ if (isset($_POST['check_inscri'])) {
 
     $conn = getDatabaseConnection();
 
-    $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
+    $sql = $bdd -> prepare("INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (:nom, :prenom, :email, :hashed_password, :phone)");
+    // $stmt = $conn->prepare($sql);
+    $sql->bindParam(':nom', $nom);
+    $sql->bindParam(':prenom', $prenom);
+    $sql->bindParam(':email', $email);
+    $sql->bindParam(':hashed_password', $hashed_password);
+    $sql->bindParam(':phone', $phone);
+
 
     if ($stmt->execute()) {
         echo "Nouvel utilisateur enregistré avec succès";

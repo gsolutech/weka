@@ -32,17 +32,17 @@
                 <div class="w-full h-6 bg-yellow-400">
                     <p class="">Fermez</p>
                 </div>
-                <button class="border-b-2 border-solid border-gray-500 h-16 shadow-xl">
-                    <div>
-                        <img src="" alt="">
+                <button class="border-b-2 border-solid border-gray-100 h-16 shadow-lg flex flex-row items-center justify-center my-auto">
+                    <div class="w-16 h-16">
+                        <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full">
                     </div>
                     <div>
                         <p class="text-black">Mon profil</p>
                     </div>
                 </button>
 
-                <button class="">
-                    <img src="" alt="logout">
+                <button class="border-b-2 border-solid border-gray-100 h-16 shadow-lg">
+                    <img src="" alt="logout" class>
                     <label class="text-black">Déconnexion</label>
                 </button>
             </ul>

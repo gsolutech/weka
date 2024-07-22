@@ -33,7 +33,7 @@ if (isset($_POST['btnconnexion'])) {
                 //redirectional authentication
                 echo "Connexion réussie !! ";
                 $idurl = rand(1000000, 9999999);
-                $url = "user-" . $idurl;
+                $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl;
                 header("location: ../../../../public/accueil.php?name=" . urlencode($url));
                 exit();
             } else {

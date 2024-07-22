@@ -31,16 +31,16 @@
             <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-20">
                 <button>
                     <div>
-
+                        <img src="" alt="">
                     </div>
                     <div>
-                        <p class="">Mon profil</p>
+                        <p class="text-black">Mon profil</p>
                     </div>
                 </button>
 
                 <button>
                     <img src="" alt="logout">
-                    <label>Déconnexion</label>
+                    <label class="text-black">Déconnexion</label>
                 </button>
             </ul>
         </nav>

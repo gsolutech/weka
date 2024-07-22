@@ -29,17 +29,19 @@
             </ul>
 
             <ul class="w-52 h-52 bg-white rounded-lg absolute right-20 top-20">
-                <div>
+                <button>
                     <div>
 
                     </div>
                     <div>
-                        
+                        <p class="">Mon profil</p>
                     </div>
-                </div>
-                <div>
+                </button>
 
-                </div>
+                <button>
+                    <img src="" alt="logout">
+                    <label>Déconnexion</label>
+                </button>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-full bg-center bg-no-repeat bg-cover">

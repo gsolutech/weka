@@ -25,7 +25,7 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full mt-7"><?php echo $premiereLettre ?></button>
+                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-7"><?php echo $premiereLettre ?></button>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-full bg-center bg-no-repeat bg-cover">

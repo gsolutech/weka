@@ -44,7 +44,7 @@
                 </button>
 
                 <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                    <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 m-auto pt-2 pr-2">
+                    <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 m-auto pt-2 pr-3">
                         <i class='bx bx-log-out' id="logoutBtn"></i>
                     </div>
                     <div class="w-5/6 flex items-center justify-center">

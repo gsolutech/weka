@@ -30,10 +30,15 @@
 
             <ul class="w-52 h-52 bg-white rounded-lg absolute right-20 top-20">
                 <div>
+                    <div>
 
+                    </div>
+                    <div>
+                        
+                    </div>
                 </div>
                 <div>
-                    
+
                 </div>
             </ul>
         </nav>

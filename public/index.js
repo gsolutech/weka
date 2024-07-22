@@ -1,3 +1,8 @@
+// 
+
+const nameS = "";
+const priceS = "";
+
 // calendar show
 document.getElementById('showCalendarRadio').addEventListener('change', function(event) {
     if (this.checked) {
@@ -188,10 +193,12 @@ document.addEventListener("click", function () {
 });
 
 //afficher la fénêtre de reservation
-function showReservation() {
-    alert("modale ");
+function showReservation(event) {
+    event.preventDefault();
+    alert("modale " + nameS + "  " + priceS);
     let reservation = document.getElementById('showReservationDiv');
     let containerReservation = document.getElementById('container_reservation_show');
+
 
     if (reservation) {
         reservation.classList.remove('hidden');
@@ -199,6 +206,7 @@ function showReservation() {
 
         containerReservation.classList.remove('hidden');
         containerReservation.classList.add('flex');
+
     } else {
         console.log('reservation introuvable');
     }
@@ -206,3 +214,54 @@ function showReservation() {
 
 //récupérer le prix du service et l'affecter à un input type text
 let prix_services;
+
+function reservation_check_price() {
+    alert('active : ' + prix_services);
+}
+
+
+const btn_buy = document.querySelectorAll('#button_buy');
+
+btn_buy.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const main_article = button.closest('#mainArticle');
+
+        const nameService = main_article.querySelector('#nameService');
+        const priceService = main_article.querySelector('#priceServiceP');
+
+        const nameS = nameService.textContent;
+        const priceS = priceService.textContent;    
+        
+        alert("Nom : " + nameS  + "        "  +  "Price : " + priceS);
+
+        let prixSet = document.getElementById('prix');
+        let serviceNameHide = document.getElementById('serviceNameHide');
+        if (prixSet) {
+            console.log("prixSet found");
+            prixSet.value = priceS;
+
+            if (serviceNameHide) {
+                console.log("serviceNameHide found");
+                serviceNameHide.value = nameS;
+            } else {
+                console.log("serviceNameHide not found");
+            }
+
+            showReservation(event);
+
+        } else {
+            console.log("prixSet not found");
+        }
+        
+    })
+});
+
+
+let validerReservation = document.getElementById('reservation_check_data');
+
+
+validerReservation.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert("valder Reservation");
+})

@@ -594,6 +594,13 @@ video {
   font-size: x-large;
 }
 
+/*  */
+
+#sub-container {
+  /* display: grid;
+    flex-direction:row; */
+}
+
 /* style réservation */
 
 .form-container {

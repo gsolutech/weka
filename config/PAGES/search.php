@@ -61,6 +61,8 @@ if (isset($_GET['inputSearch'])) {
                 <script type=\"text/javascript\" src=\"../../public/index.js\">showFiltre_recherche();</script>
                 ";
         }
+        header('Location: ../../public/index.php');
+        exit();
     }
 }
 ?>

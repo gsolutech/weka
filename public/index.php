@@ -102,13 +102,15 @@
 
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
 
-        <div id="mainContainer" class="items-center justify-center flex-wrap m-auto w-full">
+        <div id="mainContainer" class="items-center justify-center m-auto flex w-full">
             <div id="container_reservation_show" class="fixed w-full h-full backdrop-blur top-0 inset-5 z-30 hidden">
                 <?php  require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' .  DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'reservation.php'; ?>
             </div>
-            <?php    
-                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
-            ?>            
+            <div class="items-center justify-center flex flex-wrap w-9/12 relative" id="sub-container">
+                <?php    
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+                ?> 
+            </div>           
         </div>
     </div>
 </section>

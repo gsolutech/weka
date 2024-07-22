@@ -1,12 +1,12 @@
 <?php
 // session_start();
-// require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 $message = "";
 if (isset($_POST['btnconnexion'])) {
     echo $message;
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = htmlspecialchars($_POST['email']);
-        $password = sha1($_POST['password']);
+        $password = $_POST['password'];
 
         $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =?");
         $req->execute(array($email));
@@ -20,12 +20,14 @@ if (isset($_POST['btnconnexion'])) {
         if ($compt == 0) {
             $message = "Compte non trouvé ! ";
         } else {
-            if (password_verify($password, $passwordbd)) {
+            if (($password == $passwordbd)) {
                 $_SESSION['user_id'] = $resultat['idSalle'];
                 $_SESSION['username'] = $resultat['prenom'];
                 //redirectional authentication
-                header("location: ../../../../public/accueil.php");
                 echo "Connexion réussie !! ";
+
+                $url = "user-140083638904";
+                header("location: ../../../../public/accueil.php?name=" . urlencode($url));
                 exit();
             } else {
                 $message = 'Mot de passe incorrect<br/>';

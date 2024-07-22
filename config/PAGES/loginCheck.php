@@ -21,13 +21,15 @@ if (isset($_POST['btnconnexion'])) {
 
         foreach ($resultats as $resultat) {
             $passwordbd = $resultat['password'];
+
+            $_SESSION['user_id'] = $resultat['idSalle'];
+            $_SESSION['username'] = $resultat['nom'];
         }
         if ($compt == 0) {
             $message = "Compte non trouvé ! ";
         } else {
             if (($password == $passwordbd)) {
-                $_SESSION['user_id'] = $resultat['idSalle'];
-                $_SESSION['username'] = $resultat['prenom'];
+
                 //redirectional authentication
                 echo "Connexion réussie !! ";
                 $idurl = rand(1000000, 9999999);

@@ -28,11 +28,11 @@
                 <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black"><?php echo $premiereLettre ?></button>
             </ul>
 
-            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-20 flex flex-col">
+            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
                 <div class="w-full h-6 bg-yellow-400">
                     <p class="">Fermez</p>
                 </div>
-                <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative">
+                <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
                     <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 my-2">
                         <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
                     </div>
@@ -41,9 +41,13 @@
                     </div>
                 </button>
 
-                <button class="border-b-2 border-solid border-gray-100 h-24 shadow-lg">
-                    <img src="" alt="logout" class>
-                    <label class="text-black">Déconnexion</label>
+                <button class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
+                    <div class="w-16 h-16 absolute left-4 rounded-full bg-green-600 my-2">
+                        <!-- <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full"> -->
+                    </div>
+                    <div class="w-5/6 flex items-center justify-center">
+                        <p class="text-black">Déconnexion</p>
+                    </div>
                 </button>
             </ul>
         </nav>

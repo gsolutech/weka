@@ -5,6 +5,12 @@
     <?php  
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'loginCheck.php';
+        
+        //récupérer la première lettre 
+        $usernameC = $_SESSION['$username'];
+
+        $lettres = str_split($usernameC);
+        $premiereLettre = $lettres[0];
     ?>
     <section id="header" class="w-full text-white screen-minus-20 mb-24">
 
@@ -19,7 +25,7 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7">S</button>
+                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-lg mt-7"><?php echo $premiereLettre ?></button>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-full bg-center bg-no-repeat bg-cover">

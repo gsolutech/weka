@@ -8,7 +8,7 @@ session_start();
 
 $message = "";
 if (isset($_POST['btnconnexion'])) {
-    echo $message;
+
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = htmlspecialchars($_POST['email']);
         $password = $_POST['password'];
@@ -73,13 +73,13 @@ if (isset($_POST['check_inscri'])) {
     $sql->bindParam(':hashed_password', $hashed_password);
     $sql->bindParam(':phone', $phone);
 
+    $sql->execute();
 
-    if ($sql->execute()) {
-        echo "Nouvel utilisateur enregistré avec succès";
-        // echo "<srcipt>closeInscription();</srcipt>";
-    } else {
-        echo "Erreur : " . $stmt->error;
-    }
+    // if ($sql->execute()) {
+    //     echo "Nouvel utilisateur enregistré avec succès";
+    // } else {
+    //     echo "Erreur : " . $stmt->error;
+    // }
 
     $stmt->close();
     $conn->close();

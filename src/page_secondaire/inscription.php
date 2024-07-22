@@ -1,32 +1,32 @@
 <?php 
 require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-// if (isset($_POST['check_inscri'])) {
+if (isset($_POST['check_inscri'])) {
     
-//     $nom = $_POST['username'];
-//     $prenom = $_POST['firstname'];
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-//     $phone = $_POST['phone'];
+    $nom = $_POST['username'];
+    $prenom = $_POST['firstname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
 
-//     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-//     $conn = getDatabaseConnection();
+    $conn = getDatabaseConnection();
 
-//     $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
-//     $stmt = $conn->prepare($sql);
-//     $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
+    $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
 
-//     if ($stmt->execute()) {
-//         echo "Nouvel utilisateur enregistré avec succès";
-//         // echo "<srcipt>closeInscription();</srcipt>";
-//     } else {
-//         echo "Erreur : " . $stmt->error;
-//     }
+    if ($stmt->execute()) {
+        echo "Nouvel utilisateur enregistré avec succès";
+        // echo "<srcipt>closeInscription();</srcipt>";
+    } else {
+        echo "Erreur : " . $stmt->error;
+    }
 
-//     $stmt->close();
-//     $conn->close();
-// }
+    $stmt->close();
+    $conn->close();
+}
 ?>
 
 <div id="inscriptionShow" class="screen-minus-20 bg-indigo-80 justify-center items-center hidden backdrop-blur fixed w-11/12">

@@ -32,9 +32,10 @@
                 <div class="w-full h-6 bg-yellow-400">
                     <p class="">Fermez</p>
                 </div>
-                <button class="border-b-2 border-solid border-gray-100 h-16 shadow-lg flex flex-row items-center justify-center my-auto py-6 px-4">
-                    <div class="w-16 h-16 absolute left-4 rounded-full">
-                        <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full">
+                <button class="border-b-2 border-solid border-gray-100 w-full h-16 shadow-lg flex flex-row items-center justify-center my-auto py-6 px-4">
+                    <div class="w-16 h-15 absolute left-4 rounded-full bg-red-600">
+                        <p>dsf</p>
+                        <!-- <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full"> -->
                     </div>
                     <div class="w-5/6 flex items-center justify-center pb-6">
                         <p class="text-black">Mon profil</p>

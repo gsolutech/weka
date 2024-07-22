@@ -2,15 +2,15 @@
 // require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php';
 require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
-$message = "";
-$messageType = "";
-$name_service_get ="";
-$prix_get = "";
+// $message = "";
+// $messageType = "";
+// $name_service_get ="";
+// $prix_get = "";
 
-if (isset($_POST['getData_reservation'])) {
-    $name_service_get = $_POST['name_service'] ? htmlspecialchars($_POST['name_service']) : '';
-    $prix_get = $_POST['price_service'] ? htmlspecialchars($_POST['price_service']) : '';
-}
+// if (isset($_POST['getData_reservation'])) {
+//     $name_service_get = $_POST['name_service'] ? htmlspecialchars($_POST['name_service']) : '';
+//     $prix_get = $_POST['price_service'] ? htmlspecialchars($_POST['price_service']) : '';
+// }
 ?>
 
     <div class="form-container hidden" id="showReservationDiv">
@@ -59,67 +59,67 @@ if (isset($_POST['getData_reservation'])) {
 
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_reservation'])) {
+//     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_reservation'])) {
 
-    $nom = $_POST['nom'];
-    $phone = $_POST['phone'];
-    $serviceName = $_POST['serviceNameHide'];
-    $datePrevu = $_POST['datePrevu'];
-    $delai = $_POST['delais'];
-    $prix = $_POST['prix'];
-    // $prix = $prix_get;
-    $serviceAutres = $_POST['service'];
+//     $nom = $_POST['nom'];
+//     $phone = $_POST['phone'];
+//     $serviceName = $_POST['serviceNameHide'];
+//     $datePrevu = $_POST['datePrevu'];
+//     $delai = $_POST['delais'];
+//     $prix = $_POST['prix'];
+//     // $prix = $prix_get;
+//     $serviceAutres = $_POST['service'];
 
-    $etatReservation = "En attente";
-    $id_client = "";
-    try {
+//     $etatReservation = "En attente";
+//     $id_client = "";
+//     try {
         
-        $bdd->beginTransaction();
-        // echo "Connexion ouvert : " . $nom + $phone;
-        //ajouter le client
-        $stmt = $bdd->prepare("INSERT INTO tclient (nom, phone) VALUES (?, ?)");
-        $stmt->execute([$nom, $phone]);
+//         $bdd->beginTransaction();
+//         // echo "Connexion ouvert : " . $nom + $phone;
+//         //ajouter le client
+//         $stmt = $bdd->prepare("INSERT INTO tclient (nom, phone) VALUES (?, ?)");
+//         $stmt->execute([$nom, $phone]);
 
-        //récupérer l'id du client 
-        $req = $bdd->prepare("SELECT * FROM tclient ORDER BY idClient DESC LIMIT 1");
-        $req->execute();
-        $total = $req->rowCount();
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
+//         //récupérer l'id du client 
+//         $req = $bdd->prepare("SELECT * FROM tclient ORDER BY idClient DESC LIMIT 1");
+//         $req->execute();
+//         $total = $req->rowCount();
+//         $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($total) {
-            foreach($resultat as $res) {
-                $id_client = $res['idClient'];
-                echo "Id = " . $id_client;
-            }
+//         if ($total) {
+//             foreach($resultat as $res) {
+//                 $id_client = $res['idClient'];
+//                 echo "Id = " . $id_client;
+//             }
 
-        } else {
-            $message = "Une erreur s'est produite";
-        }
-        //ajouter sa reservation
-        $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres, etatReservation, idClient, servicesName) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres, $etatReservation, $id_client, $serviceName]);
+//         } else {
+//             $message = "Une erreur s'est produite";
+//         }
+//         //ajouter sa reservation
+//         $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres, etatReservation, idClient, servicesName) VALUES (?, ?, ?, ?, ?, ?, ?)");
+//         $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres, $etatReservation, $id_client, $serviceName]);
 
 
 
-        $bdd->commit();
+//         $bdd->commit();
 
-        $message = "Réservation et client enregistrés avec succès !";
-        $messageType = "success";
+//         $message = "Réservation et client enregistrés avec succès !";
+//         $messageType = "success";
 
-        $url = "user-reservation-140083638904";
-        header("Location: ../../../../public/index.php?name=" . urlencode($url));
-        exit();
+//         $url = "user-reservation-140083638904";
+//         header("Location: ../../../../public/index.php?name=" . urlencode($url));
+//         exit();
 
-    } catch (Exception $e) {
+//     } catch (Exception $e) {
     
-        $bdd->rollBack();
-        $message = "Erreur : " . $e->getMessage();
-        $messageType = "error";
-    }
-    // $stmt->close();
-    // $bdd->close();
-} else {
-    echo "Non chargée !!!! ";
-}
+//         $bdd->rollBack();
+//         $message = "Erreur : " . $e->getMessage();
+//         $messageType = "error";
+//     }
+//     // $stmt->close();
+//     // $bdd->close();
+// } else {
+//     echo "Non chargée !!!! ";
+// }
 
 ?>

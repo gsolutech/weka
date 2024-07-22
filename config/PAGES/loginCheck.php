@@ -53,36 +53,83 @@ if (isset($_POST['btnconnexion'])) {
 <?php 
 //page d'inscription service, sign up check
 
-if (isset($_POST['check_inscri'])) {
-    
-    $nom = $_POST['username'];
-    $prenom = $_POST['firstname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+?>
+
+<?php 
+//formulaire de reservation 
+
+$message = "";
+$messageType = "";
+$name_service_get ="";
+$prix_get = "";
+
+if (isset($_POST['getData_reservation'])) {
+    $name_service_get = $_POST['name_service'] ? htmlspecialchars($_POST['name_service']) : '';
+    $prix_get = $_POST['price_service'] ? htmlspecialchars($_POST['price_service']) : '';
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_reservation'])) {
+
+    $nom = $_POST['nom'];
     $phone = $_POST['phone'];
+    $serviceName = $_POST['serviceNameHide'];
+    $datePrevu = $_POST['datePrevu'];
+    $delai = $_POST['delais'];
+    $prix = $_POST['prix'];
+    // $prix = $prix_get;
+    $serviceAutres = $_POST['service'];
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $etatReservation = "En attente";
+    $id_client = "";
+    try {
+        
+        $bdd->beginTransaction();
+        // echo "Connexion ouvert : " . $nom + $phone;
+        //ajouter le client
+        $stmt = $bdd->prepare("INSERT INTO tclient (nom, phone) VALUES (?, ?)");
+        $stmt->execute([$nom, $phone]);
 
-    $conn = getDatabaseConnection();
+        //récupérer l'id du client 
+        $req = $bdd->prepare("SELECT * FROM tclient ORDER BY idClient DESC LIMIT 1");
+        $req->execute();
+        $total = $req->rowCount();
+        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql = $bdd -> prepare("INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (:nom, :prenom, :email, :hashed_password, :phone)");
-    // $stmt = $conn->prepare($sql);
-    $sql->bindParam(':nom', $nom);
-    $sql->bindParam(':prenom', $prenom);
-    $sql->bindParam(':email', $email);
-    $sql->bindParam(':hashed_password', $hashed_password);
-    $sql->bindParam(':phone', $phone);
+        if ($total) {
+            foreach($resultat as $res) {
+                $id_client = $res['idClient'];
+                echo "Id = " . $id_client;
+            }
 
-    $sql->execute();
+        } else {
+            $message = "Une erreur s'est produite";
+        }
+        //ajouter sa reservation
+        $stmt = $bdd->prepare("INSERT INTO treservation (datePrevu, delais, prix, serviceAutres, etatReservation, idClient, servicesName) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$datePrevu, $delai, $prix, $serviceAutres, $etatReservation, $id_client, $serviceName]);
 
-    // if ($sql->execute()) {
-    //     echo "Nouvel utilisateur enregistré avec succès";
-    // } else {
-    //     echo "Erreur : " . $stmt->error;
-    // }
 
-    $stmt->close();
-    $conn->close();
+
+        $bdd->commit();
+
+        $message = "Réservation et client enregistrés avec succès !";
+        $messageType = "success";
+
+        $url = "user-reservation-140083638904";
+        header("Location: ../../../../public/index.php?name=" . urlencode($url));
+        exit();
+
+    } catch (Exception $e) {
+    
+        $bdd->rollBack();
+        $message = "Erreur : " . $e->getMessage();
+        $messageType = "error";
+    }
+    // $stmt->close();
+    // $bdd->close();
+} else {
+    echo "Non chargée !!!! ";
 }
 
 ?>

@@ -23,7 +23,9 @@ if (isset($_POST['btnconnexion'])) {
             $passwordbd = $resultat['password'];
 
             $_SESSION['user_id'] = $resultat['idSalle'];
-            $_SESSION['username'] = $resultat['nom'];
+            $_SESSION['nom'] = $resultat['nom'];
+            $_SESSION['prenom'] = $resultat['prenom'];
+            $_SESSION['username'] = $resultat['nom'] . '_'. $_SESSION['prenom'];
         }
         if ($compt == 0) {
             $message = "Compte non trouvé ! ";

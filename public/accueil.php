@@ -28,7 +28,7 @@
                 <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black"><?php echo $premiereLettre ?></button>
             </ul>
 
-            <ul class="w-52 h-52 bg-white rounded-lg absolute right-20 top-20">
+            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-20">
                 <button>
                     <div>
 

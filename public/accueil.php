@@ -32,7 +32,7 @@
                 <div class="w-full h-6 bg-yellow-400">
                     <p class="">Fermez</p>
                 </div>
-                <button class="">
+                <button class="border-b-2 border-solid border-gray-500 h-16 shadow-xl">
                     <div>
                         <img src="" alt="">
                     </div>

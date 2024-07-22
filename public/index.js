@@ -5,6 +5,7 @@ const priceS = "";
 
 // calendar show
 document.getElementById('showCalendarRadio').addEventListener('change', function(event) {
+    event.preventDefault();
     if (this.checked) {
         let calendarEl = document.getElementById('calendarDiv');
         calendarEl.value = "";

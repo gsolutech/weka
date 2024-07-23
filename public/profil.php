@@ -20,7 +20,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="couverture_picture" id="showFilesDialog_couverture" class="hidden">
                     <label for="showFilesDialog_couverture" class="right-10 bottom-5 absolute text-2xl hover:bg-opacity-75" id="showDialogFile_couverture">
-                        <i class="fa-solid fa-pen-to-square" class="text-white">
+                        <i class="fa-solid fa-pen-to-square">
                     </label>
                 </form>
             </div>
@@ -29,7 +29,7 @@
                 <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/*">
-                    <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile">
+                    <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl" id="showDialogFile">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>
                 </form>

@@ -27,7 +27,6 @@
                     <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>
-                    <!-- <input type="submit" value="send_profil_pic" name="send_profil_pic" class="hidden"> -->
                 </form>
 
             </div>

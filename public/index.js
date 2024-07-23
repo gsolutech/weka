@@ -279,3 +279,11 @@ function showProfilSettings() {
 
     })
 }
+
+/* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
+formulaire (photo de profile) */
+
+document.getElementById('showFilesDialog').addEventListener('change', function() {
+    // Submit the form when a file is selected
+    this.closest('form').submit();
+});

@@ -133,9 +133,9 @@ if ($total_couverture == 0) {
 
 
 
-if (isset($_FILES['profile_picture'])) {
-    $image_items = $_FILES['profile_picture']['name'];
-    $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
+if (isset($_FILES['couverture_picture'])) {
+    $image_items = $_FILES['couverture_picture']['name'];
+    $image_items_tmp = $_FILES['couverture_picture']['tmp_name'];
 
     if ($image_items != "") {
         $ext = pathinfo($image_items, PATHINFO_EXTENSION);

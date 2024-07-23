@@ -24,7 +24,11 @@ $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 if ($total_profil == 0) {
     echo "Aucun élement trouvé";
 } else {
-    
+    foreach($resultat_profil as $res_profil) {
+        $photo_profil_name = $res_profil['photo'];
+
+        echo "Photo trouvée : " . $photo_profil_name;
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {

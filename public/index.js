@@ -256,6 +256,21 @@ btn_buy.forEach(button => {
 
 //afficher la page de profil 
 
+// document.addEventListener("DOMContentLoaded", function() {
+//     let img = document.getElementById('profileImage');
+//     // let status = document.getElementById('status');
+
+//     // Vérifier si l'image est chargée avec succès
+//     img.onload = function() {
+//         alert("IMage trouvé");
+//     };
+
+//     // Vérifier si l'image a échoué à se charger
+//     img.onerror = function() {
+//         alert('Image non trouvé');
+//     };
+// });
+
 function showProfilSettings() {
-    
+
 }

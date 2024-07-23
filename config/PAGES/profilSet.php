@@ -7,7 +7,7 @@ global $prix_items;
 global $category_items;
 global $description_items;
 global $image_name;
-global $photo_profil_name;
+$photo_profil_name;
 global $photo_couverture_name;
 
 
@@ -28,6 +28,8 @@ if ($total_profil == 0) {
         $photo_profil_name = $res_profil['photo'];
 
         echo "Photo de profi trouvée : " . $photo_profil_name;
+
+        echo "<srcipt src=\"\">showProfilSettings();</srcipt>";
     }
 }
 

@@ -145,7 +145,7 @@ if (isset($_FILES['couverture_picture'])) {
             $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
         } else {
             $image_name = $nom_services . '-' . rand() . '.' . $ext;
-            move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
+            move_uploaded_file($image_items_tmp, '../src/assets/salles/couverture/' . $image_name);
 
 
             //insertion dans la base de données 

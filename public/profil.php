@@ -15,7 +15,7 @@
     <section>
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col">
             <div class="w-full h-44 bge-cyan-custom relative overflow-hidden" id="couverture_image_container">
-                <img src="../src/assets/salles/profil/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          
+                <img src="../src/assets/salles/couverture/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          
 
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="couverture_picture" id="showFilesDialog_couverture" class="hidden">

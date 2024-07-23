@@ -13,12 +13,12 @@
         $premiereLettre = $lettres[0];
     ?>
     <section>
-        <div class="photoUpload w-full h-96 relative flex flex-col">
+        <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col">
             <div class="w-full h-44 bge-cyan-custom relative" id="couverture_image_container">
                 <img src="../src/assets/salles/profil/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover hidden" id="couvertureImage">          
                 <button class="right-10 bottom-5 absolute"><i class="fa-solid fa-pen-to-square" class="text-white"></i></button>
             </div>
-            <div class="profilUp absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white bge-cyan-custom items-center justify-center flex" id="profil_container">
+            <div id="profil_container" class="profilUp absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white bge-cyan-custom items-center justify-center flex">
                 <p class="text-white text-8xl font-bold" id="profil_image_default"><?php echo $premiereLettre ?></p>
                 <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
                 <form action="" method="post" enctype="multipart/form-data">
@@ -36,5 +36,7 @@
     <section>
 
     </section>
+
+    <script src="profil.js" defer></script>
 </body>
 </html>

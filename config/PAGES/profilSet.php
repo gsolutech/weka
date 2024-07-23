@@ -49,7 +49,7 @@ if ($total_couv == 0) {
 }
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
+if (isset($_FILES['profile_picture'])) {
     $image_items = $_FILES['profile_picture']['name'];
     $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 

@@ -22,12 +22,12 @@ $total_profil = $req_service->rowCount();
 $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 
 if ($total_profil == 0) {
-    echo "Aucun élement trouvé";
+    echo "Aucun élement trouvé (profil)";
 } else {
     foreach($resultat_profil as $res_profil) {
         $photo_profil_name = $res_profil['photo'];
 
-        echo "Photo trouvée : " . $photo_profil_name;
+        echo "Photo de profi trouvée : " . $photo_profil_name;
     }
 }
 
@@ -39,12 +39,12 @@ $total_couv = $req_couv->rowCount();
 $resultat_couv = $req_couv->fetchAll(PDO::FETCH_ASSOC);
 
 if ($total_couv == 0) {
-    echo "Aucun élement trouvé";
+    echo "Aucun élement trouvé (couverture)";
 } else {
     foreach($resultat_couv as $res_couv) {
-        $photo_profil_name = $res_couv['photo'];
+        $photo_couverture_name = $res_couv['photo'];
 
-        echo "Photo trouvée : " . $photo_profil_name;
+        echo "Photo de couverture trouvée : " . $photo_profil_name;
     }
 }
 

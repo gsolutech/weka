@@ -60,10 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
         if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
             $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
         } else {
-            $image_name = $nom_client . '-' . rand() . '.' . $ext;
-            move_uploaded_file($image_items_tmp, '../../src/assets/salles/profil/' . $image_name);
+            $image_name = $nom_services . '-' . rand() . '.' . $ext;
+            move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
 
-            $dateto_to_day = date("Y-M-D H:i:s");
+            // $dateto_to_day = date("Y-M-D H:i:s");
 
 
             //insertion dans la base de données 
@@ -72,7 +72,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
             $sql->bindParam(':date', $dateto_to_day);
             $sql->bindParam(':nomCollection', $category_items);
 
-            $sql->execute();
+            if ($sql->execute()) {
+                echo 'Photo uploader avec succès';
+            } else {
+                echo 'Le changement de la photo de profil a échoué';
+            }
         }
     } else {
         $error = "Une photo est requis !! ";

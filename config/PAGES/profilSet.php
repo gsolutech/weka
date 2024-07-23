@@ -94,7 +94,7 @@ if (isset($_FILES['profile_picture'])) {
 //  ============================================ photo de couverture uploader================================================================ 
 
 
-if (isset($_FILES['couverture_picture'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['couverture_picture'])) {
     $image_items = $_FILES['couverture_picture']['name'];
     $image_items_tmp = $_FILES['couverture_picture']['tmp_name'];
 

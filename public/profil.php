@@ -37,6 +37,5 @@
 
     </section>
 
-    <script src="profil.js" defer></script>
 </body>
 </html>

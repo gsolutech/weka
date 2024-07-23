@@ -256,37 +256,26 @@ btn_buy.forEach(button => {
 
 //afficher la page de profil 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     let img = document.getElementById('profileImage');
-//     // let status = document.getElementById('status');
+function showProfilSettings() {
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-//     // Vérifier si l'image est chargée avec succès
-//     img.onload = function() {
-//         alert("IMage trouvé");
-//     };
+        let profileImage = document.getElementById('profileImage');
+        let couvertureImage = document.getElementById('couvertureImage');
+        let profil_par_default = document.getElementById('profil_image_default');
+        let main_container = document.getElementById('main_container');
 
-//     // Vérifier si l'image a échoué à se charger
-//     img.onerror = function() {
-//         alert('Image non trouvé');
-//     };
-// });
+        let profil_container = document.getElementById('profil_container');
+        let couverture_container = document.getElementById('couverture_image_container');
 
-// function showProfilSettings() {
-//     alert('Photo test');
+        if (profileImage) {
+            profileImage.classList.remove('hidden');
+            profil_par_default.classList.add('hidden');
 
-//     let profileImage = document.getElementById('profileImage');
-//     let couvertureImage = document.getElementById('couvertureImage');
-//     let profil_par_default = document.getElementById('profil_image_default');
+            profil_container.classList.remove('bge-cyan-custom');
+            console.log('main_container true');
+        } else {
+            console.log('profileImage not found');
+        }
 
-//     let profil_container = document.getElementById('profil_container');
-//     let couverture_container = document.getElementById('couverture_image_container');
-
-//     if (profil_container) {
-//         profileImage.classList.remove('hidden');
-//         profil_par_default.classList.add('hidden');
-
-//         profil_container.classList.remove('bge-cyan-custom');
-//     } else {
-//         console.log('profileImage not found');
-//     }
-// }
+    })
+}

@@ -29,7 +29,7 @@ if ($total_profil == 0) {
 
         echo "Photo de profi trouvée : " . $photo_profil_name . "</br>";
 
-        echo '<script src="profil.js"></script>';
+        echo '<script src="index.js"></script>';
         echo '<script>showProfilSettings();</script>';
     }
 }

@@ -52,7 +52,7 @@ require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIREC
                     <label for="service_externe" class="text-gray-700">Service Traiteur Externe</label>
                 </div>
             </div>
-            <button type="submit" name="send_reservation" class="form-button" id="reservation_check_data">Envoyer</button>
+            <input type="submit" name="send_reservation" class="form-button" id="reservation_check_data" value="Envoyer">
         </form>
     </div>
 

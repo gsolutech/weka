@@ -23,10 +23,11 @@
                 <p class="text-white text-8xl font-bold" id="profil_image_default"><?php echo $premiereLettre ?></p>
                 <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/*">
+                    <input type="file" name="profile_picture" id="showFilesDialog" class="" accept="image/*">
                     <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>
+                    <input type="submit" value="">
                 </form>
 
             </div>

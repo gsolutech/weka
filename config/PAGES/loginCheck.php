@@ -69,7 +69,7 @@ if (isset($_POST['getData_reservation'])) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_reservation'])) {
+if (isset($_POST['send_reservation'])) {
 
     $nom = $_POST['nom'];
     $phone = $_POST['phone'];

@@ -224,8 +224,8 @@ function reservation_check_price() {
 const btn_buy = document.querySelectorAll('#button_buy');
 
 btn_buy.forEach(button => {
-    button.addEventListener('click', () => {
-        // event.preventDefault();
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
         const main_article = button.closest('#mainArticle');
 
         const nameService = main_article.querySelector('#nameService');

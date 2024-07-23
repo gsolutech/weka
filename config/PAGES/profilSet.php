@@ -67,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
 
 
             //insertion dans la base de données 
-            $sql = $bdd->prepare("INSERT INTO tproduit (nom, prix, description, image, date, nomCollection) VALUES (:nom, :prix, :description, :image, :date, :nomCollection)");
-            $sql->bindParam(':image', $image_name);
-            $sql->bindParam(':date', $dateto_to_day);
-            $sql->bindParam(':nomCollection', $category_items);
+            $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
+            $sql->bindParam(':nomSalle', $nom_services);
+            $sql->bindParam(':photo', $image_name);
+            $sql->bindParam(':typePhoto', $typePhotoProfil);
 
             if ($sql->execute()) {
                 echo 'Photo uploader avec succès';

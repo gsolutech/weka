@@ -20,7 +20,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="couverture_picture" id="showFilesDialog_couverture" class="hidden">
                     <label for="showFilesDialog_couverture" class="right-10 bottom-5 absolute text-2xl hover:bg-opacity-75" id="showDialogFile_couverture">
-                        <i class="fa-solid fa-pen-to-square">
+                        <i class="fa-solid fa-pen-to-square"></i>
                     </label>
                 </form>
             </div>

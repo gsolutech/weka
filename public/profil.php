@@ -14,8 +14,8 @@
     ?>
     <section>
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col">
-            <div class="w-full h-44 bge-cyan-custom relative" id="couverture_image_container">
-                <img src="../src/assets/salles/profil/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover hidden" id="couvertureImage">          
+            <div class="w-full h-44 bge-cyan-custom relative overflow-hidden" id="couverture_image_container">
+                <img src="../src/assets/salles/profil/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          
                 <button class="right-10 bottom-5 absolute"><i class="fa-solid fa-pen-to-square" class="text-white"></i></button>
             </div>
             <div id="profil_container" class="profilUp absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white bge-cyan-custom items-center justify-center flex">

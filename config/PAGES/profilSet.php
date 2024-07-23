@@ -31,6 +31,24 @@ if ($total_profil == 0) {
     }
 }
 
+//rechercher la photo de coverture correcpondante au nom du service
+$req_couv = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+$req_couv->execute([$nom_services,$typePhotoCouverture]); 
+
+$total_couv = $req_couv->rowCount();
+$resultat_couv = $req_couv->fetchAll(PDO::FETCH_ASSOC);
+
+if ($total_couv == 0) {
+    echo "Aucun élement trouvé";
+} else {
+    foreach($resultat_couv as $res_couv) {
+        $photo_profil_name = $res_couv['photo'];
+
+        echo "Photo trouvée : " . $photo_profil_name;
+    }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
     $image_items = $_FILES['profile_picture']['name'];
     $image_items_tmp = $_FILES['profile_picture']['tmp_name'];

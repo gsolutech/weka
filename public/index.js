@@ -208,7 +208,7 @@ function showReservation() {
         containerReservation.classList.add('flex');
 
     } else {
-        console.log('reservation introuvable');
+        // console.log('reservation introuvable');
     }
 }
 
@@ -231,14 +231,14 @@ btn_buy.forEach(button => {
         let prixSet = document.getElementById('prix');
         let serviceNameHide = document.getElementById('serviceNameHide');
         if (prixSet) {
-            console.log("prixSet found");
+            // console.log("prixSet found");
             prixSet.value = priceS;
 
             if (serviceNameHide) {
-                console.log("serviceNameHide found");
+                // console.log("serviceNameHide found");
                 serviceNameHide.value = nameS;
             } else {
-                console.log("serviceNameHide not found");
+                // console.log("serviceNameHide not found");
             }
 
             showReservation();

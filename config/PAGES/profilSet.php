@@ -63,8 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
             $image_name = $nom_services . '-' . rand() . '.' . $ext;
             move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
 
-            // $dateto_to_day = date("Y-M-D H:i:s");
-
 
             //insertion dans la base de données 
             $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");

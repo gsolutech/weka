@@ -1,43 +1,3 @@
-<?php
-// session_start();
-// require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-
-if (isset($_POST['btnconnexion'])) {
-    $message = "";
-    echo $message;
-    if (!empty($_POST['email']) and !empty($_POST['password'])) {
-        $email = htmlspecialchars($_POST['email']);
-        $password = sha1($_POST['password']);
-
-        $req = $bdd->prepare("SELECT * FROM tsalle WHERE email =?");
-        $req->execute(array($email));
-        $compt = $req->rowCount();
-
-        $resultats = $req -> fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($resultats as $resultat) {
-            $passwordbd = $resultat['password'];
-        }
-        if ($compt == 0) {
-            $message = "Compte non trouvé ! ";
-        } else {
-            if (password_verify($password, $passwordbd)) {
-                $_SESSION['user_id'] = $resultat['idSalle'];
-                $_SESSION['username'] = $resultat['prenom'];
-                //redirectional authentication
-                header ("location : accueil.php");
-                echo "Connexion réussie !! ";
-                exit();
-            } else {
-                $message = 'Mot de passe incorrect<br/>';
-            }
-        }
-    } else {
-        $message = 'remplissez tous les champs';
-    }
-}
-?>
-
 
 <div id="showConnexion" class="w-11/12 sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto relative">
     <form action="" method="POST" class="bg-gray-300 w-full h-full p-2 sm:p-2 md:p-4 rounded-lg relative">
@@ -69,8 +29,7 @@ if (isset($_POST['btnconnexion'])) {
 
         <div class="text-center">
             <!-- <input class=" px-10 py-20 border-0 decoration-white text-base rounded-md my-50" type="submit" value="Se connecter"> -->
-            <button name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " type="submit">
-                se connecter</button>
+            <input type="submit" name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " value="Se connecter">   
 
             <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
             <p>Vous n'avez pas un compte? <a class="text-red-500 cursor-pointer" onclick="showInscriptionPage();">Créer un compte</a> </p>

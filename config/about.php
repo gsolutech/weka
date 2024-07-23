@@ -58,11 +58,10 @@ if ($total != 0) {
                                 <span class=\"text-gray-500 text-xs absolute pl-8\"> $adresse_items</span>
                             </ul>
                             <ul class=\"w-5/12 justify-center items-center flex\">
-                                <form action=\"\" method=\"POST\">
-                                    <input type=\"hidden\" name=\"name_service\" value=\"<?php echo htmlspecialchars($nom_items); ?>\">
-                                    <input type=\"hidden\" name=\"price_service\" value=\"<?php echo htmlspecialchars($prix_items)\">
+
+
                                     <button type=\"submit\" name=\"getData_reservation\" class=\"bge-cyan-custom text-white px-4 py-2 mb-4hover:bg-cyan-500 w-full h-12 text-xs\" onclick=\"showReservation();\" id=\"button_buy\">Réservez Maintenant</button>
-                                </form>
+
                             </ul>
                         </div>
                             

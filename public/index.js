@@ -196,7 +196,6 @@ document.addEventListener("click", function () {
 //afficher la fénêtre de reservation
 function showReservation() {
 
-    alert("modale " + nameS + "  " + priceS);
     let reservation = document.getElementById('showReservationDiv');
     let containerReservation = document.getElementById('container_reservation_show');
 
@@ -220,7 +219,7 @@ const btn_buy = document.querySelectorAll('#button_buy');
 
 btn_buy.forEach(button => {
     button.addEventListener('click', () => {
-        // event.preventDefault();
+
         const main_article = button.closest('#mainArticle');
 
         const nameService = main_article.querySelector('#nameService');
@@ -228,8 +227,6 @@ btn_buy.forEach(button => {
 
         const nameS = nameService.textContent;
         const priceS = priceService.textContent;    
-        
-        alert("Nom : " + nameS  + "        "  +  "Price : " + priceS);
 
         let prixSet = document.getElementById('prix');
         let serviceNameHide = document.getElementById('serviceNameHide');
@@ -248,16 +245,6 @@ btn_buy.forEach(button => {
 
         } else {
             console.log("prixSet not found");
-        }
-        
+        }       
     })
 });
-
-
-let validerReservation = document.getElementById('reservation_check_data');
-
-
-validerReservation.addEventListener('click', (event) => {
-    event.preventDefault();
-    alert("valder Reservation");
-})

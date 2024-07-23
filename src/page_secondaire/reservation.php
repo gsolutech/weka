@@ -1,5 +1,5 @@
 <?php
-// require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php';
+require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php';
 require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
 
 // $message = "";
@@ -13,14 +13,17 @@ require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIREC
 // }
 ?>
 
-    <div class="form-container hidden" id="showReservationDiv">
+    <div class="form-container" id="showReservationDiv">
         <h2 class="form-title">Réservez Maintenant</h2>
         <?php if ($message): ?>
             <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'; ?> p-4 mb-4 rounded">
                 <?php echo htmlspecialchars($message); ?>
             </div>
         <?php endif; ?>
-        <form action="" method="POST">
+
+        <!-- ../config/PAGES/reservationCheck.php -->
+
+        <form method="POST" action="">
             <div class="mb-4">
                 <label for="nom" class="form-label">Nom et Postnom</label>
                 <input type="text" id="nom" name="nom" required class="form-input">
@@ -107,8 +110,8 @@ require_once dirname(dirname(__DIR__))  . DIRECTORY_SEPARATOR . 'config' . DIREC
 //         $messageType = "success";
 
 //         $url = "user-reservation-140083638904";
-//         header("Location: ../../../../public/index.php?name=" . urlencode($url));
-//         exit();
+//         // header("Location: ../../../../public/index.php?name=" . urlencode($url));
+//         // exit();
 
 //     } catch (Exception $e) {
     

@@ -84,10 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['profile_picture'])) {
             }
         }
     } else {
-        $error = "Une photo est requis !! ";
+        echo "Une photo est requis !! ";
     }
 } else {
-    $error = "téléchargement non effectué !";
+    echo "téléchargement non effectué !";
 }
 
 ?>

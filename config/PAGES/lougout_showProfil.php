@@ -1,4 +1,5 @@
 <?php
+setcookie('nom', $_SESSION['nom']);
 $error = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
     && isset($_POST['showProfilSet'])) {

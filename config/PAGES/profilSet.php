@@ -1,10 +1,29 @@
 <?php
+$nom_services = $_COOKIE['nom'];
+
 $error = "";
 global $nom_client;
 global $prix_items;
 global $category_items;
 global $description_items;
 global $image_name;
+global $photo_profil_name;
+global $photo_couverture_name;
+
+
+$typePhotoProfil = "profil";
+$typePhotoCouverture = "couverture";
+
+//rechercher la photo de profil correcpondante au nom du service
+$req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+$req_service->execute([$nom_services,$typePhotoProfil]); 
+
+$total_profil = $req_service->rowCount();
+$resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
+
+if ($total_profil == 0) {
+
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
     $image_items = $_FILES['profile_picture']['name'];

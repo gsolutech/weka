@@ -19,5 +19,19 @@ function showProfilSettings() {
         console.log('main_container true');
     } else {
         console.log('profileImage not found');
+        test();
+    }
+}
+
+function test() {
+    alert("test réussi ! ");
+
+    const profileImage = document.getElementById('profileImage');
+    const couvertureImage = document.getElementById('couvertureImage');
+
+    if (profileImage) {
+        console.log('test2 check');
+    } else {
+        console.log('test2 no check');
     }
 }

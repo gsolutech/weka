@@ -272,5 +272,5 @@ btn_buy.forEach(button => {
 // });
 
 function showProfilSettings() {
-
+    alert('Photo test');
 }

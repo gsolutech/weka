@@ -27,7 +27,7 @@ if ($total_profil == 0) {
     foreach($resultat_profil as $res_profil) {
         $photo_profil_name = $res_profil['photo'];
 
-        echo "Photo de profi trouvée : " . $photo_profil_name;
+        echo "Photo de profi trouvée : " . $photo_profil_name . "</br>";
 
         echo "<srcipt src=\"\">showProfilSettings();</srcipt>";
     }

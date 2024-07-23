@@ -90,8 +90,8 @@ if (isset($_FILES['profile_picture'])) {
 
 
 
-<!-- ============================================ photo de couverture uploader================================================================ -->
 <?php
+//  ============================================ photo de couverture uploader================================================================ 
 
 
 //rechercher la photo de couverture correcpondante au nom du service

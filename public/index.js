@@ -1,4 +1,4 @@
-// 
+// index.php script js
 
 const nameS = "";
 const priceS = "";
@@ -248,3 +248,14 @@ btn_buy.forEach(button => {
         }       
     })
 });
+
+
+//====================================================================
+
+//accueil.php scsript js
+
+//afficher la page de profil 
+
+function showProfilSettings() {
+    
+}

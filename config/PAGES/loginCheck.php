@@ -30,7 +30,7 @@ if (isset($_POST['btnconnexion'])) {
         if ($compt == 0) {
             $message = "Compte non trouvé ! ";
         } else {
-            if (($password == $passwordbd)) {
+            if (password_verify($password, $passwordbd)) {
 
                 //redirectional authentication
                 echo "Connexion réussie !! ";
@@ -53,6 +53,45 @@ if (isset($_POST['btnconnexion'])) {
 <?php 
 //page d'inscription service, sign up check
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+
+if (isset($_POST['check_inscri'])) {
+    
+    $nom = $_POST['username'];
+    $prenom = $_POST['firstname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $conn = getDatabaseConnection();
+
+    $sql = "INSERT INTO tsalle (nom, prenom, email, password, phone) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
+
+    if ($stmt->execute()) {
+        echo "Nouvel utilisateur enregistré avec succès";
+
+    } else {
+        echo "Erreur : " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "Erreur lors de l'inscription";
+}
+}
 ?>
 
 
@@ -67,12 +106,8 @@ $name_service_get ="";
 $prix_get = "";
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
-    if (isset($_POST['send_reservation'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST'
+    && isset($_POST['send_reservation'])) {
         
         $nom = $_POST['nom'];
         $phone = $_POST['phone'];
@@ -132,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         // $stmt->close();
         // $bdd->close();
-    } else {
-        echo "Non chargée !!!! ";
-    }
+    // } else {
+    //     echo "Non chargée !!!! ";
+    // }
 }

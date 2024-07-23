@@ -18,7 +18,7 @@
                 <img src="../src/assets/salles/couverture/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          
 
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="couverture_picture" id="showFilesDialog_couverture" class="hidden">
+                    <input type="file" name="couverture_picture" id="showFilesDialog_couverture" class="hidden" accept="image/.jpeg, .png, .jpg, .gif">
                     <label for="showFilesDialog_couverture" class="right-10 bottom-5 absolute text-2xl hover:bg-opacity-75" id="showDialogFile_couverture">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </label>
@@ -28,7 +28,7 @@
                 <p class="text-white text-8xl font-bold" id="profil_image_default"><?php echo $premiereLettre ?></p>
                 <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/*">
+                    <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/.jpeg, .png, .jpg, .gif">
                     <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl" id="showDialogFile">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>

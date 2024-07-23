@@ -47,7 +47,7 @@ if ($total_couv == 0) {
     foreach($resultat_couv as $res_couv) {
         $photo_couverture_name = $res_couv['photo'];
 
-        echo "Photo de couverture trouvée : " . $photo_profil_name;
+        echo "Photo de couverture trouvée : " . $photo_couverture_name;
     }
 }
 
@@ -92,45 +92,6 @@ if (isset($_FILES['profile_picture'])) {
 
 <?php
 //  ============================================ photo de couverture uploader================================================================ 
-
-
-//rechercher la photo de couverture correcpondante au nom du service
-$req_img_couv = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
-$req_img_couv->execute([$nom_services,$typePhotoCouverture]); 
-
-$total_img_couv = $req_img_couv->rowCount();
-$resultat_img_couv = $req_img_couv->fetchAll(PDO::FETCH_ASSOC);
-
-if ($total_img_couv == 0) {
-    echo "Aucun élement trouvé (profil)";
-} else {
-    foreach($resultat_img_couv as $res_cov_img) {
-        $photo_profil_name = $res_cov_img['photo'];
-
-        echo "Photo de profi trouvée : " . $photo_profil_name . "</br>";
-
-        echo '<script src="index.js"></script>';
-        echo '<script>showProfilSettings();</script>';
-    }
-}
-
-//rechercher la photo de coverture correcpondante au nom du service
-$req_couverture = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
-$req_couverture->execute([$nom_services,$typePhotoCouverture]); 
-
-$total_couverture = $req_couverture->rowCount();
-$resultat_couverture = $req_couverture->fetchAll(PDO::FETCH_ASSOC);
-
-if ($total_couverture == 0) {
-    echo "Aucun élement trouvé (couverture)";
-} else {
-    foreach($resultat_couverture as $res_couverture) {
-        $photo_couverture_name = $res_couverture['photo'];
-
-        echo "Photo de couverture trouvée : " . $photo_couverture_name;
-    }
-}
-
 
 
 if (isset($_FILES['couverture_picture'])) {

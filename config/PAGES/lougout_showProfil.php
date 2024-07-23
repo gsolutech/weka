@@ -3,6 +3,11 @@ $error = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
     && isset($_POST['showProfilSet'])) {
 
+        $idurl = rand(1000000, 9999999);
+        $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl . 'paramètrer+le+profil';
+        header("location: ../public/profil.php?name=" . urlencode($url));
+        exit();
+
 } else {
     $error = "Erreur Serveur, veillez réessayer plus tard";
 }  

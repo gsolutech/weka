@@ -22,7 +22,9 @@ $total_profil = $req_service->rowCount();
 $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 
 if ($total_profil == 0) {
-
+    echo "Aucun élement trouvé";
+} else {
+    
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {

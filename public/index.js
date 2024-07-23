@@ -273,4 +273,20 @@ btn_buy.forEach(button => {
 
 function showProfilSettings() {
     alert('Photo test');
+
+    let profileImage = document.getElementById('profileImage');
+    let couvertureImage = document.getElementById('couvertureImage');
+    let profil_par_default = document.getElementById('profil_image_default');
+
+    let profil_container = document.getElementById('profil_container');
+    let couverture_container = document.getElementById('couverture_image_container');
+
+    if (profileImage) {
+        profileImage.classList.remove('hidden');
+        profil_par_default.classList.add('hidden');
+
+        profil_container.classList.remove('bge-cyan-custom');
+    } else {
+        console.log('profileImage not found');
+    }
 }

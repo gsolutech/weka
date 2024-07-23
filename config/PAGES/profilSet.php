@@ -51,7 +51,7 @@ if ($total_couv == 0) {
     foreach($resultat_couv as $res_couv) {
         $photo_couverture_name = $res_couv['photo'];
 
-        echo "Photo de couverture trouvée : " . $photo_profil_name;
+        echo "Photo de couverture trouvée : " . $photo_profil_name . "</br>";
     }
 }
 
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['profile_picture'])) {
         echo "Une photo est requis !! ";
     }
 } else {
-    echo "téléchargement non effectué !";
+    echo "téléchargement non effectué ! </br>";
 }
 
 ?>

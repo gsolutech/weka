@@ -60,11 +60,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['profile_picture'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") { 
+
+if (isset($_FILES['profile_picture'])) {
     echo "<pre>";
     print_r($_POST);
     echo "</pre>";
-    
+
     $image_items = $_FILES['profile_picture']['name'];
     $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 
@@ -97,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['profile_picture'])) {
 } else {
     echo "téléchargement non effectué ! </br>";
 }
-
+}
 ?>
 
 

@@ -283,7 +283,36 @@ function showProfilSettings() {
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
 formulaire (photo de profile) */
 
-document.getElementById('showFilesDialog').addEventListener('change', function() {
-    // Submit the form when a file is selected
-    this.closest('form').submit();
-});
+document.getElementById('showFilesDialog').addEventListener('change', function () {
+    let sendPicAuto = document.getElementById('showFilesDialog');
+    if (sendPicAuto.files.length > 0) {
+        alert("Fichier chargerr");
+        document.getElementById('uploadForm').submit();
+    } else {
+        alert("No file selected.");
+    }
+})
+
+
+
+
+function sendPiCheck() { 
+    alert("fsdfsfsdfsd");
+    let sendPicAuto= document.getElementById('showFilesDialog')
+
+    if (sendPicAuto.files.length > 0) {
+        alert("Fichier chargerr");
+    } else {
+        alert("No file selected.");
+    }
+
+    // if (sendPicAuto != null) {
+    //     // sendPicAuto.addEventListener('change', function() {
+    //         // Submit the form when a file is selected
+    //         document.getElementById('uploadForm').submit();
+    //     // });
+    // } else {
+    //     console.log("sendPicAuto is not available")
+    // }
+}
+

@@ -26,10 +26,10 @@
 .screen-minus-50 {
     height: calc(100vh - 500px);
 }
-.photoUpload button i {
+.photoUpload label i {
     color: white;
 }
-.photoUpload button #profilchange {
+.photoUpload label #profilchange {
     color: black;
 }
 #closeConnexion {

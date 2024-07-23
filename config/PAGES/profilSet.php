@@ -89,16 +89,81 @@ if (isset($_FILES['profile_picture'])) {
 ?>
 
 
+
+<!-- ============================================ photo de couverture uploader================================================================ -->
 <?php
 
-if (isset($_POST['profile_image'])) {
-    if (empty($_POST['nom']) || empty($_POST['prix'])) {
-        $error = "Tout les champs sont requis ! ";
-    } else {
-        $nom_items = $_POST['nom'];
-        $prix_items = $_POST['prix'];
-        $category_items = $_POST['category'];
-        $description_items = $_POST['description'];
+
+//rechercher la photo de couverture correcpondante au nom du service
+$req_img_couv = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+$req_img_couv->execute([$nom_services,$typePhotoCouverture]); 
+
+$total_img_couv = $req_img_couv->rowCount();
+$resultat_img_couv = $req_img_couv->fetchAll(PDO::FETCH_ASSOC);
+
+if ($total_img_couv == 0) {
+    echo "Aucun élement trouvé (profil)";
+} else {
+    foreach($resultat_img_couv as $res_cov_img) {
+        $photo_profil_name = $res_cov_img['photo'];
+
+        echo "Photo de profi trouvée : " . $photo_profil_name . "</br>";
+
+        echo '<script src="index.js"></script>';
+        echo '<script>showProfilSettings();</script>';
     }
+}
+
+//rechercher la photo de coverture correcpondante au nom du service
+$req_couverture = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+$req_couverture->execute([$nom_services,$typePhotoCouverture]); 
+
+$total_couverture = $req_couverture->rowCount();
+$resultat_couverture = $req_couverture->fetchAll(PDO::FETCH_ASSOC);
+
+if ($total_couverture == 0) {
+    echo "Aucun élement trouvé (couverture)";
+} else {
+    foreach($resultat_couverture as $res_couverture) {
+        $photo_couverture_name = $res_couverture['photo'];
+
+        echo "Photo de couverture trouvée : " . $photo_couverture_name;
+    }
+}
+
+
+
+if (isset($_FILES['profile_picture'])) {
+    $image_items = $_FILES['profile_picture']['name'];
+    $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
+
+    if ($image_items != "") {
+        $ext = pathinfo($image_items, PATHINFO_EXTENSION);
+        $file_names = basename($image_items, '-' . $ext);
+
+        if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
+            $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
+        } else {
+            $image_name = $nom_services . '-' . rand() . '.' . $ext;
+            move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
+
+
+            //insertion dans la base de données 
+            $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
+            $sql->bindParam(':nomSalle', $nom_services);
+            $sql->bindParam(':photo', $image_name);
+            $sql->bindParam(':typePhoto', $typePhotoCouverture);
+
+            if ($sql->execute()) {
+                echo 'Photo uploader avec succès';
+            } else {
+                echo 'Le changement de la photo de profil a échoué';
+            }
+        }
+    } else {
+        $error = "Une photo est requis !! ";
+    }
+} else {
+    $error = "téléchargement non effectué !";
 }
 ?>

@@ -213,13 +213,8 @@ function showReservation() {
     }
 }
 
+
 //récupérer le prix du service et l'affecter à un input type text
-let prix_services;
-
-function reservation_check_price() {
-    alert('active : ' + prix_services);
-}
-
 
 const btn_buy = document.querySelectorAll('#button_buy');
 

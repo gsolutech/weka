@@ -11,6 +11,9 @@
 
         $lettres = str_split($usernameC);
         $premiereLettre = $lettres[0];
+
+        /*require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'profilSet.php';*/
+
     ?>
     <section>
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col">

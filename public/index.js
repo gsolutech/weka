@@ -283,20 +283,21 @@ function showProfilSettings() {
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
 formulaire (photo de profile) */
 
-let sendPicAuto = document.getElementById('showFilesDialog');
-if(sendPicAuto) {
-sendPicAuto.addEventListener('focus', () => {
-    alert("Please select a file");
-    console.log('Boite de dialogue ouverte');
-});
-sendPicAuto.addEventListener('blur', () => {
-    console.log('Boîte de dialogue fermée');
-});
+document.addEventListener('DOMContentLoaded', function() { 
+    let sendPicAuto = document.getElementById('showFilesDialog');
+    if(sendPicAuto) {
+    sendPicAuto.addEventListener('focus', () => {
+        alert("Please select a file");
+        console.log('Boite de dialogue ouverte');
+    });
+    sendPicAuto.addEventListener('blur', () => {
+        console.log('Boîte de dialogue fermée');
+    });
 
-} else {
-    console.log('Boîte de dialogue non trouvée');
-}
-
+    } else {
+        console.log('Boîte de dialogue non trouvée');
+    }
+});
 function sendPiCheck() { 
     alert("fsdfsfsdfsd");
     // let sendPicAuto= document.getElementById('showFilesDialog')

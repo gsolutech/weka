@@ -283,38 +283,27 @@ function showProfilSettings() {
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
 formulaire (photo de profile) */
 
-document.addEventListener('DOMContentLoaded', function() { 
-    let sendPicAuto = document.getElementById('showFilesDialog');
+function sendPiCheck() { 
+    alert("fsdfsfsdfsd");
+    // let sendPicAuto= document.getElementById('showFilesDialog')
+    const sendPicAuto = document.getElementById('showFilesDialog');
+    const uploadForm = document.getElementById('uploadForm');
+    console.log('sendPicAuto');
     if(sendPicAuto) {
-    sendPicAuto.addEventListener('focus', () => {
-        alert("Please select a file");
-        console.log('Boite de dialogue ouverte');
-    });
-    sendPicAuto.addEventListener('blur', () => {
-        console.log('Boîte de dialogue fermée');
-    });
+        sendPicAuto.addEventListener('click', () => {
+            alert("Please select a file");
+            console.log('Boite de dialogue ouverte');
+        });
+        sendPicAuto.addEventListener('change', () => {
+            console.log('Boîte de dialogue fermée');
+
+            document.getElementById('uploadForm').submit();
+        });
 
     } else {
         console.log('Boîte de dialogue non trouvée');
     }
-});
-function sendPiCheck() { 
-    alert("fsdfsfsdfsd");
-    // let sendPicAuto= document.getElementById('showFilesDialog')
 
-    // if (sendPicAuto.files.length > 0) {
-    //     alert("Fichier chargerr");
-    // } else {
-    //     alert("No file selected.");
-    // }
 
-    // if (sendPicAuto != null) {
-    //     // sendPicAuto.addEventListener('change', function() {
-    //         // Submit the form when a file is selected
-    //         document.getElementById('uploadForm').submit();
-    //     // });
-    // } else {
-    //     console.log("sendPicAuto is not available")
-    // }
 }
 

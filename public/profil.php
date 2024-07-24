@@ -30,7 +30,7 @@
                     <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile" onclick="sendPiCheck();">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>
-                    <input type="submit" name="profile_picture" id="showFilesDialog" value="SEND" class="hidden">
+                    <!-- <input type="submit" name="profile_picture" value="SEND" class="hidden"> -->
                 </form>
 
             </div>

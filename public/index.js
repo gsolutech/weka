@@ -283,29 +283,26 @@ function showProfilSettings() {
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
 formulaire (photo de profile) */
 
-document.getElementById('showFilesDialog').addEventListener('change', function () {
-    let sendPicAuto = document.getElementById('showFilesDialog');
-    let dialogFIles = document.dialogFIles.closest;
-    if (dialogFIles.files.length > 0) {
-        alert("Fichier chargerr");
-        // document.getElementById('uploadForm').submit();
-    } else {
-        alert("No file selected.");
-    }
-})
-
+let sendPicAuto = document.getElementById('showFilesDialog');
+sendPicAuto.addEventListener('focus', () => {
+    alert("Please select a file");
+    console.log('Boite de dialogue ouverte');
+});
+sendPicAuto.addEventListener('blur', () => {
+    console.log('Boîte de dialogue fermée');
+});
 
 
 
 function sendPiCheck() { 
     alert("fsdfsfsdfsd");
-    let sendPicAuto= document.getElementById('showFilesDialog')
+    // let sendPicAuto= document.getElementById('showFilesDialog')
 
-    if (sendPicAuto.files.length > 0) {
-        alert("Fichier chargerr");
-    } else {
-        alert("No file selected.");
-    }
+    // if (sendPicAuto.files.length > 0) {
+    //     alert("Fichier chargerr");
+    // } else {
+    //     alert("No file selected.");
+    // }
 
     // if (sendPicAuto != null) {
     //     // sendPicAuto.addEventListener('change', function() {

@@ -285,9 +285,10 @@ formulaire (photo de profile) */
 
 document.getElementById('showFilesDialog').addEventListener('change', function () {
     let sendPicAuto = document.getElementById('showFilesDialog');
-    if (sendPicAuto.files.length > 0) {
+    let dialogFIles = document.dialogFIles.closest;
+    if (dialogFIles.files.length > 0) {
         alert("Fichier chargerr");
-        document.getElementById('uploadForm').submit();
+        // document.getElementById('uploadForm').submit();
     } else {
         alert("No file selected.");
     }

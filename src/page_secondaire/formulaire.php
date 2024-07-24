@@ -1,9 +1,9 @@
 <?php
 // session_start();
 // require_once dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
-$message = "";
 
 if (isset($_POST['btnconnexion'])) {
+    $message = "";
     echo $message;
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = htmlspecialchars($_POST['email']);
@@ -69,8 +69,7 @@ if (isset($_POST['btnconnexion'])) {
 
         <div class="text-center">
             <!-- <input class=" px-10 py-20 border-0 decoration-white text-base rounded-md my-50" type="submit" value="Se connecter"> -->
-            <button name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " type="submit">
-                se connecter</button>
+            <input type="submit" name="btnconnexion" class="px-10 py-2 mb-4 mt-3 border-0 text-white  bg-blue-500 text-base rounded-md my-50 " value="Se connecter">   
 
             <p>Mots passe oubliée? <a class="text-red-500" href="#">Cliquez ici</a> </p>
             <p>Vous n'avez pas un compte? <a class="text-red-500 cursor-pointer" onclick="showInscriptionPage();">Créer un compte</a> </p>

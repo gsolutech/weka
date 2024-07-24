@@ -1,5 +1,11 @@
+// index.php script js
+
+const nameS = "";
+const priceS = "";
+
 // calendar show
 document.getElementById('showCalendarRadio').addEventListener('change', function(event) {
+    event.preventDefault();
     if (this.checked) {
         let calendarEl = document.getElementById('calendarDiv');
         calendarEl.value = "";
@@ -70,7 +76,21 @@ function ShowIscription() {
         console.error("closePop not found");
     }
 }
+function ShowConnexionPage_inscri_visible() {
+    //récupérer les id de la page d'inscription et de la connexion
+    let inscriptionPage = document.getElementById('inscriptionShow');
+    let connexionPage = document.getElementById('showConnexion');
 
+    if (inscriptionPage) {
+    //Fermer la page d'inscription
+        inscriptionPage.classList.remove('flex');
+        inscriptionPage.classList.add('hidden');
+
+    //Afficher la page de connexion
+        connexionPage.classList.remove('hidden');
+        connexionPage.classList.add('flex');
+    }
+}
 //Afficher la page d'inscription
 
 function showInscriptionPage() {
@@ -80,8 +100,7 @@ function showInscriptionPage() {
     console.log('Element séléctioné :', element);
 
     if (element) {
-        //cacher la page de connexion
-        // element.classList.add('someClass');
+        //fermer la page de connexion
         element.classList.add('hidden');
         element.classList.remove('flex'); 
         element.classList.add("backdrop-blur-md")
@@ -111,9 +130,6 @@ function closeInscription() {
     element.classList.remove('flex');
     element.classList.add('hidden');
     element.classList.remove("backdrop-blur-md");
-
-    bodySelect.body.classList.remove('backdrop-blur');
-
 }
 
 
@@ -159,9 +175,9 @@ document.addEventListener("click", function () {
     if (inputSearch) {
         // alert("Input checker");
 
-        let liens = new XMLHttpRequest();
-        liens.open("GET", "../config/PAGES/search.php", true);
-        liens.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // let liens = new XMLHttpRequest();
+        // liens.open("GET", "../config/PAGES/search.php", true);
+        // liens.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // alert("Récu");
 
         let mainContainer = document.getElementById("mainContainer");
@@ -177,19 +193,126 @@ document.addEventListener("click", function () {
 
 });
 
-// changer la photo de profil
+//afficher la fénêtre de reservation
+function showReservation() {
 
-// document.getElementById("showFilesDialog").addEventListener("change", function (event) {
-//     alert("Files");
-//     const file = event.target.files[0];
-//     if (file) {
-//         console.log("fichier trouver");
-//         const reader = new FileReader();
-//         reader.onload = function (e) {
-//         document.getElementById("profileImage").src = e.target.result;
-//     };
-//     reader.readAsDataURL(file);
-//     } else {
-//         console.error("Aucun fichier sélectionné.");
-//     }
-// });
+    let reservation = document.getElementById('showReservationDiv');
+    let containerReservation = document.getElementById('container_reservation_show');
+
+
+    if (reservation) {
+        reservation.classList.remove('hidden');
+        reservation.classList.add('flex-col');
+
+        containerReservation.classList.remove('hidden');
+        containerReservation.classList.add('flex');
+
+    } else {
+        // console.log('reservation introuvable');
+    }
+}
+
+
+//récupérer le prix du service et l'affecter à un input type text
+
+const btn_buy = document.querySelectorAll('#button_buy');
+
+btn_buy.forEach(button => {
+    button.addEventListener('click', () => {
+
+        const main_article = button.closest('#mainArticle');
+
+        const nameService = main_article.querySelector('#nameService');
+        const priceService = main_article.querySelector('#priceServiceP');
+
+        const nameS = nameService.textContent;
+        const priceS = priceService.textContent;    
+
+        let prixSet = document.getElementById('prix');
+        let serviceNameHide = document.getElementById('serviceNameHide');
+        if (prixSet) {
+            // console.log("prixSet found");
+            prixSet.value = priceS;
+
+            if (serviceNameHide) {
+                // console.log("serviceNameHide found");
+                serviceNameHide.value = nameS;
+            } else {
+                // console.log("serviceNameHide not found");
+            }
+
+            showReservation();
+
+        } else {
+            console.log("prixSet not found");
+        }       
+    })
+});
+
+
+//====================================================================
+
+//accueil.php scsript js
+
+//afficher la page de profil 
+
+function showProfilSettings() {
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+        let profileImage = document.getElementById('profileImage');
+        let couvertureImage = document.getElementById('couvertureImage');
+        let profil_par_default = document.getElementById('profil_image_default');
+        let main_container = document.getElementById('main_container');
+
+        let profil_container = document.getElementById('profil_container');
+        let couverture_container = document.getElementById('couverture_image_container');
+
+        if (profileImage) {
+            profileImage.classList.remove('hidden');
+            profil_par_default.classList.add('hidden');
+
+            profil_container.classList.remove('bge-cyan-custom');
+            console.log('main_container true');
+        } else {
+            console.log('profileImage not found');
+        }
+
+    })
+}
+
+/* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
+formulaire (photo de profile) */
+
+document.getElementById('showFilesDialog').addEventListener('change', function () {
+    let sendPicAuto = document.getElementById('showFilesDialog');
+    if (sendPicAuto.files.length > 0) {
+        alert("Fichier chargerr");
+        document.getElementById('uploadForm').submit();
+    } else {
+        alert("No file selected.");
+    }
+})
+
+
+
+
+function sendPiCheck() { 
+    alert("fsdfsfsdfsd");
+    let sendPicAuto= document.getElementById('showFilesDialog')
+
+    if (sendPicAuto.files.length > 0) {
+        alert("Fichier chargerr");
+    } else {
+        alert("No file selected.");
+    }
+
+    // if (sendPicAuto != null) {
+    //     // sendPicAuto.addEventListener('change', function() {
+    //         // Submit the form when a file is selected
+    //         document.getElementById('uploadForm').submit();
+    //     // });
+    // } else {
+    //     console.log("sendPicAuto is not available")
+    // }
+}
+

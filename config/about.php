@@ -29,11 +29,11 @@ if ($total != 0) {
         // $res_avis['nombreAvis'];
         echo " 
 
-                    <div class=\"w-96 mx-auto bg-gray-100 border-2 border-solid border-gray-200 m-5 shadow-lg overflow-hidde relative px-3 py-3\">
-                    <img class=\"w-full h-48 object-cover  relative\" src=\"../src/assets/salles/profil/$image_items_name\" alt=\"Asha La Villa\">
+                    <div class=\"w-96 bg-gray-100 border-2 border-solid border-gray-200 m-5 shadow-lg overflow-hidden relative px-3 py-3\" id=\"mainArticle\">
+                        <img class=\"w-full h-48 object-cover  relative\" src=\"../src/assets/salles/profil/$image_items_name\" alt=\"Asha La Villa\">
                         <div class=\"flex flex-row \">
                             <ul class=\"flex flex-row justify-between items-center mb-4 w-7/12\">
-                                <h3 class=\"text-xl font-semibold mb-2 pl-3\">$nom_items</h3>
+                                <h3 class=\"text-xl font-semibold mb-2 pl-3\" id=\"nameService\">$nom_items</h3>
                             </ul>
                             <ul class=\"flex justify-end items-end w-5/12\">
                                 <button class=\"flex justify-end items-end pr-3\"><i class='bx bx-heart text-5xl'></i></button>
@@ -49,7 +49,7 @@ if ($total != 0) {
                         </div>
                         <div class=\"flex justify-between items-center mb-4\">
                             <span class=\"bg-green-400 text-white px-4 py-2 rounded-3xl ml-3\">Disponible</span>
-                            <span class=\"text-xl font-semibold pr-3\">$$prix_items</span>
+                            <span class=\"text-xl font-semibold pr-3\" id=\"priceServiceP\">$prix_items</span>
                         </div>
                         <hr class=\"w-full bg-black opacity-20 border-1 border-solid border-black mb-3\">
                         <div class=\"flex flex-row justify-between items-center pb-3 pr-3\">
@@ -58,7 +58,10 @@ if ($total != 0) {
                                 <span class=\"text-gray-500 text-xs absolute pl-8\"> $adresse_items</span>
                             </ul>
                             <ul class=\"w-5/12 justify-center items-center flex\">
-                                <button class=\"bge-cyan-custom text-white px-4 py-2 mb-4hover:bg-cyan-500 w-full h-12 text-xs\">Réservez Maintenant</button>
+
+
+                                    <button type=\"submit\" name=\"getData_reservation\" class=\"bge-cyan-custom text-white px-4 py-2 mb-4hover:bg-cyan-500 w-full h-12 text-xs\" onclick=\"showReservation();\" id=\"button_buy\">Réservez Maintenant</button>
+
                             </ul>
                         </div>
                             

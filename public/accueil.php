@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php 
-    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php'; 
-    session_start();
-?>
+<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'head.php'; ?>
 <body class="">
     <?php  
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
+        require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'loginCheck.php';
+        require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'lougout_showProfil.php';
+        
+        //récupérer la première lettre 
+        $usernameC = $_SESSION['username'];
+
+        $lettres = str_split($usernameC);
+        $premiereLettre = $lettres[0];
     ?>
     <section id="header" class="w-full text-white screen-minus-20 mb-24">
 
@@ -21,7 +26,34 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_inscrire" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full mt-7 w-32 h-32" onclick="">Compte</button>
+                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black"><?php echo $premiereLettre ?></button>
+            </ul>
+
+            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
+                <form action="" method="post">
+                    <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
+                        <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6">
+                            <i class="fa-solid fa-rectangle-xmark" id="closeProfil"></i>
+                        </button>
+                    </div>
+                    <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2">
+                            <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="w-5/6 flex items-center justify-center">
+                            <p class="text-black font-bold">Mon profil</p>
+                        </div>
+                    </button>
+
+                    <button type="submit" name="btn_sign_out"  class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bg-red-600 m-auto pt-2 pr-3">
+                            <i class='bx bx-log-out' id="logoutBtn"></i>
+                        </div>
+                        <div class="w-5/6 flex items-center justify-center">
+                            <p class="text-black font-bold">Déconnexion</p>
+                        </div>
+                    </button>
+                </form>
             </ul>
         </nav>
         <div class="bg-header w-full flex flex-col pt-16 justify-center items-center h-full bg-center bg-no-repeat bg-cover">
@@ -70,8 +102,9 @@
 
     <!-- tout les popup -->
     <section class="w-full h-screen z-50 backdrop-blur fixed inset-4 hidden justify-center items-center"  id="closePop">
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php' ?> 
-        <?php require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php' ?> 
+        <?php 
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'formulaire.php';
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'inscription.php'; ?>
     </section>
 
     <section class="py-12">
@@ -104,23 +137,16 @@
 
         <h2 class="text-4xl font-semibold mb-8 text-center">Les Réservations</h2>
 
-        <div id="mainContainer" class="items-center justify-center flex-wrap m-auto w-full">
-            <?php
-                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
-            ?>            
+        <div id="mainContainer" class="items-center justify-center m-auto flex w-full">
+            <div id="container_reservation_show" class="fixed w-full h-full backdrop-blur top-0 inset-5 z-30 hidden">
+                <?php  require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' .  DIRECTORY_SEPARATOR . 'page_secondaire' . DIRECTORY_SEPARATOR . 'reservation.php'; ?>
+            </div>
+            <div class="items-center justify-center flex flex-wrap w-9/12 relative" id="sub-container">
+                <?php    
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
+                ?> 
+            </div>           
         </div>
-        <div id="filtreContainer" class="w-full h-auto flex-wrap hidden">
-            <?php 
-                // require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'search.php';
-            ?>
-
-        <div id="mainContainer" class="w-full flex flex-wrap justify-center items-center">
-            <?php
-                require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'about.php';   
-            ?>           
-        </div>
-        <!-- <div id="filtreContainer" class="w-full h-auto flex-wrap hidden"> 
-        </div> -->
     </div>
 </section>
 

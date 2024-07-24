@@ -284,6 +284,7 @@ function showProfilSettings() {
 formulaire (photo de profile) */
 
 let sendPicAuto = document.getElementById('showFilesDialog');
+if(sendPicAuto) {
 sendPicAuto.addEventListener('focus', () => {
     alert("Please select a file");
     console.log('Boite de dialogue ouverte');
@@ -292,7 +293,9 @@ sendPicAuto.addEventListener('blur', () => {
     console.log('Boîte de dialogue fermée');
 });
 
-
+} else {
+    console.log('Boîte de dialogue non trouvée');
+}
 
 function sendPiCheck() { 
     alert("fsdfsfsdfsd");

@@ -39,9 +39,9 @@
                         </button>
                     </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2">
-                            <lDefault id="profilDefaultMain"><?php echo $premiereLettre ?></p>
-                            <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="profil" class="w-full h-full object-cover rounded-full hidden">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center">
+                            <p id="profilDefaultMain" class="font-black text-center text-2xl"><?php echo $premiereLettre ?></p>
+                            <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden">
                         </div>
                         <div class="w-5/6 flex items-center justify-center">
                             <p class="text-black font-bold">Mon profil</p>

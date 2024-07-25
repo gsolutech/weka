@@ -36,7 +36,14 @@
     color: #0092bb;
     font-size: x-large;
 }
-
+ul #btn_back_profil {
+    color : black;
+    font-size: x-large;
+}
+ul #btn_back_profil:hover {
+    font-size: x-large;
+    color : #9fa1a3
+}
 /*  */
 
 #logoutBtn {

@@ -6,6 +6,8 @@
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'loginCheck.php';
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'lougout_showProfil.php';
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'profilSet.php';
+
         
         //récupérer la première lettre 
         $usernameC = $_SESSION['username'];
@@ -38,7 +40,8 @@
                     </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
                         <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2">
-                            <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
+                            <lDefault id="profilDefaultMain"><?php echo $premiereLettre ?></p>
+                            <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="profil" class="w-full h-full object-cover rounded-full hidden">
                         </div>
                         <div class="w-5/6 flex items-center justify-center">
                             <p class="text-black font-bold">Mon profil</p>

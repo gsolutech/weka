@@ -43,7 +43,7 @@
                     </form>
                 </div>
             </label>
-            <ul class="w-12 h-12 bg-white rounded-full absolute left-6 top-6 items-center justify-center flex">
+            <ul class="w-12 h-12 bg-white rounded-full absolute left-6 top-6 items-center justify-center flex hover:bg-cyan-200" onclick="goback();">
                 <i class='bx bx-left-arrow-alt' id="btn_back_profil"></i>
             </ul>
             <p class="text-red-600 font-bold"><?php echo $error ?></p>

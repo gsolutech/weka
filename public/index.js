@@ -291,7 +291,7 @@ function showCouvertureSettings() {
     })
 }
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
-formulaire (photo de profile) */
+formulaire (photo de profile et photo de couverture ) */
 
 function sendPiCheck() { 
 
@@ -340,3 +340,13 @@ function sendPiCheck() {
     }
 }
 
+//goback history
+
+function goback() {
+    // window.history.back();
+    if (window.referrer) {
+        window.location.href = document.referrer;
+    } else {
+        window.history.back();
+    }
+}

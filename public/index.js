@@ -323,22 +323,22 @@ function sendPiCheck() {
 
     if(sendCouverturePic) {
         alert("couverture active");
-        // sendPicAuto.addEventListener('click', () => {
-        //     alert("Please select a file");
-        //     console.log('Boite de dialogue ouverte');
-        // });
-        // sendPicAuto.addEventListener('change', () => {
+        sendCouverturePic.addEventListener('click', () => {
+            alert("Please select a file");
+            console.log('Boite de dialogue ouverte');
+        });
+        sendCouverturePic.addEventListener('change', () => {
             
-        //     if (sendPicAuto.files.length > 0) {
-        //         console.log("Image image selected");              
-        //         console.log('Boîte de dialogue fermée');
-        //         document.getElementById('send_profile_picture').click();
-        //     } else {
-        //         console.log("No image selected");             
-        //         console.log('Boîte de dialogue fermée');
-        //     }
+            if (sendCouverturePic.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_couverture_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
 
-        // });
+        });
 
     }
 }

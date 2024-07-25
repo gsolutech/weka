@@ -387,7 +387,8 @@ function showMenuOPtion() {
     }
 }
 
-function closeParamatersCompte(){
+function closeParamatersCompte(event){
+    event.preventDefault();
     const showParamatersCompte = document.getElementById('showParamatersCompte');
 
     if (showParamatersCompte) {

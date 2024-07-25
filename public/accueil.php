@@ -37,14 +37,14 @@
             </ul>
 
             <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0  flex-col hidden" id="showParamatersCompte">
+                <div class="w-full h-6 items-center justify-center flex text-center p-1">
+                    <button type="button" class="absolute left-1 top-0 items-center justify-center flex rounded-full w-10 h-6 text-center" onclick="closeParamatersCompte(event);">
+                        <!-- <div class="w-6 h-6 justify-center items-center flex text-center"> -->
+                        <i class="fa-solid fa-x" id="closeParamatersCompte"></i>
+                        <!-- </div>     -->
+                    </button>
+                </div>
                 <form action="" method="post">
-                    <div class="w-full h-6 items-center justify-center flex text-center p-1">
-                        <button class=" absolute left-1 top-0 items-center justify-center flex rounded-full w-10 h-6 text-center" onclick="closeParamatersCompte();">
-                            <!-- <div class="w-6 h-6 justify-center items-center flex text-center"> -->
-                            <i class="fa-solid fa-x" id="closeParamatersCompte"></i>
-                            <!-- </div>     -->
-                        </button>
-                    </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
                         <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center" id="mainContainer_profilSetMain">
                             <p id="profilDefaultMain" class="font-black text-center text-2xl"><?php echo $premiereLettre ?></p>

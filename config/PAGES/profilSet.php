@@ -62,8 +62,8 @@ if ($total_couv == 0) {
 //======================================== inserer la photo de profile ===============================================================
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
-    if (isset($_POST['send_profile_picture'])) {
-        echo "send_profile_picture available";
+    if (isset($_POST['send_couverture_picture'])) {
+        echo "send_couverture_picture available";
 
         $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
         $req_service->execute([$nom_services,$typePhotoProfil]); 
@@ -87,10 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
 
-    if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
+    if (isset($_FILES['couverture_picture']) && ($_FILES['couverture_picture']['error']) == UPLOAD_ERR_OK ) { 
 
-        $image_items = $_FILES['profile_picture']['name'];
-        $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
+        $image_items = $_FILES['couverture_picture']['name'];
+        $image_items_tmp = $_FILES['couverture_picture']['tmp_name'];
 
         if ($image_items != "") {
             $ext = pathinfo($image_items, PATHINFO_EXTENSION);

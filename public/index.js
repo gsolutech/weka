@@ -382,5 +382,7 @@ function showMenuOPtion() {
     if (showParamatersCompte) {
         showParamatersCompte.classList.remove('hidden');
         showParamatersCompte.classList.add('flex');
+    } else {
+        console.log('showParamatersCompte not found');
     }
 }

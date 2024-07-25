@@ -609,9 +609,10 @@ ul #btn_back_profil:hover {
   font-size: x-large;
 }
 
-#closeParamatersCompte {
+#showParamatersCompte #closeParamatersCompte {
   position: relative;
   text-align: center;
+  color:black;
 }
 
 /*  */

@@ -48,9 +48,10 @@ ul #btn_back_profil:hover {
     color : black;
     font-size: x-large;
 }
-#closeParamatersCompte {
+#showParamatersCompte #closeParamatersCompte {
     position: relative;
     text-align: center;
+    color:black;
 }
 /*  */
 

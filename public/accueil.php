@@ -38,9 +38,11 @@
 
             <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0  flex-col hidden" id="showParamatersCompte">
                 <form action="" method="post">
-                    <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
-                        <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6 bg-gray-200 rounded-full w-10 h-10 text-center">
-                            <i class='bx bx-x' id="closeParamatersCompte"></i>
+                    <div class="w-full h-6 rounded-lg items-center justify-center flex text-center">
+                        <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6 bg-gray-200 rounded-full w-6 h-6 text-center">
+                            <div class="w-6 h-6 justify-center items-center flex text-center relative">
+                                <i class='bx bx-x' id="closeParamatersCompte"></i>
+                            </div>    
                         </button>
                     </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">

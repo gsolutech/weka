@@ -39,9 +39,9 @@
             <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0  flex-col hidden" id="showParamatersCompte">
                 <form action="" method="post">
                     <div class="w-full h-6 items-center justify-center flex text-center bg-green-300">
-                        <button class="items-center justify-center flex pt-3 pr-6 bg-gray-200 rounded-full w-full h-full text-center">
+                        <button class=" absolute left-3 items-center justify-center flex bg-gray-200 rounded-full w-10 h-10 text-center">
                             <!-- <div class="w-6 h-6 justify-center items-center flex text-center"> -->
-                                <i class='bx bx-x' id="closeParamatersCompte"></i>
+                            <i class="fa-solid fa-x"></i>
                             <!-- </div>     -->
                         </button>
                     </div>

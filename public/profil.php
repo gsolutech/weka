@@ -25,12 +25,12 @@
             <div id="profil_container" class="profilUp absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white bge-cyan-custom items-center justify-center flex">
                 <p class="text-white text-8xl font-bold" id="profil_image_default"><?php echo $premiereLettre ?></p>
                 <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
-                <form action="../config/PAGES/profilSet.php" method="post" enctype="multipart/form-data" id="uploadForm">
+                <form action="" method="post" enctype="multipart/form-data" id="uploadForm">
                     <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/*">
                     <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" id="showDialogFile" onclick="sendPiCheck();">
                         <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
                     </label>
-                    <!-- <input type="submit" name="profile_picture" value="SEND" class="hidden"> -->
+                    <input type="submit" name="send_profile_picture" value="SEND" class="hidden">
                 </form>
 
             </div>

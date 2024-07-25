@@ -62,44 +62,48 @@ error_reporting(E_ALL);
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
+    if (isset($_POST['send_profile_picture'])) {
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
 
-if (isset($_FILES['profile_picture'])) {
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
+        if (isset($_FILES['photo']) || ($_FILES['photo']['error']) == UPLOAD_ERR_OK ) { 
 
-    $image_items = $_FILES['profile_picture']['name'];
-    $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
+        $image_items = $_FILES['profile_picture']['name'];
+        $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 
-    if ($image_items != "") {
-        $ext = pathinfo($image_items, PATHINFO_EXTENSION);
-        $file_names = basename($image_items, '-' . $ext);
+            if ($image_items != "") {
+                $ext = pathinfo($image_items, PATHINFO_EXTENSION);
+                $file_names = basename($image_items, '-' . $ext);
 
-        if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
-            $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
-        } else {
-            $image_name = $nom_services . '-' . rand() . '.' . $ext;
-            move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
+                if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
+                    $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
+                } else {
+                    $image_name = $nom_services . '-' . rand() . '.' . $ext;
+                    move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
 
 
-            //insertion dans la base de données 
-            $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
-            $sql->bindParam(':nomSalle', $nom_services);
-            $sql->bindParam(':photo', $image_name);
-            $sql->bindParam(':typePhoto', $typePhotoProfil);
+                    //insertion dans la base de données 
+                    $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
+                    $sql->bindParam(':nomSalle', $nom_services);
+                    $sql->bindParam(':photo', $image_name);
+                    $sql->bindParam(':typePhoto', $typePhotoProfil);
 
-            if ($sql->execute()) {
-                echo 'Photo uploader avec succès';
+                    if ($sql->execute()) {
+                        echo 'Photo uploader avec succès';
+                    } else {
+                        echo 'Le changement de la photo de profil a échoué';
+                    }
+                }
             } else {
-                echo 'Le changement de la photo de profil a échoué';
+                echo "Image vide";
             }
+        } else {
+            echo "Une photo est requis !! ";
         }
     } else {
-        echo "Une photo est requis !! ";
+        echo "téléchargement non effectué ! </br>";
     }
-} else {
-    echo "téléchargement non effectué ! </br>";
-}
 }
 ?>
 

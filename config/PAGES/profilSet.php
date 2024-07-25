@@ -257,7 +257,7 @@ function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
             $req_service_delete->execute([$id_delete]);
 
             if ($req_service_delete->rowCount() > 0) {
-                $file_path = '../src/assets/salles//' . $file_name;
+                $file_path = '../src/assets/salles/couverture/' . $file_name;
 
                 if ((file_exists($file_path))) {
                     if (unlink($file_path)) {

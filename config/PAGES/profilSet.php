@@ -62,12 +62,13 @@ error_reporting(E_ALL);
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
+    echo "<pre>";
+    print_r($_FILES);
+    echo "</pre>";
     if (isset($_POST['send_profile_picture'])) {
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
 
-        if (isset($_FILES['photo']) || ($_FILES['photo']['error']) == UPLOAD_ERR_OK ) { 
+        echo "send_profile_picture available";
+        if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
 
         $image_items = $_FILES['profile_picture']['name'];
         $image_items_tmp = $_FILES['profile_picture']['tmp_name'];

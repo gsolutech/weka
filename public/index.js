@@ -287,7 +287,7 @@ function sendPiCheck() {
     alert("fsdfsfsdfsd");
     // let sendPicAuto= document.getElementById('showFilesDialog')
     const sendPicAuto = document.getElementById('showFilesDialog');
-    const uploadForm = document.getElementById('uploadForm');
+    let send_profile_picture = document.getElementById('uploadForm');
     console.log('sendPicAuto');
     if(sendPicAuto) {
         sendPicAuto.addEventListener('click', () => {
@@ -295,9 +295,16 @@ function sendPiCheck() {
             console.log('Boite de dialogue ouverte');
         });
         sendPicAuto.addEventListener('change', () => {
-            console.log('Boîte de dialogue fermée');
+            
+            if (sendPicAuto.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_profile_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
 
-            document.getElementById('uploadForm').submit();
         });
 
     } else {

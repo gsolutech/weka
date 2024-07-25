@@ -272,8 +272,17 @@ function showProfilSettings() {
         } else {
             console.log('profileImage not found');
         }
+        //page accueil main
+        let mainContainer_one_Deft = document.getElementById('mainContainer_one_Deft');
+        let letterDefault_one = document.getElementById('letterDefault_one');
+        let profilSetMain_one = document.getElementById('profilSetMain_one');
 
-        //page d'accueil
+        if (profilSetMain_one) {
+            profilSetMain_one.classList.remove('hidden');
+            letterDefault_one.classList.add('hidden');
+            mainContainer_one_Deft.classList.remove('bge-cyan-custom');
+        }
+        //page d'accueil -> menu 
         let profilSetMain = document.getElementById('profilSetMain');
         let profilDefaultMain = document.getElementById('profilDefaultMain');
         let mainContainer_profilSetMain = document.getElementById('mainContainer_profilSetMain');
@@ -285,6 +294,7 @@ function showProfilSettings() {
         } else {
             console.log('profilSetMain not found');
         }
+
     })
 }
 function showCouvertureSettings() {

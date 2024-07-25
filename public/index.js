@@ -294,10 +294,10 @@ function showCouvertureSettings() {
 formulaire (photo de profile) */
 
 function sendPiCheck() { 
-    alert("fsdfsfsdfsd");
-    // let sendPicAuto= document.getElementById('showFilesDialog')
+
     const sendPicAuto = document.getElementById('showFilesDialog');
-    let send_profile_picture = document.getElementById('uploadForm');
+    const sendCouverturePic = document.getElementById('showFilesDialogCouv');
+
     console.log('sendPicAuto');
     if(sendPicAuto) {
         sendPicAuto.addEventListener('click', () => {
@@ -321,6 +321,25 @@ function sendPiCheck() {
         console.log('Boîte de dialogue non trouvée');
     }
 
+    if(sendCouverturePic) {
+        alert("couverture active");
+        // sendPicAuto.addEventListener('click', () => {
+        //     alert("Please select a file");
+        //     console.log('Boite de dialogue ouverte');
+        // });
+        // sendPicAuto.addEventListener('change', () => {
+            
+        //     if (sendPicAuto.files.length > 0) {
+        //         console.log("Image image selected");              
+        //         console.log('Boîte de dialogue fermée');
+        //         document.getElementById('send_profile_picture').click();
+        //     } else {
+        //         console.log("No image selected");             
+        //         console.log('Boîte de dialogue fermée');
+        //     }
 
+        // });
+
+    }
 }
 

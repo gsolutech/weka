@@ -64,6 +64,8 @@ if (isset($_POST['check_inscri'])) {
     $password = $_POST['password'];
     $phone = $_POST['phone'];
 
+    $adresse_default = "Aucun";
+
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $conn = getDatabaseConnection();
@@ -72,9 +74,14 @@ if (isset($_POST['check_inscri'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $phone);
 
-    if ($stmt->execute()) {
-        echo "Nouvel utilisateur enregistré avec succès";
+    $sql2 = $bdd -> prepare("INSERT INTO tinfosalle (nomSalle,adresse) VALUES (:nom, :adresseService)");
+    $sql2->bindParam(':nom', $nom);
+    $sql2->bindParam(':adresseService', $adresse_default);
 
+    $sql2->execute();
+
+    if ($stmt->execute()) {
+        // echo "Nouvel utilisateur enregistré avec succès";
     } else {
         echo "Erreur : " . $stmt->error;
     }

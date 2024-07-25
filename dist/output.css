@@ -594,6 +594,27 @@ video {
   font-size: x-large;
 }
 
+ul #btn_back_profil {
+  color : black;
+  font-size: x-large;
+}
+
+ul #btn_back_profil:hover {
+  font-size: x-large;
+  color : #9fa1a3
+}
+
+#btn_general_settings {
+  color : black;
+  font-size: x-large;
+}
+
+#showParamatersCompte #closeParamatersCompte {
+  position: relative;
+  text-align: center;
+  color:black;
+}
+
 /*  */
 
 #logoutBtn {

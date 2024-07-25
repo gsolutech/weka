@@ -260,12 +260,8 @@ function showProfilSettings() {
     document.addEventListener('DOMContentLoaded', (event) => {
 
         let profileImage = document.getElementById('profileImage');
-        let couvertureImage = document.getElementById('couvertureImage');
         let profil_par_default = document.getElementById('profil_image_default');
-        let main_container = document.getElementById('main_container');
-
         let profil_container = document.getElementById('profil_container');
-        let couverture_container = document.getElementById('couverture_image_container');
 
         if (profileImage) {
             profileImage.classList.remove('hidden');
@@ -276,43 +272,129 @@ function showProfilSettings() {
         } else {
             console.log('profileImage not found');
         }
+        //page accueil main
+        let mainContainer_one_Deft = document.getElementById('mainContainer_one_Deft');
+        let letterDefault_one = document.getElementById('letterDefault_one');
+        let profilSetMain_one = document.getElementById('profilSetMain_one');
+
+        if (profilSetMain_one) {
+            profilSetMain_one.classList.remove('hidden');
+            letterDefault_one.classList.add('hidden');
+            mainContainer_one_Deft.classList.remove('bge-cyan-custom');
+        }
+        //page d'accueil -> menu 
+        let profilSetMain = document.getElementById('profilSetMain');
+        let profilDefaultMain = document.getElementById('profilDefaultMain');
+        let mainContainer_profilSetMain = document.getElementById('mainContainer_profilSetMain');
+        
+        if (profilSetMain) {
+            profilSetMain.classList.remove('hidden');
+            profilDefaultMain.classList.add('hidden');
+            mainContainer_profilSetMain.classList.remove('bge-cyan-custom');
+        } else {
+            console.log('profilSetMain not found');
+        }
 
     })
 }
+function showCouvertureSettings() {
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let couvertureImage = document.getElementById('couvertureImage');
+        let main_container = document.getElementById('main_container');
+        let couverture_container = document.getElementById('couverture_image_container');
 
+            if (couvertureImage) {
+                couvertureImage.classList.remove('hidden');
+                couverture_container.classList.remove('bge-cyan-custom');
+
+                console.log('couverture container true');
+            } else {
+                console.log('couverture container false');
+            }
+    })
+}
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
-formulaire (photo de profile) */
-
-document.getElementById('showFilesDialog').addEventListener('change', function () {
-    let sendPicAuto = document.getElementById('showFilesDialog');
-    if (sendPicAuto.files.length > 0) {
-        alert("Fichier chargerr");
-        document.getElementById('uploadForm').submit();
-    } else {
-        alert("No file selected.");
-    }
-})
-
-
-
+formulaire (photo de profile et photo de couverture ) */
 
 function sendPiCheck() { 
-    alert("fsdfsfsdfsd");
-    let sendPicAuto= document.getElementById('showFilesDialog')
 
-    if (sendPicAuto.files.length > 0) {
-        alert("Fichier chargerr");
+    const sendPicAuto = document.getElementById('showFilesDialog');
+    const sendCouverturePic = document.getElementById('showFilesDialogCouv');
+
+    console.log('sendPicAuto');
+    if(sendPicAuto) {
+        sendPicAuto.addEventListener('click', () => {
+            console.log('Boite de dialogue ouverte');
+        });
+        sendPicAuto.addEventListener('change', () => {
+            
+            if (sendPicAuto.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_profile_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
+
+        });
+
     } else {
-        alert("No file selected.");
+        console.log('Boîte de dialogue non trouvée');
     }
 
-    // if (sendPicAuto != null) {
-    //     // sendPicAuto.addEventListener('change', function() {
-    //         // Submit the form when a file is selected
-    //         document.getElementById('uploadForm').submit();
-    //     // });
-    // } else {
-    //     console.log("sendPicAuto is not available")
-    // }
+    if(sendCouverturePic) {
+        sendCouverturePic.addEventListener('click', () => {
+            console.log('Boite de dialogue ouverte');
+        });
+        sendCouverturePic.addEventListener('change', () => {
+            
+            if (sendCouverturePic.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_couverture_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
+
+        });
+
+    }
 }
 
+//goback history
+
+function goback() {
+    // window.history.back();
+    if (window.referrer) {
+        window.location.href = document.referrer;
+    } else {
+        window.history.back();
+    }
+}
+
+// page d'accueil show menu option
+
+function showMenuOPtion() {
+    const showParamatersCompte = document.getElementById('showParamatersCompte');
+
+    if (showParamatersCompte) {
+        showParamatersCompte.classList.remove('hidden');
+        showParamatersCompte.classList.add('flex');
+    } else {
+        console.log('showParamatersCompte not found');
+    }
+}
+
+function closeParamatersCompte(event){
+    event.preventDefault();
+    const showParamatersCompte = document.getElementById('showParamatersCompte');
+
+    if (showParamatersCompte) {
+        showParamatersCompte.classList.remove('flex');
+        showParamatersCompte.classList.add('hidden');
+    } else {
+        console.log('showParamatersCompte not found');
+    }
+}

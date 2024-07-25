@@ -17,6 +17,9 @@
     ?>
     <section>
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col text-center">
+            <ul class="w-24 h-24 bg-white rounded-full absolute left-4 top-4">
+                <i class='bx bx-left-arrow-alt'></i>
+            </ul>
             <label for="showFilesDialogCouv">
                 <div class="w-full h-44 bge-cyan-custom relative overflow-hidden" id="couverture_image_container">
                     <img src="../src/assets/salles/couverture/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          

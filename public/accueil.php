@@ -39,7 +39,7 @@
             <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0  flex-col hidden" id="showParamatersCompte">
                 <form action="" method="post">
                     <div class="w-full h-6 items-center justify-center flex text-center bg-green-300">
-                        <button class=" absolute left-3 items-center justify-center flex bg-gray-200 rounded-full w-10 h-10 text-center">
+                        <button class=" absolute left-3 top-1 items-center justify-center flex rounded-full w-10 h-10 text-center">
                             <!-- <div class="w-6 h-6 justify-center items-center flex text-center"> -->
                             <i class="fa-solid fa-x"></i>
                             <!-- </div>     -->

@@ -609,6 +609,11 @@ ul #btn_back_profil:hover {
   font-size: x-large;
 }
 
+#closeParamatersCompte {
+  position: relative;
+  text-align: center;
+}
+
 /*  */
 
 #logoutBtn {

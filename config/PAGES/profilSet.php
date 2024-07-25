@@ -52,10 +52,10 @@ if ($total_couv == 0) {
     foreach($resultat_couv as $res_couv) {
         $photo_couverture_name = $res_couv['photo'];
 
-        echo "Photo de couverture trouvée : " . $photo_profil_name . "</br>";
+        echo "Photo de couverture trouvée : " . $photo_couverture_name . "</br>";
 
         echo '<script src="index.js"></script>';
-        echo '<script>showProfilSettings();</script>';
+        echo '<script>showCouvertureSettings();</script>';
     }
 }
 

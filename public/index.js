@@ -260,12 +260,8 @@ function showProfilSettings() {
     document.addEventListener('DOMContentLoaded', (event) => {
 
         let profileImage = document.getElementById('profileImage');
-        let couvertureImage = document.getElementById('couvertureImage');
         let profil_par_default = document.getElementById('profil_image_default');
-        let main_container = document.getElementById('main_container');
-
         let profil_container = document.getElementById('profil_container');
-        let couverture_container = document.getElementById('couverture_image_container');
 
         if (profileImage) {
             profileImage.classList.remove('hidden');
@@ -273,6 +269,16 @@ function showProfilSettings() {
 
             profil_container.classList.remove('bge-cyan-custom');
             console.log('main_container true');
+        } else {
+            console.log('profileImage not found');
+        }
+    })
+}
+function showCouvertureSettings() {
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let couvertureImage = document.getElementById('couvertureImage');
+        let main_container = document.getElementById('main_container');
+        let couverture_container = document.getElementById('couverture_image_container');
 
             if (couvertureImage) {
                 couvertureImage.classList.remove('hidden');
@@ -282,13 +288,8 @@ function showProfilSettings() {
             } else {
                 console.log('couverture container false');
             }
-        } else {
-            console.log('profileImage not found');
-        }
-
     })
 }
-
 /* écouteur d'événement pour détecter le changement de l'input de type file et soumettre automatiquement le 
 formulaire (photo de profile) */
 

@@ -104,6 +104,7 @@ function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
                 $sql->bindParam(':photo', $image_name);
                 $sql->bindParam(':typePhoto', $typePhotoProfil);
 
+                // $sql2 = $bdd->prepare("INSERT INTO tinfosalle ()");
                 if ($sql->execute()) {
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();

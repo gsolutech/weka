@@ -267,7 +267,7 @@ function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
                         echo "Le fichier a été supprimé avec succès.</br>";
 
                         echo "Record deleted successfully." . $file_path .'</br>';
-                        uploadProfileImage($bdd, $nom_services, $typePhotoCouverture);
+                        uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture);
                         
                     } else {
                         echo "Erreur lors de la suppression du fichier." . $file_path .'</br>';

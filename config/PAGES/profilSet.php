@@ -62,8 +62,8 @@ if ($total_couv == 0) {
 //======================================== inserer la photo de profile ===============================================================
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
-    if (isset($_POST['send_couverture_picture'])) {
-        echo "send_couverture_picture available";
+    if (isset($_POST['send_profile_picture'])) {
+        echo "send_profile_picture available";
 
         $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
         $req_service->execute([$nom_services,$typePhotoProfil]); 
@@ -87,10 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
 
-    if (isset($_FILES['couverture_picture']) && ($_FILES['couverture_picture']['error']) == UPLOAD_ERR_OK ) { 
+    if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
 
-        $image_items = $_FILES['couverture_picture']['name'];
-        $image_items_tmp = $_FILES['couverture_picture']['tmp_name'];
+        $image_items = $_FILES['profile_picture']['name'];
+        $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 
         if ($image_items != "") {
             $ext = pathinfo($image_items, PATHINFO_EXTENSION);
@@ -176,8 +176,8 @@ function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
-    if (isset($_POST['send_profile_picture'])) {
-        echo "send_profile_picture available";
+    if (isset($_POST['send_couverture_picture'])) {
+        echo "send_couverture_picture available";
 
         $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
         $req_service->execute([$nom_services,$typePhotoCouverture]); 
@@ -187,10 +187,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
         if ($total_profil == 0) {
             echo "Aucun élement trouvé (profil)";
-            uploadProfileImage($bdd, $nom_services, $typePhotoCouverture);
+            uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture);
         } else {
             echo "Element deleted available";
-            deleteProfileIfExist($bdd, $nom_services, $typePhotoCouverture);
+            deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture);
         }
 
 
@@ -224,18 +224,18 @@ function uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture) {
                 $sql->bindParam(':typePhoto', $typePhotoCouverture);
 
                 if ($sql->execute()) {
-                    echo 'Photo uploader avec succès (fonction)';
+                    echo 'Photo uploader couverture avec succès (fonction)';
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 } else {
-                    echo 'Le changement de la photo de profil a échoué';
+                    echo 'Le changement de la photo de send_couverture_picture a échoué';
                 }
             }
         } else {
-            echo "Image vide";
+            echo "Image vide (send_couverture_picture)";
         }
     } else {
-        echo "Une photo est requis !! ";
+        echo "Une photo de couverture est requis !! ";
     }
 }
 function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {

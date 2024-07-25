@@ -53,12 +53,12 @@
                         </div>
                     </button>
 
-                    <button type="submit" name="showGeneSettings" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center" id="">
+                    <button type="button" name="showGeneSettings" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
+                        <div class="w-16 h-16 absolute left-4 rounded-full my-2 text-center flex justify-center items-center" id="">
                             <i class='bx bxs-cog' id="btn_general_settings"></i>
                         </div>
                         <div class="w-5/6 flex items-center justify-center">
-                            <p class="text-black font-bold">Paramètre</p>
+                            <p class="text-black font-bold">Paramètres</p>
                         </div>
                     </button>
 

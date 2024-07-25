@@ -604,6 +604,11 @@ ul #btn_back_profil:hover {
   color : #9fa1a3
 }
 
+#btn_general_settings {
+  color : black;
+  font-size: x-large;
+}
+
 /*  */
 
 #logoutBtn {

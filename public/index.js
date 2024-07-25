@@ -301,7 +301,6 @@ function sendPiCheck() {
     console.log('sendPicAuto');
     if(sendPicAuto) {
         sendPicAuto.addEventListener('click', () => {
-            alert("Please select a file");
             console.log('Boite de dialogue ouverte');
         });
         sendPicAuto.addEventListener('change', () => {
@@ -322,9 +321,7 @@ function sendPiCheck() {
     }
 
     if(sendCouverturePic) {
-        alert("couverture active");
         sendCouverturePic.addEventListener('click', () => {
-            alert("Please select a file");
             console.log('Boite de dialogue ouverte');
         });
         sendCouverturePic.addEventListener('change', () => {

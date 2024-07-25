@@ -10,6 +10,7 @@ global $image_name;
 global $photo_profil_name;
 global $photo_couverture_name;
 global $req_service;
+global $error;
 
 
 $typePhotoProfil = "profil";
@@ -25,12 +26,10 @@ $total_profil = $req_service->rowCount();
 $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 
 if ($total_profil == 0) {
-    echo "Aucun élement trouvé (profil)";
+    //
 } else {
     foreach($resultat_profil as $res_profil) {
         $photo_profil_name = $res_profil['photo'];
-
-        echo "Photo de profi trouvée : " . $photo_profil_name . "</br>";
 
         echo '<script src="index.js"></script>';
         echo '<script>showProfilSettings();</script>';
@@ -47,12 +46,10 @@ $total_couv = $req_couv->rowCount();
 $resultat_couv = $req_couv->fetchAll(PDO::FETCH_ASSOC);
 
 if ($total_couv == 0) {
-    echo "Aucun élement trouvé (couverture)";
+    //
 } else {
     foreach($resultat_couv as $res_couv) {
         $photo_couverture_name = $res_couv['photo'];
-
-        echo "Photo de couverture trouvée : " . $photo_couverture_name . "</br>";
 
         echo '<script src="index.js"></script>';
         echo '<script>showCouvertureSettings();</script>';
@@ -72,16 +69,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
     
         if ($total_profil == 0) {
-            echo "Aucun élement trouvé (profil)";
             uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
         } else {
-            echo "Element deleted available";
             deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil);
         }
 
 
     } else {
-        echo "téléchargement non effectué ! </br>";
+        $error = "téléchargement non effectué !";
     }
 }
 
@@ -110,18 +105,17 @@ function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
                 $sql->bindParam(':typePhoto', $typePhotoProfil);
 
                 if ($sql->execute()) {
-                    echo 'Photo uploader avec succès (fonction)';
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 } else {
-                    echo 'Le changement de la photo de profil a échoué';
+                    $error = 'Le changement de la photo de profil a échoué';
                 }
             }
         } else {
-            echo "Image vide";
+            $error = "Veillez charger une image !!";
         }
     } else {
-        echo "Une photo est requis !! ";
+        $error = "Une erreur s'est produite, réesayer plus tard";
     }
 }
 function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
@@ -133,7 +127,7 @@ function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
     $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 
     if ($total_profil == 0) {
-        echo "Aucun à supprimer élement trouvé (profil)";
+        // echo "Aucun à supprimer élement trouvé (profil)";
     } else {
         $id_delete = "";
         foreach($resultat_profil as $res_profil) {
@@ -150,19 +144,16 @@ function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
 
                 if ((file_exists($file_path))) {
                     if (unlink($file_path)) {
-                        echo "Le fichier a été supprimé avec succès.</br>";
-
-                        echo "Record deleted successfully." . $file_path .'</br>';
                         uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
                         
                     } else {
-                        echo "Erreur lors de la suppression du fichier." . $file_path .'</br>';
+                        $error = "Erreur lors de la suppression du fichier." . $file_path .'</br>';
                     }
                 }else {
-                    echo "Le fichier n'existe pas." . $file_path .'</br>';
+                    $error = "Le fichier n'existe pas." . $file_path .'</br>';
                 }
             } else {
-                echo "No record found to delete.";
+                $supp = "No record found to delete.";
             }
         }
     }
@@ -177,7 +168,6 @@ function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
     if (isset($_POST['send_couverture_picture'])) {
-        echo "send_couverture_picture available";
 
         $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
         $req_service->execute([$nom_services,$typePhotoCouverture]); 
@@ -186,16 +176,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
     
         if ($total_profil == 0) {
-            echo "Aucun élement trouvé (profil)";
             uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture);
         } else {
-            echo "Element deleted available";
             deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture);
         }
 
 
     } else {
-        echo "téléchargement non effectué ! </br>";
+        $error = "Téléchargement non effectué ! </br>";
     }
 }
 
@@ -224,18 +212,17 @@ function uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture) {
                 $sql->bindParam(':typePhoto', $typePhotoCouverture);
 
                 if ($sql->execute()) {
-                    echo 'Photo uploader couverture avec succès (fonction)';
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 } else {
-                    echo 'Le changement de la photo de send_couverture_picture a échoué';
+                    $error = 'Le changement de la photo de couverture a échoué';
                 }
             }
         } else {
-            echo "Image vide (send_couverture_picture)";
+            $error = "Image vide (send_couverture_picture)";
         }
     } else {
-        echo "Une photo de couverture est requis !! ";
+        $error = "Une photo de couverture est requis !! ";
     }
 }
 function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
@@ -247,7 +234,7 @@ function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
     $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
 
     if ($total_profil == 0) {
-        echo "Aucun à supprimer élement trouvé (profil)";
+        // echo "Aucun à supprimer élement trouvé (profil)";
     } else {
         $id_delete = "";
         foreach($resultat_profil as $res_profil) {
@@ -264,19 +251,16 @@ function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
 
                 if ((file_exists($file_path))) {
                     if (unlink($file_path)) {
-                        echo "Le fichier a été supprimé avec succès.</br>";
-
-                        echo "Record deleted successfully." . $file_path .'</br>';
                         uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture);
                         
                     } else {
-                        echo "Erreur lors de la suppression du fichier." . $file_path .'</br>';
+                        $error = "Erreur lors de la suppression du fichier." . $file_path .'</br>';
                     }
                 }else {
-                    echo "Le fichier n'existe pas." . $file_path .'</br>';
+                    $error = "Le fichier n'existe pas." . $file_path .'</br>';
                 }
             } else {
-                echo "No record found to delete.";
+                $supp = "No record found to delete.";
             }
         }
     }

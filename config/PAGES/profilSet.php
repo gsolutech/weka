@@ -176,14 +176,5 @@ function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
 
 <?php
 
-if (isset($_POST['profile_image'])) {
-    if (empty($_POST['nom']) || empty($_POST['prix'])) {
-        $error = "Tout les champs sont requis ! ";
-    } else {
-        $nom_items = $_POST['nom'];
-        $prix_items = $_POST['prix'];
-        $category_items = $_POST['category'];
-        $description_items = $_POST['description'];
-    }
-}
+//=======================================================  photo de couverture =================================================
 ?>

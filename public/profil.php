@@ -19,8 +19,14 @@
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col">
             <div class="w-full h-44 bge-cyan-custom relative overflow-hidden" id="couverture_image_container">
                 <img src="../src/assets/salles/profil/<?php echo $photo_couverture_name?>" alt="" class="relative w-full h-full object-cover object-center hidden" id="couvertureImage">          
-                <button class="right-10 bottom-5 absolute"><i class="fa-solid fa-pen-to-square" class="text-white"></i></button>
-                
+                <form action="" method="POST" enctype="multipart/form-data" id="uploadCouvertureForm">
+                    <input type="file" name="couverture_picture" id="showFilesDialogCouv" class="hidden" accept="image/*">
+                    <label for="showFilesDialogCouv" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" onclick="sendPiCheck();">
+                        <i class="fa-solid fa-pen-to-square" id="profilchange"></i>
+                    </label>
+                    <button type="submit" name="send_couverture_picture" id="send_couverture_picture" class="hidden">send</button>
+                </form>
+       
             </div>
             <div id="profil_container" class="profilUp absolute w-44 h-44 rounded-full ml-20 top-20 border-8 border-solid border-white bge-cyan-custom items-center justify-center flex">
                 <p class="text-white text-8xl font-bold" id="profil_image_default"><?php echo $premiereLettre ?></p>

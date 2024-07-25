@@ -53,6 +53,9 @@ if ($total_couv == 0) {
         $photo_couverture_name = $res_couv['photo'];
 
         echo "Photo de couverture trouvée : " . $photo_profil_name . "</br>";
+
+        echo '<script src="index.js"></script>';
+        echo '<script>showProfilSettings();</script>';
     }
 }
 

@@ -273,6 +273,15 @@ function showProfilSettings() {
 
             profil_container.classList.remove('bge-cyan-custom');
             console.log('main_container true');
+
+            if (couvertureImage) {
+                couvertureImage.classList.remove('hidden');
+                couverture_container.classList.remove('bge-cyan-custom');
+
+                console.log('couverture container true');
+            } else {
+                console.log('couverture container false');
+            }
         } else {
             console.log('profileImage not found');
         }

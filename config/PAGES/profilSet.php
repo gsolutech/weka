@@ -177,17 +177,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "send_profile_picture available";
 
         $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
-        $req_service->execute([$nom_services,$typePhotoProfil]); 
+        $req_service->execute([$nom_services,$typePhotoCouverture]); 
     
         $total_profil = $req_service->rowCount();
         $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
     
         if ($total_profil == 0) {
             echo "Aucun élement trouvé (profil)";
-            uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
+            uploadProfileImage($bdd, $nom_services, $typePhotoCouverture);
         } else {
             echo "Element deleted available";
-            deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil);
+            deleteProfileIfExist($bdd, $nom_services, $typePhotoCouverture);
         }
 
 
@@ -196,12 +196,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-function uploadCouvertureImage($bdd, $nom_services, $typePhotoProfil) {
+function uploadCouvertureImage($bdd, $nom_services, $typePhotoCouverture) {
 
-    if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
+    if (isset($_FILES['couverture_picture']) && ($_FILES['couverture_picture']['error']) == UPLOAD_ERR_OK ) { 
 
-        $image_items = $_FILES['profile_picture']['name'];
-        $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
+        $image_items = $_FILES['couverture_picture']['name'];
+        $image_items_tmp = $_FILES['couverture_picture']['tmp_name'];
 
         if ($image_items != "") {
             $ext = pathinfo($image_items, PATHINFO_EXTENSION);
@@ -211,14 +211,14 @@ function uploadCouvertureImage($bdd, $nom_services, $typePhotoProfil) {
                 $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
             } else {
                 $image_name = $nom_services . '-' . rand() . '.' . $ext;
-                move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
+                move_uploaded_file($image_items_tmp, '../src/assets/salles/couverture/' . $image_name);
 
 
                 //insertion dans la base de données 
                 $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
                 $sql->bindParam(':nomSalle', $nom_services);
                 $sql->bindParam(':photo', $image_name);
-                $sql->bindParam(':typePhoto', $typePhotoProfil);
+                $sql->bindParam(':typePhoto', $typePhotoCouverture);
 
                 if ($sql->execute()) {
                     echo 'Photo uploader avec succès (fonction)';
@@ -235,10 +235,10 @@ function uploadCouvertureImage($bdd, $nom_services, $typePhotoProfil) {
         echo "Une photo est requis !! ";
     }
 }
-function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoProfil) {
+function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoCouverture) {
     
     $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
-    $req_service->execute([$nom_services,$typePhotoProfil]); 
+    $req_service->execute([$nom_services,$typePhotoCouverture]); 
 
     $total_profil = $req_service->rowCount();
     $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
@@ -257,14 +257,14 @@ function deleteCouvertureIfExist($bdd, $nom_services, $typePhotoProfil) {
             $req_service_delete->execute([$id_delete]);
 
             if ($req_service_delete->rowCount() > 0) {
-                $file_path = '../src/assets/salles/profil/' . $file_name;
+                $file_path = '../src/assets/salles//' . $file_name;
 
                 if ((file_exists($file_path))) {
                     if (unlink($file_path)) {
                         echo "Le fichier a été supprimé avec succès.</br>";
 
                         echo "Record deleted successfully." . $file_path .'</br>';
-                        uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
+                        uploadProfileImage($bdd, $nom_services, $typePhotoCouverture);
                         
                     } else {
                         echo "Erreur lors de la suppression du fichier." . $file_path .'</br>';

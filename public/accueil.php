@@ -36,7 +36,7 @@
                 </button>
             </ul>
 
-            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col" id="showParamatersCompte">
+            <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0 flex flex-col" id="showParamatersCompte">
                 <form action="" method="post">
                     <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
                         <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6">

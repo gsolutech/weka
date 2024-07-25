@@ -9,6 +9,7 @@ global $description_items;
 global $image_name;
 global $photo_profil_name;
 global $photo_couverture_name;
+global $req_service;
 
 
 $typePhotoProfil = "profil";
@@ -66,44 +67,108 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     print_r($_FILES);
     echo "</pre>";
     if (isset($_POST['send_profile_picture'])) {
-
         echo "send_profile_picture available";
-        if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
+
+        $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+        $req_service->execute([$nom_services,$typePhotoProfil]); 
+    
+        $total_profil = $req_service->rowCount();
+        $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
+    
+        if ($total_profil == 0) {
+            echo "Aucun élement trouvé (profil)";
+            uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
+        } else {
+            echo "Element deleted available";
+            deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil);
+        }
+
+
+    } else {
+        echo "téléchargement non effectué ! </br>";
+    }
+}
+
+function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
+
+    if (isset($_FILES['profile_picture']) && ($_FILES['profile_picture']['error']) == UPLOAD_ERR_OK ) { 
 
         $image_items = $_FILES['profile_picture']['name'];
         $image_items_tmp = $_FILES['profile_picture']['tmp_name'];
 
-            if ($image_items != "") {
-                $ext = pathinfo($image_items, PATHINFO_EXTENSION);
-                $file_names = basename($image_items, '-' . $ext);
+        if ($image_items != "") {
+            $ext = pathinfo($image_items, PATHINFO_EXTENSION);
+            $file_names = basename($image_items, '-' . $ext);
 
-                if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
-                    $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
-                } else {
-                    $image_name = $nom_services . '-' . rand() . '.' . $ext;
-                    move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
-
-
-                    //insertion dans la base de données 
-                    $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
-                    $sql->bindParam(':nomSalle', $nom_services);
-                    $sql->bindParam(':photo', $image_name);
-                    $sql->bindParam(':typePhoto', $typePhotoProfil);
-
-                    if ($sql->execute()) {
-                        echo 'Photo uploader avec succès';
-                    } else {
-                        echo 'Le changement de la photo de profil a échoué';
-                    }
-                }
+            if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif") {
+                $error = "Extension non permi * ('.jpeg, .png, .jpg, .gif')";
             } else {
-                echo "Image vide";
+                $image_name = $nom_services . '-' . rand() . '.' . $ext;
+                move_uploaded_file($image_items_tmp, '../src/assets/salles/profil/' . $image_name);
+
+
+                //insertion dans la base de données 
+                $sql = $bdd->prepare("INSERT INTO tphoto (nomSalle, photo, typePhoto) VALUES (:nomSalle, :photo, :typePhoto)");
+                $sql->bindParam(':nomSalle', $nom_services);
+                $sql->bindParam(':photo', $image_name);
+                $sql->bindParam(':typePhoto', $typePhotoProfil);
+
+                if ($sql->execute()) {
+                    echo 'Photo uploader avec succès (fonction)';
+                    header("Location: " . $_SERVER['REQUEST_URI']);
+                    exit();
+                } else {
+                    echo 'Le changement de la photo de profil a échoué';
+                }
             }
         } else {
-            echo "Une photo est requis !! ";
+            echo "Image vide";
         }
     } else {
-        echo "téléchargement non effectué ! </br>";
+        echo "Une photo est requis !! ";
+    }
+}
+function deleteProfileIfExist($bdd, $nom_services, $typePhotoProfil) {
+    
+    $req_service = $bdd -> prepare ("SELECT * FROM tphoto WHERE nomSalle=? AND typePhoto=?");
+    $req_service->execute([$nom_services,$typePhotoProfil]); 
+
+    $total_profil = $req_service->rowCount();
+    $resultat_profil = $req_service->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($total_profil == 0) {
+        echo "Aucun à supprimer élement trouvé (profil)";
+    } else {
+        $id_delete = "";
+        foreach($resultat_profil as $res_profil) {
+
+            $id_delete = $res_profil['idPhoto'];
+            $file_name = $res_profil['photo'];
+
+
+            $req_service_delete = $bdd -> prepare ("DELETE FROM tphoto WHERE idPhoto=?");
+            $req_service_delete->execute([$id_delete]);
+
+            if ($req_service_delete->rowCount() > 0) {
+                $file_path = '../src/assets/salles/profil/' . $file_name;
+
+                if ((file_exists($file_path))) {
+                    if (unlink($file_path)) {
+                        echo "Le fichier a été supprimé avec succès.</br>";
+
+                        echo "Record deleted successfully." . $file_path .'</br>';
+                        uploadProfileImage($bdd, $nom_services, $typePhotoProfil);
+                        
+                    } else {
+                        echo "Erreur lors de la suppression du fichier." . $file_path .'</br>';
+                    }
+                }else {
+                    echo "Le fichier n'existe pas." . $file_path .'</br>';
+                }
+            } else {
+                echo "No record found to delete.";
+            }
+        }
     }
 }
 ?>

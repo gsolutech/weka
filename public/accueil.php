@@ -39,7 +39,7 @@
                         </button>
                     </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center" id="profilSetMain">
                             <p id="profilDefaultMain" class="font-black text-center text-2xl"><?php echo $premiereLettre ?></p>
                             <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden">
                         </div>

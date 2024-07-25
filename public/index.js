@@ -297,6 +297,7 @@ function sendPiCheck() {
 
     const sendPicAuto = document.getElementById('showFilesDialog');
     const sendCouverturePic = document.getElementById('showFilesDialogCouv');
+    const profilSetMain = document.getElementById('profilSetMain');
 
     console.log('sendPicAuto');
     if(sendPicAuto) {
@@ -337,6 +338,10 @@ function sendPiCheck() {
 
         });
 
+    }
+
+    if (profilSetMain) {
+        alert("Check");
     }
 }
 

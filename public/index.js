@@ -379,7 +379,8 @@ function goback() {
 function showMenuOPtion() {
     const showParamatersCompte = document.getElementById('showParamatersCompte');
 
-    if (showCouvertureSettings) {
-        alert('menuuuuuuuuuu');
+    if (showParamatersCompte) {
+        showParamatersCompte.classList.remove('hidden');
+        showParamatersCompte.classList.add('flex');
     }
 }

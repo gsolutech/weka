@@ -17,7 +17,7 @@
     ?>
     <section>
         <div id="main_container" class="photoUpload w-full h-96 relative flex flex-col text-center">
-            <ul class="w-24 h-24 bg-white rounded-full absolute left-4 top-4">
+            <ul class="w-24 h-24 bg-red-500 rounded-full absolute left-4 top-4">
                 <i class='bx bx-left-arrow-alt'></i>
             </ul>
             <label for="showFilesDialogCouv">

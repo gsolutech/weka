@@ -386,3 +386,14 @@ function showMenuOPtion() {
         console.log('showParamatersCompte not found');
     }
 }
+
+function closeParamatersCompte(){
+    const showParamatersCompte = document.getElementById('showParamatersCompte');
+
+    if (showParamatersCompte) {
+        showParamatersCompte.classList.remove('flex');
+        showParamatersCompte.classList.add('hidden');
+    } else {
+        console.log('showParamatersCompte not found');
+    }
+}

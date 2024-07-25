@@ -272,6 +272,19 @@ function showProfilSettings() {
         } else {
             console.log('profileImage not found');
         }
+
+        //page d'accueil
+        let profilSetMain = document.getElementById('profilSetMain');
+        let profilDefaultMain = document.getElementById('profilDefaultMain');
+        let mainContainer_profilSetMain = document.getElementById('mainContainer_profilSetMain');
+        
+        if (profilSetMain) {
+            profilSetMain.classList.remove('hidden');
+            profilDefaultMain.classList.add('hidden');
+            mainContainer_profilSetMain.classList.remove('bge-cyan-custom');
+        } else {
+            console.log('profilSetMain not found');
+        }
     })
 }
 function showCouvertureSettings() {
@@ -297,7 +310,6 @@ function sendPiCheck() {
 
     const sendPicAuto = document.getElementById('showFilesDialog');
     const sendCouverturePic = document.getElementById('showFilesDialogCouv');
-    const profilSetMain = document.getElementById('profilSetMain');
 
     console.log('sendPicAuto');
     if(sendPicAuto) {
@@ -354,10 +366,15 @@ function goback() {
 
 // page d'accueil show profile picture
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (profilSetMain) {
+document.addEventListener('DOMContentLoaded', function() {
+    let showParamatersCompte = document.getElementById('showParamatersCompte');
+    const profilSetMain = document.getElementById('profilSetMain');
+
+    if (showParamatersCompte) {
         alert("Check");
+        console.log('showParam true');
     } else {
         alert ('profil non trouvé');
+        console.log('showParam false');
     }
-} )
+});

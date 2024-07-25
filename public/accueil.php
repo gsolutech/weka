@@ -31,7 +31,7 @@
                 <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black"><?php echo $premiereLettre ?></button>
             </ul>
 
-            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
+            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col" id="showParamatersCompte">
                 <form action="" method="post">
                     <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
                         <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6">
@@ -39,7 +39,7 @@
                         </button>
                     </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center" id="mainContainer_profilSetMain">
                             <p id="profilDefaultMain" class="font-black text-center text-2xl"><?php echo $premiereLettre ?></p>
                             <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden" id="profilSetMain">
                         </div>

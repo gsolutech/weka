@@ -28,7 +28,7 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_profil" class="border-solid border-gray-100 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black">
+                <button id="btn_profil" class="border-solid border-gray-100 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black" onclick="showMenuOPtion();">
                     <div class="bge-cyan-custom items-center justify-center flex w-12 h-12 rounded-full" id="mainContainer_one_Deft">
                         <p class="font-black text-center text-2xl" id="letterDefault_one"><?php echo $premiereLettre ?></p>
                         <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden" id="profilSetMain_one">

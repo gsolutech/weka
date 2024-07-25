@@ -374,17 +374,12 @@ function goback() {
     }
 }
 
-// page d'accueil show profile picture
+// page d'accueil show menu option
 
-document.addEventListener('DOMContentLoaded', function() {
-    let showParamatersCompte = document.getElementById('showParamatersCompte');
-    const profilSetMain = document.getElementById('profilSetMain');
+function showMenuOPtion() {
+    const showParamatersCompte = document.getElementById('showParamatersCompte');
 
-    if (showParamatersCompte) {
-        alert("Check");
-        console.log('showParam true');
-    } else {
-        alert ('profil non trouvé');
-        console.log('showParam false');
+    if (showCouvertureSettings) {
+        alert('menuuuuuuuuuu');
     }
-});
+}

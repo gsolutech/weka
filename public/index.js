@@ -339,10 +339,6 @@ function sendPiCheck() {
         });
 
     }
-
-    if (profilSetMain) {
-        alert("Check");
-    }
 }
 
 //goback history
@@ -355,3 +351,13 @@ function goback() {
         window.history.back();
     }
 }
+
+// page d'accueil show profile picture
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (profilSetMain) {
+        alert("Check");
+    } else {
+        alert ('profil non trouvé');
+    }
+} )

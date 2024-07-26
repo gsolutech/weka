@@ -51,7 +51,7 @@
                 <label for="filtre_Check" class="mr-10 ml-2">Disponible</label>
             </ul>
         </div>
-
+<!--  -->
         <div id="calendarDiv" class="w-full h-screen hidden z-50 backdrop-blur fixed inset-4 mt-10 justify-center items-center">
             <div class=" bg-white w-96 h-52 justify-center items-center flex relative flex-col rounded-md">
                 <p class="text-black pb-3">Choisissez une date </p>

@@ -6,6 +6,8 @@
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php';
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'loginCheck.php';
         require_once dirname(dirname(__DIR__)) .DIRECTORY_SEPARATOR . 'WEKA' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'lougout_showProfil.php';
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'weka' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'PAGES' . DIRECTORY_SEPARATOR . 'profilSet.php';
+
         
         //récupérer la première lettre 
         $usernameC = $_SESSION['username'];
@@ -26,22 +28,39 @@
                 <li href="" class="pr-7 cursor-pointer">Contact</li>
             </ul>
             <ul class="flex-row w-2/6 absolute right-20 justify-end items-end flex">
-                <button id="btn_profil" class="bge-cyan-custom border-solid border-cyan-500 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black"><?php echo $premiereLettre ?></button>
+                <button id="btn_profil" class="border-solid border-gray-100 pr-4 pl-4 pt-1 pb-1 rounded-full w-12 h-12 mt-4 font-black" onclick="showMenuOPtion();">
+                    <div class="bge-cyan-custom items-center justify-center flex w-12 h-12 rounded-full" id="mainContainer_one_Deft">
+                        <p class="font-black text-center text-2xl" id="letterDefault_one"><?php echo $premiereLettre ?></p>
+                        <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden" id="profilSetMain_one">
+                    </div>
+                </button>
             </ul>
 
-            <ul class="w-72 h-52 bg-white rounded-lg absolute right-20 top-24 flex flex-col">
+            <ul class="w-72 h-screen fixed bg-white rounded-none right-0 top-0  flex-col hidden" id="showParamatersCompte">
+                <div class="w-full h-6 items-center justify-center flex text-center p-1">
+                    <button type="button" class="absolute left-1 top-0 items-center justify-center flex rounded-full w-10 h-6 text-center" onclick="closeParamatersCompte(event);">
+                        <!-- <div class="w-6 h-6 justify-center items-center flex text-center"> -->
+                        <i class="fa-solid fa-x" id="closeParamatersCompte"></i>
+                        <!-- </div>     -->
+                    </button>
+                </div>
                 <form action="" method="post">
-                    <div class="w-full h-6 rounded-lg items-center justify-center flex m-auto">
-                        <button class="absolute top-1 right-1 items-center justify-center flex pt-3 pr-6">
-                            <i class="fa-solid fa-rectangle-xmark" id="closeProfil"></i>
-                        </button>
-                    </div>
                     <button type="submit" name="showProfilSet" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
-                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2">
-                            <img src="../src/assets/salles/profil/1.jpg" alt="profil" class="w-full h-full object-cover rounded-full">
+                        <div class="w-16 h-16 absolute left-4 rounded-full bge-cyan-custom my-2 text-center flex justify-center items-center" id="mainContainer_profilSetMain">
+                            <p id="profilDefaultMain" class="font-black text-center text-2xl"><?php echo $premiereLettre ?></p>
+                            <img src="../src/assets/salles/profil/<?php echo $photo_profil_name?>" class="w-full h-full object-cover rounded-full hidden" id="profilSetMain">
                         </div>
                         <div class="w-5/6 flex items-center justify-center">
                             <p class="text-black font-bold">Mon profil</p>
+                        </div>
+                    </button>
+
+                    <button type="button" name="showGeneSettings" class="border-b-2 border-solid border-gray-100 w-full h-24 shadow-lg flex flex-row items-center justify-center py-4 relative rounded-lg">
+                        <div class="w-16 h-16 absolute left-4 rounded-full my-2 text-center flex justify-center items-center" id="">
+                            <i class='bx bxs-cog' id="btn_general_settings"></i>
+                        </div>
+                        <div class="w-5/6 flex items-center justify-center">
+                            <p class="text-black font-bold">Paramètres</p>
                         </div>
                     </button>
 

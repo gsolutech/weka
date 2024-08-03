@@ -38,8 +38,21 @@ if (isset($_POST['btnconnexion'])) {
                 echo "Connexion réussie !! ";
                 $idurl = rand(1000000, 9999999);
                 $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl;
-                header("Location: ../../../../public/accueil.php?name=" . urlencode($url));
+
+
+                $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+                $domainName = $_SERVER['HTTP_HOST'];
+
+                $path = dirname($_SERVER['PHP_SELF']);
+
+                $absoluteUrl = $protocol . $domainName . $path . "/accueil.php?name=" . urlencode($url);
+
+                header("Location: " .$absoluteUrl);
+
+
                 exit();
+
             } else {
                 $message = 'Mot de passe incorrect<br/>';
                 echo " <script>testConnexion();</script> ";

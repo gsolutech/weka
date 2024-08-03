@@ -6,14 +6,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 
         $idurl = rand(1000000, 9999999);
         $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl . 'paramètrer+le+profil';
-        header("location: ../public/profil.php?name=" . urlencode($url));
+
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+        $domainName = $_SERVER['HTTP_HOST'];
+
+        $path = dirname($_SERVER['PHP_SELF']);
+
+        $absoluteUrl = $protocol . $domainName . $path . "/profil.php?name=" . urlencode($url);
+
+        header("Location: " .$absoluteUrl);
         exit();
 
 } else {
     $error = "Erreur Serveur, veillez réessayer plus tard";
 }  
 
-//=======================================
+//======================================= deconnexion ==========================================
 //SRcipt de déconnexion
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
@@ -29,8 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
                 $params["secure"], $params["httponly"]
             );
         }
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 
-        header("Location: ../public/index.php");
+        $domainName = $_SERVER['HTTP_HOST'];
+
+        $path = dirname($_SERVER['PHP_SELF']);
+
+        $absoluteUrl = $protocol . $domainName . $path . "/index.php";
+
+        header("Location: " .$absoluteUrl);
         exit();
 } else {
     $error = "Erreur Serveur, veillez réessayer plus tard";

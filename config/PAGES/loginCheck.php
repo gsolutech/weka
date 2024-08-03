@@ -1,10 +1,12 @@
-<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; ?>
+<?php 
+session_start();
+
+require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; 
+?>
 
 <?php
 // page de connexion login check
 
-
-session_start();
 
 $message = "";
 if (isset($_POST['btnconnexion'])) {
@@ -36,7 +38,7 @@ if (isset($_POST['btnconnexion'])) {
                 echo "Connexion réussie !! ";
                 $idurl = rand(1000000, 9999999);
                 $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl;
-                header("Location: ../../../../public/accueil.php");
+                header("Location: ../../../../public/accueil.php?name=" . urlencode($url));
                 exit();
             } else {
                 $message = 'Mot de passe incorrect<br/>';

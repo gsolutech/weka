@@ -116,7 +116,21 @@ function uploadProfileImage($bdd, $nom_services, $typePhotoProfil) {
                 $sql->bindParam(':photo', $image_name);
                 $sql->bindParam(':typePhoto', $typePhotoProfil);
 
-                // $sql2 = $bdd->prepare("INSERT INTO tinfosalle ()");
+                //rechercher le service dans la table infoSErvice
+                $sql2 = $bdd->prepare("SELECT * FROM tinfosalle WHERE nomSalle=?");
+                $sql2->execute($nom_services);
+
+                $total_sql2 = $sql2->rowCount();
+                $resultat_sql2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
+
+                if($total_sql2 == 0) {
+                    //
+                } else {
+                    foreach($resultat_sql2 as $res_sql2) {
+                        
+                    }
+                }
+
                 if ($sql->execute()) {
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();

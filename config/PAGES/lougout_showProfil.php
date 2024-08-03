@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
     $error = "Erreur Serveur, veillez réessayer plus tard";
 }  
 
-//=======================================
+//======================================= deconnexion ==========================================
 //SRcipt de déconnexion
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'

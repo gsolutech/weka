@@ -1,10 +1,12 @@
-<?php require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; ?>
+<?php 
+session_start();
+
+require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'conBd.php'; 
+?>
 
 <?php
 // page de connexion login check
 
-
-session_start();
 
 $message = "";
 if (isset($_POST['btnconnexion'])) {
@@ -36,7 +38,19 @@ if (isset($_POST['btnconnexion'])) {
                 echo "Connexion réussie !! ";
                 $idurl = rand(1000000, 9999999);
                 $url = "user-" . $_SESSION['user_id'] . $_SESSION['username'] . $idurl;
-                header("Location: ../../../../public/accueil.php?name=" . urlencode($url));
+
+                // $absolute_url = "http://localhost/weka/public/accueil.php?name=" . urlencode($url);
+
+                $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+                $domainName = $_SERVER['HTTP_HOST'];
+
+                $path = dirname($_SERVER['PHP_SELF']);
+
+                $absoluteUrl = $protocol . $domainName . $path . "/accueil.php?name=" . urlencode($url);
+
+                header("Location: " .$absoluteUrl);
+
                 exit();
             } else {
                 $message = 'Mot de passe incorrect<br/>';

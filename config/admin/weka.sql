@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 20 juil. 2024 à 13:29
+-- Généré le : sam. 03 août 2024 à 06:46
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `tclient` (
   `prenom` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `phone` bigint DEFAULT NULL,
+  `dateToDay` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idClient`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -72,17 +73,15 @@ CREATE TABLE IF NOT EXISTS `tinfosalle` (
   `idAvis` int NOT NULL,
   PRIMARY KEY (`idInfo`),
   KEY `fk_avis` (`idAvis`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `tinfosalle`
 --
 
 INSERT INTO `tinfosalle` (`idInfo`, `nomSalle`, `adresse`, `prix1`, `prix2`, `photo`, `description`, `taille`, `equipement`, `idAvis`) VALUES
-(1, 'HB', 'goma, afia bora', 1300, 800, '1.jpg', 'salle de luxe pour vos cérémonies ', 0, 'parking, service traiteur', 0),
-(2, 'MUVITHO', 'trois paillotes', 850, 600, '3.jpg', 'salle de fête', 700, 'parking, service traiteur', 0),
-(3, 'La promise', 'Goma,le volcan', 2400, 1800, '10.jpg', 'salle de fete', 3000, '...', 0),
-(4, 'Le chalet', 'goma', 890, 800, '9.jpg', 'SALLE DE FËTE', 600, 'AUTRES', 0);
+(2, 'hb', 'Aucun', 0, 0, 'hb-965761718.jpg', '', 0, '', 0),
+(3, 'la promise', 'Aucun', 0, 0, 'la promise-760192826.jpg', '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -95,8 +94,18 @@ CREATE TABLE IF NOT EXISTS `tphoto` (
   `idPhoto` int NOT NULL AUTO_INCREMENT,
   `nomSalle` varchar(50) NOT NULL,
   `photo` varchar(100) NOT NULL,
+  `typePhoto` varchar(200) NOT NULL,
+  `dateToDay` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idPhoto`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `tphoto`
+--
+
+INSERT INTO `tphoto` (`idPhoto`, `nomSalle`, `photo`, `typePhoto`, `dateToDay`) VALUES
+(64, 'hb', 'hb-965761718.jpg', 'profil', '2024-08-03 08:31:09'),
+(65, 'la promise', 'la promise-760192826.jpg', 'profil', '2024-08-03 08:37:36');
 
 -- --------------------------------------------------------
 
@@ -113,6 +122,7 @@ CREATE TABLE IF NOT EXISTS `treservation` (
   `etatReservation` varchar(50) NOT NULL,
   `prix` decimal(10,0) NOT NULL,
   `serviceAutres` text NOT NULL,
+  `servicesName` varchar(200) NOT NULL,
   `idAvis` int NOT NULL,
   PRIMARY KEY (`idReservation`),
   KEY `fk_clientid` (`idClient`),
@@ -134,16 +144,18 @@ CREATE TABLE IF NOT EXISTS `tsalle` (
   `phone` varchar(30) NOT NULL,
   `password` varchar(200) NOT NULL,
   `idInfo` int NOT NULL,
+  `dateToDay` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idSalle`),
   KEY `fk_idInfo` (`idInfo`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `tsalle`
 --
 
-INSERT INTO `tsalle` (`idSalle`, `nom`, `prenom`, `email`, `phone`, `password`, `idInfo`) VALUES
-(1, 'HB', 'GOMA', 'hb@gmail.com', '0987654321', 'hb2024@', 0);
+INSERT INTO `tsalle` (`idSalle`, `nom`, `prenom`, `email`, `phone`, `password`, `idInfo`, `dateToDay`) VALUES
+(4, 'hb', 'goma', 'hb@gmail.com', '0987654321', '$2y$10$/WV5Nvc1uDUz661CT3ra6OBYrwnZLYcqhYfh2UZTYwTFiDqmSSdPO', 0, '2024-08-03 08:25:39'),
+(5, 'la promise', 'goma', 'lapromise@gmail.com', '0987654321', '$2y$10$1rQOwzNMYq3D2zFJhwBuJezXtJ6yp7bpFxWgZJLhWlk3ZhXd/CuYi', 0, '2024-08-03 08:36:54');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,5 +1,17 @@
 <?php
-$nom_services = $_COOKIE['nom'];
+// session_start();
+
+// if (!isset($_SESSION['user_id']) || !isset($_SESSION['nom'])) {
+//     die("Les variables de session ne sont pas définies.");
+// } else {
+// $nom_services = $_SESSION["nom"];
+// }
+
+// if (!isset($_COOKIE['user_id']) || !isset($_COOKIE['username'])) {
+//     die("Les variables de cookies ne sont pas définies.");
+// } else {
+    $nom_services = $_COOKIE['nom'];
+// }
 
 $error = "";
 global $nom_client;

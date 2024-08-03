@@ -51,8 +51,6 @@ if (isset($_POST['btnconnexion'])) {
                 header("Location: " .$absoluteUrl);
 
 
-                header("Location: ../../../../public/accueil.php?name=" . urlencode($url));
-
                 exit();
 
             } else {
